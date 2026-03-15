@@ -1,0 +1,3732 @@
+﻿<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.eurekapackaging.it/',
+        AccountUUID: 'cf279c6fb73a440cb358adc032ea153b',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '158cafef',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Thu Sep 11 14:25:48 UTC 2025',
+        ExternalUid: '2291407',
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'sottovuoto',
+        InitialPageUuid: '3ec742d704524fcb9b1d622afdcc0f8c',
+        InitialPageId: '1186707646',
+        InitialEncodedPageAlias: 'c290dG92dW90bw==',
+        InitialHeaderUuid: 'e4a5d420b6534267b205843c1048cb2d',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: false,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '500000',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'LEFT',
+        currentLanguage: 'it',
+        currentLocale: 'it',
+        NavItems: '{}',
+        errors: {
+            general: 'Si è verificato un errore durante la connessione alla pagina.<br /> Assicurati di essere online.',
+            password: 'Combinazione nome/password non corretta',
+            tryAgain: 'Riprova'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.eurekapackaging.it/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '1000',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'it',
+        hamburgerMigration: null,
+        isFlexSite: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="sottovuoto.html">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="icon" type="image/x-icon" href="158cafef/site_favicon_16_1725618118105.ico">
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/">
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link type="text/css" rel="stylesheet" href="fonts/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900&family=Shadows+Into+Light:ital,wght@0,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:ital,wght@0,200..700;1,200..700&family=Dancing+Script:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,wght@0,100..1000;1,100..1000&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;subset=latin-ext&amp;display=swap">
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="stylesheet" type="text/css" href="mnlt/production/5790/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css">
+
+<!-- End of RT CSS Include -->
+
+<link type="text/css" rel="stylesheet" href="WIDGET_CSS/7c61efb5defabdb2432b4f6fca32ae47.css" id="widgetCSS">
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="sottovuoto"] #dm [data-show-on-page-only="sottovuoto"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link type="text/css" rel="stylesheet" href="158cafef/files/158cafef_1.min.css?v=621" id="siteGlobalCss">
+
+
+<!-- additional css file per platform -->
+<link type="text/css" rel="stylesheet" href="_dm/s/rt/css/iol/iol-runtime.css?version=2025-09-11T12_48_39">
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style id="additionalGlobalCss" type="text/css">
+</style>
+
+<style id="pagestyle" type="text/css">
+    *#dm *.dmBody div.dmforminput textarea
+{
+	color:rgba(51,51,51,1) !important;
+}
+*#dm *.dmBody div.dmforminput *.fileUploadLink
+{
+	color:rgba(51,51,51,1) !important;
+}
+*#dm *.dmBody div.checkboxwrapper span
+{
+	color:rgba(51,51,51,1) !important;
+}
+*#dm *.dmBody div.radiowrapper span
+{
+	color:rgba(51,51,51,1) !important;
+}
+*#dm *.dmBody div.caption-container *.caption-text *.rteBlock
+{
+	color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody div.u_introhome
+{
+	background-color:rgba(255,255,255,1) !important;
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody nav.u_1122882908
+{
+	color:black !important;
+}
+*#dm *.dmBody *.u_1353856952:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1353856952.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1353856952>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_1353856952:before
+{
+	background-color:rgba(0,0,0,1) !important;
+	opacity:0.31 !important;
+}
+*#dm *.dmBody div.u_1353856952.before
+{
+	background-color:rgba(0,0,0,1) !important;
+	opacity:0.31 !important;
+}
+*#dm *.dmBody div.u_1353856952>.bgExtraLayerOverlay
+{
+	background-color:rgba(0,0,0,1) !important;
+	opacity:0.31 !important;
+}
+*#dm *.dmBody div.u_1803994780
+{
+	background-color:rgba(255,255,255,1) !important;
+}
+*#dm *.dmBody div.u_1455023373
+{
+	background-repeat:no-repeat !important;
+	background-image:url(158cafef/dms3rep/multi/opt/Imballaggio-EUREKA-CAMPOFORMIDO-007-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody div.u_1312424720
+{
+	background-color:rgba(255,255,255,0.9) !important;
+}
+*#dm *.dmBody div.u_1353856952
+{
+	background-repeat:no-repeat !important;
+	background-image:url(158cafef/dms3rep/multi/opt/Imballaggio-EUREKA-CAMPOFORMIDO-002-2880w.jpg) !important;
+	background-size:cover !important;
+	box-shadow:none !important;
+	-moz-box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+}
+*#dm *.dmBody *.u_1469685316
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1445472082
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1853220849
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1754991515
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1579807060
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1257065159
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1122628309
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1934211323
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1539329820
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1636337583
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1181571479
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1482775655
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1599241443
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1270594951
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1026371579
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1416557129
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1243102469
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1564322394
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1538615817
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1205465860
+{
+	display:none !important;
+}
+*#dm *.dmBody div.u_1922282688 img[dm_changed]
+{
+	border-color:rgba(214,214,214,1) !important;
+	border-width:1px !important;
+	border-style:solid !important;
+}
+*#dm *.dmBody div.u_1922282688 img
+{
+	border-color:rgba(214,214,214,1) !important;
+	border-width:1px !important;
+	border-style:solid !important;
+}
+*#dm *.dmBody *.u_1093570602
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1030682850
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1642707380
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1787504120
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1331304078
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1042730996
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1632915126
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1798489158
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1398211039
+{
+	background-position:50% 50% !important;
+}
+*#dm *.dmBody *.u_1238449423 .photoGalleryThumbs .image-container a
+{
+	background-size:contain !important;
+}
+*#dm *.dmBody div.u_1238449423 .caption-container .caption-text
+{
+	color:rgba(79,79,79,1) !important;
+	margin-top:10px !important;
+}
+*#dm *.dmBody div.u_1238449423 .caption-container .caption-text .rteBlock
+{
+	color:rgba(79,79,79,1) !important;
+}
+*#dm *.dmBody *.u_1291938575 .photoGalleryThumbs .image-container a
+{
+	background-size:contain !important;
+}
+*#dm *.dmBody div.u_1291938575 .caption-container .caption-text
+{
+	color:rgba(79,79,79,1) !important;
+	margin-top:10px !important;
+}
+*#dm *.dmBody div.u_1291938575 .caption-container .caption-text .rteBlock
+{
+	color:rgba(79,79,79,1) !important;
+}
+*#dm *.dmBody div.u_1291938575 .caption-inner
+{
+	background-color:rgba(0,0,0,0) !important;
+}
+*#dm *.dmBody *.u_1238026480 .photoGalleryThumbs .image-container a
+{
+	background-size:contain !important;
+}
+*#dm *.dmBody div.u_1238026480 .caption-container .caption-text
+{
+	color:rgba(79,79,79,1) !important;
+	margin-top:10px !important;
+}
+*#dm *.dmBody div.u_1238026480 .caption-container .caption-text .rteBlock
+{
+	color:rgba(79,79,79,1) !important;
+}
+*#dm *.dmBody div.u_1870810185
+{
+	background-color:rgba(0,0,0,0.2) !important;
+}
+*#dm *.dmBody *.u_1612123476
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1538019169
+{
+	display:none !important;
+}
+*#dm *.dmBody *.u_1383904773
+{
+	display:block !important;
+}
+*#dm *.dmBody *.u_1236001407
+{
+	display:none !important;
+}
+*#dm *.dmBody div.u_1238449423
+{
+	background-color:rgba(255,255,255,1) !important;
+}
+*#dm *.dmBody div.u_1418208938
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_1520689900
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_1633790640
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_1516423314
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_1596126531
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_1331332835
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_1290490578
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_Termosigillatura
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_LineaDomestica
+{
+	background-color:rgba(244,244,244,1) !important;
+}
+*#dm *.dmBody div.u_1743526643
+{
+	background-color:rgba(160,11,11,1) !important;
+}
+*#dm *.dmBody div.u_1722850697
+{
+	background-color:rgba(255,255,255,1) !important;
+	background-repeat:no-repeat !important;
+	background-image:url(158cafef/dms3rep/multi/opt/Imballaggio-EUREKA-CAMPOFORMIDO-002-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody *.u_1722850697:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1722850697.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_1722850697>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_1722850697:before
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_1722850697.before
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_1722850697>.bgExtraLayerOverlay
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_1409836054
+{
+	background-color:rgba(255,255,255,0.2) !important;
+}
+*#dm *.dmBody div.u_Materialidiconsumo
+{
+	background-color:rgba(255,255,255,1) !important;
+	background-repeat:no-repeat !important;
+	background-image:url(158cafef/dms3rep/multi/opt/Imballaggio-EUREKA-CAMPOFORMIDO-002-2880w.jpg) !important;
+	background-size:cover !important;
+}
+*#dm *.dmBody *.u_Materialidiconsumo:before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_Materialidiconsumo.before
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody *.u_Materialidiconsumo>.bgExtraLayerOverlay
+{
+	opacity:0.5 !important;
+	background-color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.u_Materialidiconsumo:before
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_Materialidiconsumo.before
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_Materialidiconsumo>.bgExtraLayerOverlay
+{
+	background-color:rgba(0,0,0,1) !important;
+}
+*#dm *.dmBody div.u_ServizioAssistenza
+{
+	background-color:rgba(160,11,11,1) !important;
+}
+*#dm *.dmBody div.u_1101383000
+{
+	border-style:solid !important;
+	border-width:2px !important;
+	border-color:rgba(160,11,11,1) !important;
+	background-color:rgba(255,255,255,0.7) !important;
+}
+*#dm *.dmBody div.u_1734457187
+{
+	border-style:solid !important;
+	border-width:2px !important;
+	border-color:rgba(160,11,11,1) !important;
+	background-color:rgba(255,255,255,0.7) !important;
+}
+*#dm *.dmBody div.u_1917975120 .svg
+{
+	color:rgba(255,255,255,1) !important;
+	fill:rgba(255,255,255,1) !important;
+}
+*#dm *.dmBody div.u_1164106590
+{
+	border-style:solid !important;
+	border-width:2px !important;
+	border-color:rgba(160,11,11,1) !important;
+	background-image:linear-gradient(90deg,rgba(255,255,255,0.7) 0%,rgba(217,217,217,1) 100%) !important;
+	background-origin:border-box !important;
+}
+*#dm *.dmBody div.u_1573148049
+{
+	box-shadow:none !important;
+	-moz-box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+	border-style:solid !important;
+	border-width:2px !important;
+	border-color:rgba(160,11,11,1) !important;
+	background-image:linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(217, 217, 217, 1) 100%) !important;
+	background-origin:border-box !important;
+}
+
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    *#dm *.dmBody div.u_introhome
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:100px !important;
+	padding-left:40px !important;
+	padding-bottom:100px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:none !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:40px !important;
+	min-width:0 !important;
+	text-align:center !important;
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+	background-position:0 0 !important;
+}
+*#dm *.d-page-1716942098 DIV.dmInner
+{
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-position:50% 50% !important;
+	background-color:rgba(255,255,255,1) !important;
+}
+*#dm *.d-page-1716942098 DIV#dmSlideRightNavRight
+{
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-position:50% 50% !important;
+	background-color:rgba(255,255,255,1) !important;
+}
+*#dm *.dmBody div.u_1960797467
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+}
+*#dm *.dmBody div.u_1837295172
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1620365571
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody a.u_1741774424
+{
+	height:49.9922px !important;
+	margin-left:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:15px !important;
+	margin-bottom:0 !important;
+	margin-right:auto !important;
+	padding-right:0 !important;
+	display:block !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:279px !important;
+	position:relative !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:center !important;
+}
+*#dm *.dmBody div.u_1312424720
+{
+	margin-left:0 !important;
+	padding-top:250px !important;
+	padding-left:30px !important;
+	padding-bottom:250px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:30px !important;
+}
+*#dm *.dmBody div.u_1353856952
+{
+	padding-top:290px !important;
+	padding-left:50px !important;
+	padding-bottom:290px !important;
+	padding-right:50px !important;
+	width:auto !important;
+	background-position:50% 50% !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+}
+*#dm *.dmBody *.u_1238449423 .photoGalleryThumbs
+{
+	padding:2.5px !important;
+}
+*#dm *.dmBody *.u_1238449423 .layout-container
+{
+	padding:2.5px !important;
+}
+*#dm *.dmBody *.u_1238449423 .photoGalleryViewAll
+{
+	padding:0 5px !important;
+}
+*#dm *.dmBody div.u_1537054072
+{
+	margin-left:0 !important;
+	padding-top:80px !important;
+	padding-left:50px !important;
+	padding-bottom:80px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody *.u_1238449423 .photoGalleryThumbs .image-container a
+{
+	padding-top:350px !important;
+}
+*#dm *.dmBody div.u_1418208938
+{
+	padding-top:80px !important;
+	padding-left:50px !important;
+	padding-bottom:80px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1291938575
+{
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody *.u_1291938575 .photoGalleryThumbs
+{
+	padding:2.5px !important;
+}
+*#dm *.dmBody *.u_1291938575 .layout-container
+{
+	padding:2.5px !important;
+}
+*#dm *.dmBody *.u_1291938575 .photoGalleryViewAll
+{
+	padding:0 5px !important;
+}
+*#dm *.dmBody *.u_1291938575 .photoGalleryThumbs .image-container a
+{
+	padding-top:350px !important;
+}
+*#dm *.dmBody div.u_1291938575 .caption-container .caption-text
+{
+	font-size:18px !important;
+}
+*#dm *.dmBody div.u_1291938575 .caption-container .caption-text .rteBlock
+{
+	font-size:18px !important;
+}
+*#dm *.dmBody div.u_1238026480
+{
+	margin-left:0 !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:20px !important;
+	margin-bottom:10px !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1922282688
+{
+	display:block !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:300px !important;
+	position:relative !important;
+	height:150px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody *.u_1238026480 .photoGalleryThumbs
+{
+	padding:2.5px !important;
+}
+*#dm *.dmBody *.u_1238026480 .layout-container
+{
+	padding:2.5px !important;
+}
+*#dm *.dmBody *.u_1238026480 .photoGalleryViewAll
+{
+	padding:0 5px !important;
+}
+*#dm *.dmBody div.u_1698238002
+{
+	padding-top:80px !important;
+	padding-left:50px !important;
+	padding-bottom:80px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody *.u_1238026480 .photoGalleryThumbs .image-container a
+{
+	padding-top:350px !important;
+}
+*#dm *.dmBody div.u_1238026480 .caption-container .caption-text
+{
+	font-size:18px !important;
+}
+*#dm *.dmBody div.u_1238026480 .caption-container .caption-text .rteBlock
+{
+	font-size:18px !important;
+}
+*#dm *.dmBody div.u_1091120860
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+}
+*#dm *.dmBody div.u_1206825032
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1355448065
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1101383000
+{
+	padding-top:30px !important;
+	padding-left:30px !important;
+	padding-bottom:30px !important;
+	padding-right:30px !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:10px !important;
+}
+*#dm *.dmBody div.u_1275972875
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1114467898
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1073840822
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1425393942
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1734457187
+{
+	padding-top:30px !important;
+	padding-left:30px !important;
+	padding-bottom:30px !important;
+	padding-right:30px !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:10px !important;
+}
+*#dm *.dmBody div.u_1870810185
+{
+	margin-left:0 !important;
+	padding-top:20px !important;
+	padding-left:20px !important;
+	padding-bottom:20px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:20px !important;
+}
+*#dm *.dmBody div.u_1238449423 .caption-container .caption-text
+{
+	font-size:18px !important;
+}
+*#dm *.dmBody div.u_1238449423 .caption-container .caption-text .rteBlock
+{
+	font-size:18px !important;
+}
+*#dm *.dmBody div.u_1238449423
+{
+	margin-left:0 !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:20px !important;
+	margin-bottom:10px !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1217286440
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1758878267
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1679125912
+{
+	width:200px !important;
+	height:auto !important;
+	display:block !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1611223699
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1462216018
+{
+	margin-left:20px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1414871900
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1068039945
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1116759573
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1396358480
+{
+	margin-left:20px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1665584362
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1045126067
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1107691509
+{
+	margin-left:0 !important;
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1737074940
+{
+	margin-left:0 !important;
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1776231234
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+	margin-left:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+}
+*#dm *.dmBody div.u_1899932603
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1781856261
+{
+	margin-left:20px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1135395921
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1468719551
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1642333900
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1841154096
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1024221459
+{
+	margin-left:20px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1228577868
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1828355149
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1681215990
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1363749397
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1644442365
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1085526633
+{
+	width:200px !important;
+	height:auto !important;
+	display:block !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1520689900
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1523898643
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1648300679
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1602437218
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1633790640
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1220870633
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1781605601
+{
+	margin-left:20px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1589817000
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1576311922
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1516423314
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1646856764
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1529969904
+{
+	margin-left:20px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1153352799
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1606395213
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1596126531
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1260224490
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1267398476
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1748870572
+{
+	width:200px !important;
+	height:auto !important;
+	display:block !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1814258978
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1834913660
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1668891503
+{
+	margin-left:20px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1561101204
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1136908147
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1295652299
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1969363753
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1349058939
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1558007681
+{
+	width:200px !important;
+	height:auto !important;
+	display:block !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1331332835
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1154029359
+{
+	important:true !important;
+	width:600px !important;
+}
+*#dm *.dmBody div.u_1253077044
+{
+	margin-left:20px !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:0 !important;
+}
+*#dm *.dmBody div.u_1960242827
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:100% !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	display:block !important;
+}
+*#dm *.dmBody div.u_1186745453
+{
+	height:40px !important;
+}
+*#dm *.dmBody div.u_1290490578
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_Sottovuotoacampana
+{
+	margin-left:0 !important;
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_Termosigillatura
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_Estrazioneesterna
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_LineaDomestica
+{
+	padding-top:30px !important;
+	padding-left:50px !important;
+	padding-bottom:30px !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1743526643
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:91.5px !important;
+	padding-left:50px !important;
+	padding-bottom:111.5px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:50px !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1722850697
+{
+	margin-left:0 !important;
+	padding-top:56.5px !important;
+	padding-left:50px !important;
+	padding-bottom:66.5px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:50px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_Materialidiconsumo
+{
+	margin-left:0 !important;
+	padding-top:56.5px !important;
+	padding-left:50px !important;
+	padding-bottom:66.5px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:50px !important;
+	width:auto !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	height:auto !important;
+	max-width:100% !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_ServizioAssistenza
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:34.5px !important;
+	padding-left:50px !important;
+	padding-bottom:54.5px !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:50px !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1455023373
+{
+	background-position:50% 50% !important;
+	background-attachment:fixed !important;
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	padding-right:0 !important;
+	padding-left:0 !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:auto !important;
+	position:relative !important;
+	height:auto !important;
+	margin-right:0 !important;
+	margin-left:0 !important;
+	max-width:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	min-width:0 !important;
+	text-align:start !important;
+}
+*#dm *.dmBody div.u_1525514902
+{
+	width:64px !important;
+	height:60px !important;
+	display:block !important;
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	position:relative !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:0 !important;
+	text-align:center !important;
+	margin-left:199.25px !important;
+	margin-top:0 !important;
+	margin-bottom:15px !important;
+	margin-right:199.25px !important;
+}
+*#dm *.dmBody div.u_1803994780
+{
+	margin-left:0 !important;
+	padding-top:50px !important;
+	padding-left:50px !important;
+	padding-bottom:70px !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	margin-right:0 !important;
+	padding-right:50px !important;
+	width:auto !important;
+}
+*#dm *.dmBody div.u_1917975120
+{
+	width:80px !important;
+	height:80px !important;
+}
+*#dm *.dmBody div.u_1391334642
+{
+	margin-left:0px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+	padding-right:0px !important;
+}
+*#dm *.dmBody div.u_1164106590
+{
+	padding-top:30px !important;
+	padding-left:30px !important;
+	padding-bottom:30px !important;
+	padding-right:30px !important;
+	margin-left:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+}
+*#dm *.dmBody div.u_1573148049
+{
+	margin-left:10px !important;
+	padding-top:30px !important;
+	padding-left:30px !important;
+	padding-bottom:30px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+	padding-right:30px !important;
+}
+*#dm *.dmBody div.u_1200153331
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1863451906
+{
+	float:none !important;
+	top:0 !important;
+	left:0 !important;
+	width:calc(100% - 0px) !important;
+	position:relative !important;
+	height:auto !important;
+	padding-top:0 !important;
+	padding-left:0 !important;
+	padding-bottom:0 !important;
+	max-width:100% !important;
+	padding-right:0 !important;
+	min-width:25px !important;
+}
+*#dm *.dmBody div.u_1186635601
+{
+	margin-left:20px !important;
+	padding-top:0px !important;
+	padding-left:0px !important;
+	padding-bottom:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-right:0px !important;
+	padding-right:0px !important;
+}
+
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-17, .size-17, .size-17 > font { font-size: 17px !important; }.font-size-18, .size-18, .size-18 > font { font-size: 18px !important; }.font-size-24, .size-24, .size-24 > font { font-size: 24px !important; }.font-size-14, .size-14, .size-14 > font { font-size: 14px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+  
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  
+</style>
+
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Arial Fallback";
+  src: local('Arial');
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Shadows Into Light Fallback";
+  src: local('Arial');
+  ascent-override: 135.8086%;
+  descent-override: 49.8981%;
+  size-adjust: 86.5044%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Lato Fallback";
+  src: local('Arial');
+  ascent-override: 101.3181%;
+  descent-override: 21.865%;
+  size-adjust: 97.4159%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Oswald Fallback";
+  src: local('Arial');
+  ascent-override: 145.0682%;
+  descent-override: 35.1423%;
+  size-adjust: 82.2372%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Dancing Script Fallback";
+  src: local('Arial');
+  ascent-override: 114.0713%;
+  descent-override: 34.7173%;
+  size-adjust: 80.6513%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "DM Sans Fallback";
+  src: local('Arial');
+  ascent-override: 94.3696%;
+  descent-override: 29.4905%;
+  size-adjust: 105.1186%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.eurekapackaging.it/sottovuoto">
+
+  <title>
+    Conservazione sottovuoto | Campoformido, UD | Eureka
+  </title>
+  <meta name="description" content="Cerchi le migliori macchine per sottovuoto a Campoformido? Contatta ora Eureka e scopri le tante opzioni disponibili e i prezzi convenienti.">
+
+  <script id="iol-df-head" src="df/iol-df.js" type="text/javascript">
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  </script>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Conservazione sottovuoto | Campoformido, UD | Eureka">
+  <meta name="twitter:description" content="Cerchi le migliori macchine per sottovuoto a Campoformido? Contatta ora Eureka e scopri le tante opzioni disponibili e i prezzi convenienti.">
+  <meta property="og:description" content="Cerchi le migliori macchine per sottovuoto a Campoformido? Contatta ora Eureka e scopri le tante opzioni disponibili e i prezzi convenienti.">
+  <meta property="og:title" content="Conservazione sottovuoto | Campoformido, UD | Eureka">
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="sottovuoto" class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody " style="padding:0;margin:0;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-sec hasAnimations rows-1200 hasStickyHeader inMiniHeaderMode dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-2" preserve-sticky-header="true" layout="7f3c1de367df47d5b45ab63d33101c7b===header" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" logo-size-target="80%"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="dmRespRow dmDefaultListContentRow u_1147363181 fullBleedChanged fullBleedMode" style="text-align:center" id="1147363181"> <div class="dmRespColsWrapper" id="1246303652"> <div class="u_1206480769 small-12 dmRespCol large-2 medium-2" id="1206480769"> <div class="u_1591777140 imageWidget align-center" data-widget-type="image" id="1591777140" data-element-type="image"><img src="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" id="1660864639" class="" data-dm-image-path="https://lirp.cdn-website.com/158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" onerror="handleImageLoadError(this)"></div> 
+</div> 
+ <div class="u_1494027347 dmRespCol small-12 large-8 medium-8" id="1494027347"> <nav class="u_1159269384 effect-float main-navigation unifiednav dmLinksMenu" role="navigation" layout-main="horizontal_nav_layout_2" layout-sub="submenu_horizontal_2" data-show-vertical-sub-items="HOVER" id="1159269384" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" data-nav-structure="HORIZONTAL" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="index.htm" class="unifiednav__item  dmUDNavigationItem_00  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         HOME
+        " data-auto="page-text-style">HOME<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="#" class="unifiednav__item  dmUDNavigationItem_010101195525  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         PRODOTTI
+        " data-auto="page-text-style">PRODOTTI<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" aria-haspopup="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="sottovuoto.html" class="unifiednav__item  dmNavItemSelected  dmUDNavigationItem_0101015007  unifiednav__item_has-sub-nav" target="" data-target-page-alias="" data-auto="selected-page"> <span class="nav-item-text " data-link-text="
+           SOTTOVUOTO
+          " data-auto="page-text-style">SOTTOVUOTO<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="1" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="sottovuoto.html#Sottovuotoacampana" class="unifiednav__item  dmUDNavigationItem_010101486851  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Sottovuoto a campana
+            " data-auto="page-text-style">Sottovuoto a campana<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="sottovuoto.html#Termosigillatura" class="unifiednav__item  dmUDNavigationItem_010101185248  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Termosigillatura
+            " data-auto="page-text-style">Termosigillatura<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="sottovuoto.html#Estrazioneesterna" class="unifiednav__item  dmUDNavigationItem_010101223666  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Estrazione esterna
+            " data-auto="page-text-style">Estrazione esterna<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="sottovuoto.html#LineaDomestica" class="unifiednav__item  dmUDNavigationItem_010101218463  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Linea Domestica
+            " data-auto="page-text-style">Linea Domestica<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="sottovuoto.html#Materialidiconsumo" class="unifiednav__item  dmUDNavigationItem_010101360582  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Materiali di consumo
+            " data-auto="page-text-style">Materiali di consumo<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="sottovuoto.html#ServizioAssistenza" class="unifiednav__item  dmUDNavigationItem_010101767342  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Servizio Assistenza
+            " data-auto="page-text-style">Servizio Assistenza<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="cottura.html" class="unifiednav__item  dmUDNavigationItem_010101449617  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           COTTURA
+          " data-auto="page-text-style">COTTURA<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="refrigerazione.html" class="unifiednav__item  dmUDNavigationItem_010101254382  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           REFRIGERAZIONE
+          " data-auto="page-text-style">REFRIGERAZIONE<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="1" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="refrigerazione.html#Abbattitori" class="unifiednav__item  dmUDNavigationItem_010101243595  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Abbattitori
+            " data-auto="page-text-style">Abbattitori<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="refrigerazione.html#Conservatori" class="unifiednav__item  dmUDNavigationItem_010101418124  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Conservatori
+            " data-auto="page-text-style">Conservatori<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="refrigerazione.html#Sistemidilievitazione" class="unifiednav__item  dmUDNavigationItem_010101454040  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Sistemi di lievitazione
+            " data-auto="page-text-style">Sistemi di lievitazione<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="refrigerazione.html#ServizioAssistenza" class="unifiednav__item  dmUDNavigationItem_010101255098  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Servizio Assistenza
+            " data-auto="page-text-style">Servizio Assistenza<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="gas.html" class="unifiednav__item  dmUDNavigationItem_010101454967  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           GAS
+          " data-auto="page-text-style">GAS<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="1" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="gas.html#Gasalimentari" class="unifiednav__item  dmUDNavigationItem_010101560951  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Gas alimentari
+            " data-auto="page-text-style">Gas alimentari<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="gas.html#Gasindustriali" class="unifiednav__item  dmUDNavigationItem_010101897640  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Gas industriali
+            " data-auto="page-text-style">Gas industriali<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="http://www.medicairfood.com" class="unifiednav__item  dmUDNavigationItem_010101914209  " target="_blank" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Consulenza e tecnologie per alimenti
+            " data-auto="page-text-style">Consulenza e tecnologie per alimenti<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="imballaggi-industriali.html" class="unifiednav__item  dmUDNavigationItem_010101219755  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           IMBALLAGGI INDUSTRIALI
+          " data-auto="page-text-style">IMBALLAGGI INDUSTRIALI<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="1" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="imballaggi-industriali.html#GeneralPackaging" class="unifiednav__item  dmUDNavigationItem_010101899761  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             General Packaging
+            " data-auto="page-text-style">General Packaging<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="imballaggi-industriali.html#Fardellatrici" class="unifiednav__item  dmUDNavigationItem_010101463097  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Fardellatrici
+            " data-auto="page-text-style">Fardellatrici<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="imballaggi-industriali.html#FlowPack" class="unifiednav__item  dmUDNavigationItem_010101484147  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Flow Pack
+            " data-auto="page-text-style">Flow Pack<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="imballaggi-industriali.html#Macchineverticali" class="unifiednav__item  dmUDNavigationItem_010101505061  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Macchine verticali
+            " data-auto="page-text-style">Macchine verticali<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="imballaggi-industriali.html#Macchineorizzontali" class="unifiednav__item  dmUDNavigationItem_010101553145  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Macchine orizzontali
+            " data-auto="page-text-style">Macchine orizzontali<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="imballaggi-industriali.html#Macchinenastratura" class="unifiednav__item  dmUDNavigationItem_010101603163  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Macchine nastratura
+            " data-auto="page-text-style">Macchine nastratura<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="2"> <a href="imballaggi-industriali.html#Servizioassistenza" class="unifiednav__item  dmUDNavigationItem_010101687993  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+             Servizio assistenza
+            " data-auto="page-text-style">Servizio assistenza<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="usato.html" class="unifiednav__item  dmUDNavigationItem_010101175525  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           USATO
+          " data-auto="page-text-style">USATO<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="index.htm#EVENTI-NEWS" class="unifiednav__item  dmUDNavigationItem_010101952809  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         EVENTI - NEWS
+        " data-auto="page-text-style">EVENTI - NEWS<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" aria-expanded="false" class="unifiednav__container unifiednav__container_sub-nav" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="index.htm#CORSIDIFORMAZIONE" class="unifiednav__item  dmUDNavigationItem_01010176525  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           CORSI DI FORMAZIONE
+          " data-auto="page-text-style">CORSI DI FORMAZIONE<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="index.htm#WEBINAR" class="unifiednav__item  dmUDNavigationItem_010101815769  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+           WEBINAR
+          " data-auto="page-text-style">WEBINAR<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="contatti.html" class="unifiednav__item  dmUDNavigationItem_010101502206  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="
+         CONTATTI
+        " data-auto="page-text-style">CONTATTI<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+ <div class="u_1741938344 dmRespCol small-12 large-2 medium-2" id="1741938344"> <a data-display-type="block" class="u_1481049271 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="index.htm" id="1481049271" data-element-type="dButtonLinkId"> <span class="iconBg" id="1138656447"> <span class="icon hasFontIcon icon-star" id="1288879645"></span> 
+</span> 
+ <span class="text" id="1685937366">CONTACT US</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"> <div class="innerPageTitle">SOTTOVUOTO</div> 
+</div> 
+ <div class="titleLine display_None"><hr></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_sottovuoto dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="dmRespRow u_1353856952 fullBleedChanged fullBleedMode hasBackgroundOverlay" id="1353856952"> <div class="dmRespColsWrapper" id="1480401121"> <div class="dmRespCol large-12 medium-12 small-12 u_1988061021" id="1988061021"> <div class="dmRespRow u_1960797467 fullBleedChanged fullBleedMode" id="1960797467"> <div class="dmRespColsWrapper" id="1152298764"> <div class="u_1870810185 dmRespCol small-12 large-5 medium-6" id="1870810185"> <div class="u_1001000658 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1001000658" style="transition: opacity 1s ease-in-out 0s;"> <h1><span style="display: initial; color: rgb(244, 244, 244);">Conservare alimenti sottovuoto, le migliori macchine a Udine, Pordenone, Gorizia, Trieste</span></h1> 
+</div> 
+</div> 
+ <div class="u_1549426957 dmRespCol small-12 large-7 medium-6 hide-for-small" id="1549426957"> <div data-element-type="spacer" class="dmSpacer" id="1147419106"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1803994780" id="1803994780"> <div class="dmRespColsWrapper" id="1218229337"> <div class="dmRespCol large-12 medium-12 small-12 u_1013330296" id="1013330296"> <div class="u_1837295172 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1837295172" style="transition: opacity 1s ease-in-out 0s;"><p class="m-text-align-left text-align-center"><span style="display: initial;">Il Sottovuoto Oltre la Conservazione.<br></span></p><p class="m-text-align-left text-align-center"><span style="display: initial;">Le nostre macchine sottovuoto sono la soluzione ideale per &quot;creare&quot; prodotti di altissima qualit&agrave; ed efficienza, semplificando il lavoro quotidiano e garantendo sempre il massimo della tecnologia e delle prestazioni con un consistente risparmio di tempo e di costi.</span></p><p class="m-text-align-left text-align-center"><br></p><p class="m-text-align-left text-align-center"><span style="display: initial;">contattaci per una consulenza o informazioni sulle nostre macchine per sottovuoto.</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_Sottovuotoacampana" id="Sottovuotoacampana" data-anchor="Sottovuoto a campana"> <div class="dmRespColsWrapper" id="1598518225"> <div class="u_1895677298 dmRespCol small-12 large-4 medium-4" id="1895677298"> <div class="u_1679125912 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1679125912"> <a id="1751458391"><img src="158cafef/dms3rep/multi/opt/orved-640w-1920w.jpg" alt="" id="1513710794" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/158cafef/dms3rep/multi/orved-640w.jpg" onerror="handleImageLoadError(this)"></a> 
+</div> 
+</div> 
+ <div class="u_1488135071 dmRespCol small-12 large-8 medium-8" id="1488135071"> <div class="u_1217286440 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1217286440" style="transition: opacity 1s ease-in-out 0s;"> <h2 class="m-text-align-left text-align-center"><span style="display: initial;">Le nostre linee di SOTTOVUOTO A CAMPANA</span></h2> 
+</div> 
+ <div class="u_1758878267 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1758878267" style="transition: opacity 1s ease-in-out 0s;"><p class="m-text-align-left text-align-center"><span style="display: initial;">Consigliamo a tutti i nostri clienti i modelli di macchine per sottovuoto a campana, perfette per le esigenze di attivit&agrave; di ristorazione e dell&rsquo;industria alimentare. Realizzate in acciaio inox assicurano sempre un&rsquo;ottima resistenza insieme a un design moderno ed elegante.</span></p><p class="m-text-align-left text-align-center"><span class="" style="display: initial;"><span style="display: initial;">Abbiamo scelto</span> 
+</span><span style="display: initial; font-weight: bold;">Orved</span><span class="" style="display: initial;"> <span style="display: initial;">il miglior partner del settore.</span></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1107691509" id="1107691509"> <div class="dmRespColsWrapper" id="1948944291"> <div class="dmRespCol small-12 large-6 medium-6" id="1067508455"> <div class="u_1414871900 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1414871900" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="m-text-align-left text-align-left"><span style="display: initial;">Vacuum Gourmet</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1611223699" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1611223699"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1523367472" layout="empty"> <ul class="slides" id="1370853139"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1113261725"><img dm="true" src="158cafef/dms3rep/multi/opt/Gourmet-Cuisson-1920w.jpg" id="1814191062" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1698247780"></div> 
+ <div class="slide-inner" id="1367479926"> <div class="text-wrapper" id="1804279559"> <h3 class="slide-title" id="1319904458">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1471739075">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1405383849"> <span class="iconBg" id="1961478285"> <span class="icon hasFontIcon icon-star" id="1087054992"></span> 
+</span> 
+ <span class="text" id="1694414937">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1806377097"><img dm="true" src="158cafef/dms3rep/multi/opt/Gourmet-IdeaPro-1920w.jpg" id="1654782098" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1312187105"></div> 
+ <div class="slide-inner" id="1488143058"> <div class="text-wrapper" id="1224573516"> <h3 class="slide-title" id="1548901070">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1910854974">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1142757201"> <span class="iconBg" id="1764735962"> <span class="icon hasFontIcon icon-star" id="1595378724"></span> 
+</span> 
+ <span class="text" id="1487458831">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1707111721"><img dm="true" src="158cafef/dms3rep/multi/opt/SV%20LAB-1920w.jpg" id="1599577836" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1046010963"></div> 
+ <div class="slide-inner" id="1311311680"> <div class="text-wrapper" id="1232879577"> <h3 class="slide-title" id="1883116741">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1148279884">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1215755131"> <span class="iconBg" id="1603287671"> <span class="icon hasFontIcon icon-star" id="1888680486"></span> 
+</span> 
+ <span class="text" id="1782595826">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1462216018" id="1462216018"> <div data-element-type="spacer" class="dmSpacer u_1068039945" id="1068039945"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1560290490" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">La linea Gourmet di Orved, soddisfa le esigenze per gli chef pi&ugrave; esigenti.<br></span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1938562908" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">Scopri i m</span><span style="display: initial; font-weight: normal;">odell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/i-nostri-prodotti/linea-cuisson_39_28.htm" target="_blank" runtime_url="https://www.orved.it/it/i-nostri-prodotti/linea-cuisson_39_28.htm" type="url" style="font-weight: bold; color: rgb(0, 0, 0); display: initial;"><strong>Cuisson</strong></a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/i-nostri-prodotti/linea-idea-pro_39_27.htm" target="_blank" runtime_url="https://www.orved.it/it/i-nostri-prodotti/linea-idea-pro_39_27.htm" type="url" style="display: initial; color: rgb(0, 0, 0);"><strong>Idea Pro</strong></a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/i-nostri-prodotti/linea-sv-lab_39_29.htm" target="_blank" runtime_url="https://www.orved.it/it/i-nostri-prodotti/linea-sv-lab_39_29.htm" type="url" style="display: initial; color: rgb(0, 0, 0);"><strong>Sv La</strong></a><strong style="display: initial;">b</strong><span style="display: initial;"><br></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1776231234" id="1776231234"> <div class="dmRespColsWrapper" id="1921342648"> <div class="dmRespCol small-12 large-6 medium-6" id="1296261806"> <div class="u_1665584362 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1665584362" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="text-align-left m-text-align-left"><span style="display: initial;">Vacuum Pastry &amp; Bakery</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1116759573" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1116759573"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1475814409" layout="empty"> <ul class="slides" id="1647400915"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1255656567"><img dm="true" src="158cafef/dms3rep/multi/opt/Pastry-Backery-1920w.jpg" id="1686711542" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1021849281"></div> 
+ <div class="slide-inner" id="1664957103"> <div class="text-wrapper" id="1154344971"> <h3 class="slide-title" id="1723982454">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1619695842">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1951694072"> <span class="iconBg" id="1376298794"> <span class="icon hasFontIcon icon-star" id="1114246485"></span> 
+</span> 
+ <span class="text" id="1221104847">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1396358480" id="1396358480"> <div data-element-type="spacer" class="dmSpacer u_1045126067" id="1045126067"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1674956432" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">La linea Pastry &amp; Bakery di Orved, soddisfa le esigenze del &quot;mondo&quot; dolce e salato.</span></p><p style="line-height: 1.5;"><span style="display: initial;"><br></span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1846525975" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">Scopri i mo</span><span style="display: initial; font-weight: normal;">dell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/i-nostri-prodotti/pastry-collection_39_33.htm" target="_blank" runtime_url="https://www.orved.it/it/i-nostri-prodotti/pastry-collection_39_33.htm" type="url" style="display: initial; color: rgb(0, 0, 0);"><strong>Pastry &amp; Baker</strong></a><strong style="display: initial;">y</strong><span style="display: initial;"><br></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1642333900" id="1642333900"> <div class="dmRespColsWrapper" id="1483687303"> <div class="dmRespCol small-12 large-6 medium-6" id="1955938604"> <div class="u_1135395921 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1135395921" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="m-text-align-left text-align-left"><span style="display: initial; font-weight: 600;">Vacuum Bistrot</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1899932603" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1899932603"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1447840272" layout="empty"> <ul class="slides" id="1222857160"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1819303802"><img dm="true" src="158cafef/dms3rep/multi/opt/Bistro-idea-1920w.jpg" id="1747441925" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1635768188"></div> 
+ <div class="slide-inner" id="1056928980"> <div class="text-wrapper" id="1855971907"> <h3 class="slide-title" id="1369970153">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1989547334">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1772483134"> <span class="iconBg" id="1912132344"> <span class="icon hasFontIcon icon-star" id="1023039683"></span> 
+</span> 
+ <span class="text" id="1097503302">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1281821313"><img dm="true" src="158cafef/dms3rep/multi/opt/Bistro-evox-1920w.jpg" id="1030736141" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1139307702"></div> 
+ <div class="slide-inner" id="1114344877"> <div class="text-wrapper" id="1828224010"> <h3 class="slide-title" id="1125105024">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1952576224">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1274452022"> <span class="iconBg" id="1511124581"> <span class="icon hasFontIcon icon-star" id="1332470626"></span> 
+</span> 
+ <span class="text" id="1472038685">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1991668343"><img dm="true" src="158cafef/dms3rep/multi/opt/Bistro-svlab%20essential-1920w.jpg" id="1221627073" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1859611035"></div> 
+ <div class="slide-inner" id="1381308430"> <div class="text-wrapper" id="1412202612"> <h3 class="slide-title" id="1838544248">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1436144675">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1746127138"> <span class="iconBg" id="1159531364"> <span class="icon hasFontIcon icon-star" id="1374200334"></span> 
+</span> 
+ <span class="text" id="1196925975">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1781856261" id="1781856261"> <div data-element-type="spacer" class="dmSpacer u_1468719551" id="1468719551"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1960546633" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span class="" style="display: initial;"><span style="display: initial;">La linea Bistrot, un sottovuoto compatto e di semplice impiego.</span> 
+</span></p><p style="line-height: 1.5;"><span style="display: initial;"><br></span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1066621091" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">Scopri i mo</span><span style="display: initial; font-weight: normal;">dell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/i-nostri-prodotti/linea-idea_39_31.htm" target="_blank" runtime_url="https://www.orved.it/it/i-nostri-prodotti/linea-idea_39_31.htm" type="url" style="font-weight: bold; color: rgb(0, 0, 0); display: initial;"><strong>Idea</strong></a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/i-nostri-prodotti/linea-evox_39_30.htm" target="_blank" runtime_url="https://www.orved.it/it/i-nostri-prodotti/linea-evox_39_30.htm" type="url" style="color: rgb(0, 0, 0); display: initial;"><strong>Evox</strong></a></p><p style="line-height: 1.5;"><a href="sottovuoto.html" runtime_url="/sottovuoto" type="page" style="color: rgb(0, 0, 0); display: initial;"><strong>Sv Lab Essenti</strong></a><strong style="color: rgb(0, 0, 0); display: initial;">a</strong><strong style="display: initial;">l</strong><span style="display: initial;"><br></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1681215990" id="1681215990"> <div class="dmRespColsWrapper" id="1429966164"> <div class="dmRespCol small-12 large-6 medium-6" id="1194267112"> <div class="u_1228577868 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1228577868" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="m-text-align-left text-align-left"><span style="display: initial;">Per Confezionare</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1841154096" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1841154096"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1135584459" layout="empty"> <ul class="slides" id="1243239894"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1256676410"><img dm="true" src="158cafef/dms3rep/multi/opt/Confezionare-VM-1920w.jpg" id="1018990206" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1221989459"></div> 
+ <div class="slide-inner" id="1052165339"> <div class="text-wrapper" id="1017466327"> <h3 class="slide-title" id="1380814627">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1714766100">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1670176502"> <span class="iconBg" id="1765422001"> <span class="icon hasFontIcon icon-star" id="1534068647"></span> 
+</span> 
+ <span class="text" id="1530466497">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1024221459" id="1024221459"> <div data-element-type="spacer" class="dmSpacer u_1828355149" id="1828355149"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1392727082" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">La linea di confezionatrici robuste ed essenziali per il &quot;mondo&quot; dei laboratori.<br></span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1405224839" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">Scopri i mo</span><span style="display: initial; font-weight: normal;">dell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/i-nostri-prodotti/linea-vm_39_34.htm" runtime_url="https://www.orved.it/it/i-nostri-prodotti/linea-vm_39_34.htm" type="url" style="font-weight: bold; display: initial; color: rgb(0, 0, 0);" target="_blank"><strong>Vm</strong></a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_Termosigillatura" id="Termosigillatura" data-anchor="Termosigillatura"> <div class="dmRespColsWrapper" id="1966414790"> <div class="u_1210904257 dmRespCol small-12 large-3 medium-3" id="1210904257"> <div class="u_1085526633 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1085526633"> <a id="1798367083"><img src="158cafef/dms3rep/multi/opt/orved-640w-1920w.jpg" alt="" id="1679480326" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/158cafef/dms3rep/multi/orved-640w.jpg" onerror="handleImageLoadError(this)"></a> 
+</div> 
+</div> 
+ <div class="u_1581686512 dmRespCol small-12 large-9 medium-9" id="1581686512"> <div class="u_1363749397 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1363749397" style="transition: opacity 1s ease-in-out 0s;"> <h2 class="m-text-align-left text-align-center"><span style="display: initial;">Le nostre linea di TERMOSIGILLATURA</span></h2> 
+</div> 
+ <div class="u_1644442365 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1644442365" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center m-text-align-left"><span class="" style="display: initial;"><span style="display: initial;">A tutti i nostri cliente proponiamo le line di termosigillatura di casa</span> 
+</span><span style="display: initial; font-weight: bold;">Orved</span></p><p class="text-align-center m-text-align-left"><span style="display: initial;">offrendo le soluzioni ottimali per ogni esigenza.</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1633790640" id="1633790640"> <div class="dmRespColsWrapper" id="1050946316"> <div class="dmRespCol small-12 large-6 medium-6" id="1569517571"> <div class="u_1648300679 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1648300679" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="m-text-align-left text-align-left"><span class="" style="display: initial;"><span style="display: initial;">Linea</span> 
+</span><span style="display: initial; font-weight: 600;">VGP</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1523898643" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1523898643"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1528980975" layout="empty"> <ul class="slides" id="1441585609"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1323627436"><img dm="true" src="158cafef/dms3rep/multi/opt/vgp25-1920w.png" id="1180294452" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1035443279"></div> 
+ <div class="slide-inner" id="1920485348"> <div class="text-wrapper" id="1008076943"> <h3 class="slide-title" id="1085747589">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1144221339">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1595909414"> <span class="iconBg" id="1343336282"> <span class="icon hasFontIcon icon-star" id="1851395473"></span> 
+</span> 
+ <span class="text" id="1026556100">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1333621504"><img dm="true" src="158cafef/dms3rep/multi/opt/vgp60-1920w.png" id="1820732377" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1956501762"></div> 
+ <div class="slide-inner" id="1232067011"> <div class="text-wrapper" id="1426603312"> <h3 class="slide-title" id="1729790007">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1791344661">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1392007494"> <span class="iconBg" id="1169045898"> <span class="icon hasFontIcon icon-star" id="1582825794"></span> 
+</span> 
+ <span class="text" id="1685441448">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1186635601" id="1186635601"> <div data-element-type="spacer" class="dmSpacer u_1602437218" id="1602437218"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1390800905" style="transition: opacity 1s ease-in-out 0s;"><p class="m-size-12 size-17"><span class="m-font-size-12 font-size-17" style="display: initial;">Saldatura eccellente, design compatto: la termosigillatrice perfetta per l'asporto</span></p><p style="line-height: 1.5;"><span style="display: initial;"><br></span></p></div> 
+ <div class="dmNewParagraph u_1369280575" data-element-type="paragraph" data-version="5" id="1369280575" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">Scopri i mo</span><span style="display: initial; font-weight: normal;">dell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vgp-25" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vgp-25" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">VGP 25</a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vgp-60" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vgp-60" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">VGP 60</a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vgp-12-mini" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vgp-12-mini" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">VGP 12 mini</a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1516423314" id="1516423314"> <div class="dmRespColsWrapper" id="1719500014"> <div class="dmRespCol small-12 large-6 medium-6" id="1532318122"> <div class="u_1589817000 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1589817000" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="text-align-left m-text-align-left"><span class="" style="display: initial;"><span style="display: initial;">Linea</span> 
+</span><span style="display: initial; font-weight: 600;">VGP SKIN</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1220870633" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1220870633"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1219777398" layout="empty"> <ul class="slides" id="1027677150"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1162619789"><img dm="true" src="158cafef/dms3rep/multi/opt/vgp60skin-1920w.png" id="1022228843" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1068269840"></div> 
+ <div class="slide-inner" id="1577504515"> <div class="text-wrapper" id="1611680245"> <h3 class="slide-title" id="1319213074">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1330450260">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1490025904"> <span class="iconBg" id="1144407588"> <span class="icon hasFontIcon icon-star" id="1411831607"></span> 
+</span> 
+ <span class="text" id="1037370337">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1445163197"><img dm="true" src="158cafef/dms3rep/multi/opt/vgpcombiskin-1920w.png" id="1218492109" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1413465062"></div> 
+ <div class="slide-inner" id="1171300387"> <div class="text-wrapper" id="1740230229"> <h3 class="slide-title" id="1396551022">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1560444124">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1893706286"> <span class="iconBg" id="1872635239"> <span class="icon hasFontIcon icon-star" id="1636744224"></span> 
+</span> 
+ <span class="text" id="1000991940">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1781605601" id="1781605601"> <div data-element-type="spacer" class="dmSpacer u_1576311922" id="1576311922"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1734714893" style="transition: opacity 1s ease-in-out 0s;"><p class="m-size-12 size-17"><span class="m-font-size-12 font-size-17" style="display: initial;">Saldatura eccellente, design compatto: la termosigillatrice perfetta per l'asporto</span></p><p style="line-height: 1.5;"><span style="display: initial;"><br></span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1200182617" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">Scopri i mo</span><span style="display: initial; font-weight: normal;">dell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vgp-60-skin" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vgp-60-skin" type="url" style="color: rgb(0, 0, 0); display: initial; font-weight: bold;">VGP 60 SKIN</a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vgp-combi-skin" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vgp-combi-skin" type="url" style="color: rgb(0, 0, 0); display: initial; font-weight: bold;">VGP COMBI SKIN</a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1596126531" id="1596126531"> <div class="dmRespColsWrapper" id="1614466729"> <div class="dmRespCol small-12 large-6 medium-6" id="1347634232"> <div class="u_1153352799 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1153352799" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="m-text-align-left text-align-left"><span style="display: initial;">Linea Profi</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1646856764" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1646856764"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1500599806" layout="empty"> <ul class="slides" id="1891078620"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1759800024"><img dm="true" src="158cafef/dms3rep/multi/opt/profi1n-1920w.png" id="1580183701" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1458337566"></div> 
+ <div class="slide-inner" id="1057273968"> <div class="text-wrapper" id="1307640557"> <h3 class="slide-title" id="1318522278">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1627958507">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1999881075"> <span class="iconBg" id="1019918439"> <span class="icon hasFontIcon icon-star" id="1121197332"></span> 
+</span> 
+ <span class="text" id="1636187032">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1419529315"><img dm="true" src="158cafef/dms3rep/multi/opt/profi2-1920w.png" id="1428891506" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1914713737"></div> 
+ <div class="slide-inner" id="1580864437"> <div class="text-wrapper" id="1137375838"> <h3 class="slide-title" id="1071189827">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1298291407">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1571943326"> <span class="iconBg" id="1161523346"> <span class="icon hasFontIcon icon-star" id="1172774821"></span> 
+</span> 
+ <span class="text" id="1773572777">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1676968652"><img dm="true" src="158cafef/dms3rep/multi/opt/profi3-1920w.png" id="1093040515" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1717471468"></div> 
+ <div class="slide-inner" id="1616518420"> <div class="text-wrapper" id="1915701200"> <h3 class="slide-title" id="1760635577">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1715276523">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1477787959"> <span class="iconBg" id="1220327403"> <span class="icon hasFontIcon icon-star" id="1120128569"></span> 
+</span> 
+ <span class="text" id="1923324603">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1529969904" id="1529969904"> <div data-element-type="spacer" class="dmSpacer u_1606395213" id="1606395213"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1339413350" style="transition: opacity 1s ease-in-out 0s;"><p><span style="display: initial;">Rapidit&agrave;, sicurezza e professionalit&agrave;</span></p><p style="line-height: 1.5;"><span style="display: initial;"><br></span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1673533868" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">Scopri i mo</span><span style="display: initial; font-weight: normal;">dell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/profi-1n" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/profi-1n" type="url" style="color: rgb(0, 0, 0); display: initial; font-weight: bold;">Profi 1n</a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/profi-2" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/profi-2" type="url" style="color: rgb(0, 0, 0); display: initial; font-weight: bold;">Profi 2</a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/profi-3" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/profi-3" type="url" style="color: rgb(0, 0, 0); display: initial; font-weight: bold;">Profi 3</a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_Estrazioneesterna" id="Estrazioneesterna" data-anchor="Estrazione esterna"> <div class="dmRespColsWrapper" id="1366365347"> <div class="u_1134046145 dmRespCol small-12 large-4 medium-4" id="1134046145"> <div class="u_1748870572 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1748870572"> <a id="1633263879"><img src="158cafef/dms3rep/multi/opt/orved-640w-1920w.jpg" alt="" id="1361306681" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/158cafef/dms3rep/multi/orved-640w.jpg" onerror="handleImageLoadError(this)"></a> 
+</div> 
+</div> 
+ <div class="u_1476511603 dmRespCol small-12 large-8 medium-8" id="1476511603"> <div class="u_1260224490 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1260224490" style="transition: opacity 1s ease-in-out 0s;"> <h2 class="m-text-align-left text-align-center"><span style="display: initial;">Le nostre linea di ESTRAZIONE ESTERNA</span></h2> 
+</div> 
+ <div class="u_1267398476 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1267398476" style="transition: opacity 1s ease-in-out 0s;"><p class="m-text-align-left text-align-center"><span style="display: initial;">Per il confezionamento di prodotti solidi e asciutti,</span></p><p class="m-text-align-left text-align-center"><span class="" style="display: initial;"><span style="display: initial;"><span class="ql-cursor">﻿</span>abbiamo scelto</span> 
+</span><span style="display: initial; font-weight: bold;">Orved</span><span class="" style="display: initial;"> <span style="display: initial;">il miglior partner del settore.</span></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1295652299" id="1295652299"> <div class="dmRespColsWrapper" id="1099996731"> <div class="dmRespCol small-12 large-6 medium-6" id="1721507418"> <div class="u_1561101204 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1561101204" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="text-align-left m-text-align-left"><span style="display: initial;">Linea Estrazione esterna</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1834913660" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1834913660"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1323077120" layout="empty"> <ul class="slides" id="1635268782"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1894041939"><img dm="true" src="158cafef/dms3rep/multi/opt/fastvacuum-1920w.png" id="1945374451" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1280514560"></div> 
+ <div class="slide-inner" id="1499806702"> <div class="text-wrapper" id="1343764015"> <h3 class="slide-title" id="1816106655">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1403409215">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1922299412"> <span class="iconBg" id="1648697485"> <span class="icon hasFontIcon icon-star" id="1945240861"></span> 
+</span> 
+ <span class="text" id="1451888735">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1960351127"><img dm="true" src="158cafef/dms3rep/multi/opt/vacuum42-1920w.png" id="1509518784" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1156350122"></div> 
+ <div class="slide-inner" id="1200184034"> <div class="text-wrapper" id="1509844890"> <h3 class="slide-title" id="1538473677">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1552271299">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1183895346"> <span class="iconBg" id="1377391829"> <span class="icon hasFontIcon icon-star" id="1760115724"></span> 
+</span> 
+ <span class="text" id="1928071713">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1277603375"><img dm="true" src="158cafef/dms3rep/multi/opt/newvacuum-1920w.png" id="1039389128" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1523289527"></div> 
+ <div class="slide-inner" id="1853639925"> <div class="text-wrapper" id="1823754946"> <h3 class="slide-title" id="1419790883">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1599703435">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1878206347"> <span class="iconBg" id="1012187800"> <span class="icon hasFontIcon icon-star" id="1610139342"></span> 
+</span> 
+ <span class="text" id="1459532753">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1965645509"><img dm="true" src="158cafef/dms3rep/multi/opt/vm98-1920w.png" id="1309433205" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1234653964"></div> 
+ <div class="slide-inner" id="1005761205"> <div class="text-wrapper" id="1574931259"> <h3 class="slide-title" id="1282206731">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1235019358">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1054797980"> <span class="iconBg" id="1564184971"> <span class="icon hasFontIcon icon-star" id="1329299288"></span> 
+</span> 
+ <span class="text" id="1584930557">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1990077334"><img dm="true" src="158cafef/dms3rep/multi/opt/vm1490n-1920w.png" id="1067993688" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1418751992"></div> 
+ <div class="slide-inner" id="1278767946"> <div class="text-wrapper" id="1862699164"> <h3 class="slide-title" id="1832912294">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1077403067">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1844091208"> <span class="iconBg" id="1213383520"> <span class="icon hasFontIcon icon-star" id="1033248308"></span> 
+</span> 
+ <span class="text" id="1296871347">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1668891503" id="1668891503"> <div data-element-type="spacer" class="dmSpacer u_1136908147" id="1136908147"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1192038818" style="transition: opacity 1s ease-in-out 0s;"><p><span style="display: initial;">La linea &ldquo;top&rdquo; per il confezionamento di prodotti solidi e asciutti</span></p><p style="line-height: 1.5;"><span style="display: initial;"><br></span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1855993753" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span class="" style="display: initial;"><span style="display: initial;">Scopri i</span> 
+</span><span style="display: initial; font-weight: normal;">modell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/fast-vacuum" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/fast-vacuum" type="url" style="font-weight: bold; display: initial; color: rgb(0, 0, 0);"><strong>Fast Vacuum</strong></a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vacuum-42" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vacuum-42" type="url" style="font-weight: bold; display: initial; color: rgb(0, 0, 0);"><strong>Vacuum 42</strong></a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vm-98" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vm-98" type="url" style="font-weight: bold; display: initial; color: rgb(0, 0, 0);"><strong>VM 98</strong></a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vm-1490n" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vm-1490n" type="url" style="font-weight: bold; display: initial; color: rgb(0, 0, 0);"><strong>VM 14/90n</strong></a><span style="display: initial;"><br></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_LineaDomestica" id="LineaDomestica" data-anchor="Linea Domestica"> <div class="dmRespColsWrapper" id="1216699784"> <div class="u_1644697343 dmRespCol small-12 large-4 medium-4" id="1644697343"> <div class="u_1558007681 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1558007681"> <a id="1590846117"><img src="158cafef/dms3rep/multi/opt/orved-640w-1920w.jpg" alt="" id="1316491433" class="" data-dm-image-path="https://irp-cdn.multiscreensite.com/158cafef/dms3rep/multi/orved-640w.jpg" onerror="handleImageLoadError(this)"></a> 
+</div> 
+</div> 
+ <div class="u_1634948594 dmRespCol small-12 large-8 medium-8" id="1634948594"> <div class="u_1969363753 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1969363753" style="transition: opacity 1s ease-in-out 0s;"> <h2 class="text-align-center m-text-align-left"><span style="display: initial;">Linea Domestica</span></h2> 
+</div> 
+ <div class="u_1349058939 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1349058939" style="transition: opacity 1s ease-in-out 0s;"><p class="m-text-align-left text-align-center"><span style="display: initial;">Le linee sottovuoto per utenza domestica</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1290490578" id="1290490578"> <div class="dmRespColsWrapper" id="1247456646"> <div class="dmRespCol small-12 large-6 medium-6" id="1464962551"> <div class="u_1960242827 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1960242827" style="transition: opacity 1s ease-in-out 0s; text-align: left;"> <h2 class="m-text-align-left text-align-left"><span class="" style="display: initial;"><span style="display: initial;">Linea</span> 
+</span><span style="display: initial; font-weight: 600;">Domestica</span></h2> 
+</div> 
+ <div class="flex-container dmImageSlider dmNoMargin dmNoMark u_1154029359" data-widget-type="imageSlider" dmle_volatile_widget="true" data-element-type="dSliderId" id="1154029359"> <div class="flexslider ed-version" sliderscriptparams="{'stretch':false,'animation':true,'randomize':false,'directionNav':true,'isAutoPlay':true,'isFade':true,'controlNav':false,'slideshowSpeed':3000,'animationDuration':600,'pausePlay':true}" id="1609671161" layout="empty"> <ul class="slides" id="1766598426"> <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1258739244"><img dm="true" src="158cafef/dms3rep/multi/opt/ecovacuum-1920w.png" id="1016632612" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1408477200"></div> 
+ <div class="slide-inner" id="1946944079"> <div class="text-wrapper" id="1028509104"> <h3 class="slide-title" id="1597389612">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1364909746">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1372801807"> <span class="iconBg" id="1681758966"> <span class="icon hasFontIcon icon-star" id="1486480016"></span> 
+</span> 
+ <span class="text" id="1711808044">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+ <li layout="center" position="center" animation="fadeInUp" show-content="true" color-overlay="true" text-background="true" id="1011816831"><img dm="true" src="158cafef/dms3rep/multi/opt/vacuumfamily-1920w.png" id="1655437789" onerror="handleImageLoadError(this)"> <div class="color-overlay" id="1109393154"></div> 
+ <div class="slide-inner" id="1842605597"> <div class="text-wrapper" id="1169129147"> <h3 class="slide-title" id="1447500009">Titolo diapositiva</h3> 
+ <div class="slide-text richText" id="1674541382">Scrivi qui la tua didascalia</div> 
+</div> 
+ <div class="slide-button dmWidget clearfix" id="1305598166"> <span class="iconBg" id="1341210636"> <span class="icon hasFontIcon icon-star" id="1957989629"></span> 
+</span> 
+ <span class="text" id="1814615382">Pulsante</span> 
+</div> 
+</div> 
+</li> 
+</ul> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-6 medium-6 small-12 u_1253077044" id="1253077044"> <div data-element-type="spacer" class="dmSpacer u_1186745453" id="1186745453"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1998252692" style="transition: opacity 1s ease-in-out 0s;"><p class="m-size-12"><span class="m-font-size-12" style="display: initial;">Le macchine sottovuoto da casa per alimenti vincente nel rapporto prezzo-qualit&agrave;-prestazioni.&nbsp;</span></p><p style="line-height: 1.5;"><span style="display: initial;"><br></span></p></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1604988522" style="transition: opacity 1s ease-in-out 0s;"><p style="line-height: 1.5;"><span style="display: initial;">Scopri i mo</span><span style="display: initial; font-weight: normal;">dell</span><span style="display: initial; font-weight: normal; color: rgb(0, 0, 0);">i con un click:</span></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/eco-vacuum" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/eco-vacuum" type="url" style="color: rgb(0, 0, 0); font-weight: bold; display: initial;">Eco Vacuum</a></p><p style="line-height: 1.5;"><a href="https://www.orved.it/it/orved-prodotti/vacuum-family" target="_blank" runtime_url="https://www.orved.it/it/orved-prodotti/vacuum-family" type="url" style="color: rgb(0, 0, 0); font-weight: bold; display: initial;">Vacuum Family</a></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_Materialidiconsumo dmRespRow hasBackgroundOverlay" id="Materialidiconsumo" data-anchor="Materiali di consumo"> <div class="dmRespColsWrapper" id="1216032448"> <div class="dmRespCol large-12 medium-12 small-12 u_1391334642" id="1391334642"> <div class="dmNewParagraph u_1409836054" data-element-type="paragraph" data-version="5" id="1409836054" style="transition: opacity 1s ease-in-out 0s;"> <h2 class="text-align-center"><span style="color: rgb(255, 255, 255); display: initial; text-decoration: none;">Materiali di consumo</span></h2> 
+</div> 
+ <div class="dmRespRow u_1091120860 fullBleedChanged fullBleedMode" id="1091120860"> <div class="dmRespColsWrapper" id="1496388453"> <div class="dmRespCol small-12 u_1101383000 large-3 medium-3" id="1101383000"> <div class="u_1206825032 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1206825032" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="text-align-center"><span style="display: initial;">Buste sottovuoto</span></h3> 
+</div> 
+ <div class="u_1355448065 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1355448065" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><a href="https://www.orved.it/it/orved-buste-sottovuoto/natural-vacuum-bags" runtime_url="https://www.orved.it/it/orved-buste-sottovuoto/natural-vacuum-bags" type="url" style="display: initial; font-weight: bold; color: rgb(101, 83, 21);" target="_blank">Natural Vacuum&nbsp; Bags</a></p><p class="text-align-center"><a href="https://www.orved.it/it/orved-buste-sottovuoto/buste-lisce" target="_blank" runtime_url="https://www.orved.it/it/orved-buste-sottovuoto/buste-lisce" type="url" style="font-weight: bold; display: initial; color: rgb(0, 0, 0);">Buste lisce</a></p><p class="text-align-center"><a href="https://www.orved.it/it/orved-buste-sottovuoto/buste-goffrate" target="_blank" runtime_url="https://www.orved.it/it/orved-buste-sottovuoto/buste-goffrate" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">Buste goffrate</a><span single-space="true" class="" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);"> <span style="display: initial; font-weight: bold; color: rgb(0, 0, 0);"></span> 
+</span></p><p class="text-align-center"><a href="https://www.orved.it/it/orved-buste-sottovuoto/buste-cottura" target="_blank" runtime_url="https://www.orved.it/it/orved-buste-sottovuoto/buste-cottura" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">Buste cottura</a></p><p class="text-align-center"><a href="https://www.orved.it/it/orved-buste-sottovuoto/buste-cook-and-chill" target="_blank" runtime_url="https://www.orved.it/it/orved-buste-sottovuoto/buste-cook-and-chill" type="url" style="display: initial; font-weight: bold; color: rgb(11, 99, 160);">Buste cook and chill</a></p><p class="text-align-center"><a href="https://orved.it/it/orved-buste-sottovuoto/kit-buste" target="_blank" runtime_url="https://orved.it/it/orved-buste-sottovuoto/kit-buste" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">Buste kit</a></p></div> 
+</div> 
+ <div class="dmRespCol small-12 u_1734457187 large-3 medium-3" id="1734457187"> <div class="u_1275972875 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1275972875" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="text-align-center"><span style="display: initial;">Accessori sottovuoto</span></h3> 
+</div> 
+ <div class="u_1114467898 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1114467898" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><a href="https://orved.it/it/accessori-di-supporto" target="_blank" runtime_url="https://orved.it/it/accessori-di-supporto" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">Accessori di supporto</a></p><p class="text-align-center"><a href="https://orved.it/it/accessori-per-il-vuoto" target="_blank" runtime_url="https://orved.it/it/accessori-per-il-vuoto" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">Accessori per il vuoto</a></p><p class="text-align-center"><a href="https://orved.it/it/accessori-per-conservazione" target="_blank" runtime_url="https://orved.it/it/accessori-per-conservazione" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);">Accessori per conservazione</a></p></div> 
+</div> 
+ <div class="dmRespCol small-12 u_1164106590 large-3 medium-3" id="1164106590"> <div class="u_1073840822 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1073840822" data-styletopreserve="{" background-image":""}"=""> <h3 class="text-align-center"><span style="display: initial;">Manutenzioni</span></h3> 
+</div> 
+ <div class="u_1425393942 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1425393942" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><a href="https://orved.it/it/orved-accessori-sottovuoto/kit-manutenzione" runtime_url="https://orved.it/it/orved-accessori-sottovuoto/kit-manutenzione" type="url" style="display: initial; font-weight: bold; color: rgb(0, 0, 0);" target="_blank">Kit manutenzione sottovuoto a campana</a></p></div> 
+</div> 
+ <div class="dmRespCol large-3 medium-3 small-12 u_1573148049" id="1573148049"> <div class="u_1200153331 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1200153331" data-styletopreserve="{" background-image":""}"=""> <h3 class="text-align-center"><span class="" style="display: initial;"><span style="display: initial;">Confezionamento</span> 
+</span></h3> 
+</div> 
+ <div class="u_1863451906 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1863451906" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center"><span class="" style="color: rgb(0, 0, 0); font-weight: bold; display: initial;"><span style="color: rgb(0, 0, 0); font-weight: bold; display: initial;">Vaschette</span> 
+</span></p><p class="text-align-center"><span class="" style="color: rgb(0, 0, 0); font-weight: bold; display: initial;"><span style="color: rgb(0, 0, 0); font-weight: bold; display: initial;">Bobine Film</span> 
+</span></p><p class="text-align-center"><span style="display: initial;"><span class="ql-cursor">﻿</span></span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_ServizioAssistenza dmRespRow" id="ServizioAssistenza" data-anchor="Servizio Assistenza"> <div class="dmRespColsWrapper" id="1685350013"> <div class="dmRespCol large-12 medium-12 small-12" id="1113728409"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1838421562" style="transition: opacity 1s ease-in-out 0s;"> <h2 class="text-align-center"><span style="color: rgb(255, 255, 255); display: initial;">Servizio di Assistenza post vendita dedicato</span></h2> 
+</div> 
+ <div class="graphicWidget u_1917975120" data-element-type="graphic" data-widget-type="graphic" id="1917975120"> <svg version="1.1" id="1938481288" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve" class="svg u_1938481288" data-icon-custom="true" data-icon-name="customer-service.svg"> <g> <g> <path d="M402.524,432l-18.52-55.568c-6.472-19.4-22.984-33.72-43.112-37.384l-53.464-9.728v-4.144
+			c9.304-5.4,17.4-12.624,23.848-21.176h16.152c13.232,0,24-10.768,24-24v-96c0-57.344-46.656-104-104-104s-104,46.656-104,104v56
+			c0,15.424,10.968,28.328,25.512,31.336c4.488,22.992,18.856,42.448,38.488,53.84v4.144l-53.472,9.728
+			c-20.12,3.664-36.64,17.984-43.104,37.384l-3.2,9.608l-27.248-27.248c-3.12-3.12-3.12-8.2,0-11.32l31.6-31.592l-59.312-59.312
+			L16.98,292.28c-10.576,10.576-16.4,24.64-16.4,39.6s5.824,29.016,16.4,39.592l108.12,108.12C135.676,490.168,149.74,496,164.7,496
+			c14.96,0,29.016-5.832,39.344-16.168l38.968-35.704L230.86,432H402.524z M335.428,280c0,4.416-3.592,8-8,8H320.7
+			c2.32-5.288,4.08-10.864,5.216-16.664c3.424-0.712,6.576-2.072,9.512-3.784V280z M327.428,253.776v-27.552
+			c4.76,2.776,8,7.88,8,13.776S332.188,251,327.428,253.776z M167.428,253.776c-4.76-2.776-8-7.88-8-13.776s3.24-11,8-13.776
+			V253.776z M167.428,200v9.136c-2.848,0.744-5.52,1.864-8,3.312V184c0-48.52,39.48-88,88-88s88,39.48,88,88v28.448
+			c-2.48-1.448-5.152-2.576-8-3.312V200h-8c-23.656,0-45.896-9.216-62.632-25.944l-9.368-9.368l-9.368,9.368
+			C221.324,190.784,199.084,200,175.428,200H167.428z M183.428,256v-40.304c24.024-1.808,46.424-11.72,64-28.432
+			c17.576,16.712,39.976,26.632,64,28.432V256c0,11.664-3.184,22.576-8.656,32h-55.344v16h42.192c-11.28,9.928-26.024,16-42.192,16
+			C212.14,320,183.428,291.288,183.428,256z M271.428,332.312v0.376l-24,24l-24-24v-0.376c7.584,2.384,15.64,3.688,24,3.688
+			S263.844,334.696,271.428,332.312z M126.02,381.488c4.616-13.856,16.416-24.088,30.792-26.712l55.92-10.16l34.696,34.696
+			l34.688-34.688l55.912,10.16c14.376,2.624,26.176,12.848,30.792,26.712L380.332,416H214.86l-31.16-31.16l-34.624,31.32
+			c-3.016,3.032-8.288,3.032-11.312,0l-17.472-17.472L126.02,381.488z M52.684,279.192l36.688,36.688l-8.688,8.688L43.996,287.88
+			L52.684,279.192z M192.964,468.296c-7.552,7.536-17.6,11.704-28.28,11.704c-10.68,0-20.728-4.168-28.288-11.72L28.276,360.168
+			c-7.552-7.552-11.712-17.6-11.712-28.28c0-10.688,4.16-20.736,11.712-28.288l4.4-4.4l36.688,36.688l-0.288,0.288
+			c-9.352,9.36-9.352,24.584,0,33.944l57.368,57.368c4.536,4.528,10.56,7.032,16.976,7.032s12.44-2.496,16.68-6.752l0.6-0.536
+			l36.856,36.856L192.964,468.296z M209.364,453.256l-36.776-36.776l10.568-9.552l36.712,36.712L209.364,453.256z"></path> 
+</g> 
+</g> 
+ <g> <g> <path d="M471.428,0h-112c-13.232,0-24,10.768-24,24v64c0,13.232,10.768,24,24,24h21.368l-8.272,48.248l77.2-48.248h21.704
+			c13.232,0,24-10.768,24-24V24C495.428,10.768,484.66,0,471.428,0z M479.428,88c0,4.408-3.592,8-8,8h-26.296l-50.808,31.752
+			L399.772,96h-40.344c-4.408,0-8-3.592-8-8V24c0-4.408,3.592-8,8-8h112c4.408,0,8,3.592,8,8V88z"></path> 
+</g> 
+</g> 
+ <g> <g> <rect x="367.428" y="32" width="96" height="16"></rect> 
+</g> 
+</g> 
+ <g> <g> <rect x="367.428" y="64" width="64" height="16"></rect> 
+</g> 
+</g> 
+ <g> <g> <rect x="447.428" y="64" width="16" height="16"></rect> 
+</g> 
+</g> 
+ <g> <g> <path d="M247.428,24C142.9,24,52.86,96.304,29.452,197.16l-15.16-25.272l-13.72,8.232l28.12,46.856l46.856-28.12l-8.232-13.72
+			l-21.68,13.008C68.308,105.88,151.276,40,247.428,40c21.016,0,41.752,3.12,61.632,9.28L313.796,34
+			C292.38,27.36,270.052,24,247.428,24z"></path> 
+</g> 
+</g> 
+ <g> <g> <path d="M491.54,177.136l-46.856-28.12l-28.112,46.864l13.72,8.232l14-23.336c7.368,21.56,11.136,44.112,11.136,67.224
+			c0,47.576-16.48,94.088-46.392,130.96l12.424,10.08c32.224-39.712,49.968-89.808,49.968-141.04
+			c0-24.472-3.944-48.368-11.632-71.248l23.512,14.104L491.54,177.136z"></path> 
+</g> 
+</g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+ <g></g> 
+</svg> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1629966291" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center m-size-13 size-18"><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: normal; color: rgb(255, 255, 255);">La nostra attenzione verso il cliente non si ferma solo alla vendita del prodotto,</span></p><p class="text-align-center m-size-13 size-18"><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: normal; color: rgb(255, 255, 255);">ma offriamo anche un accurato servizio post-vendita.</span></p><p class="text-align-center m-size-13 size-18"><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: normal; color: rgb(255, 255, 255);"><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: normal; color: rgb(255, 255, 255);">Un</span> 
+</span><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: bold; color: rgb(255, 255, 255);"><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: bold; color: rgb(255, 255, 255);">assistenza tecnica</span> 
+</span><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: normal; color: rgb(255, 255, 255);">sempre presente per rispondere a riparazione, manutenzioni, consulenze e consigli.</span></p><p class="text-align-center m-size-13 size-18"><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: normal; color: rgb(255, 255, 255);"><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: normal; color: rgb(255, 255, 255);">Chiamaci al</span> 
+</span><span class="font-size-18 m-font-size-13" style="display: initial; font-weight: bold; color: rgb(255, 255, 255);">0432 570313</span></p><p class="text-align-center"><span style="display: initial;"><br></span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1455023373 dmRespRow fullBleedChanged fullBleedMode" id="1455023373"> <div class="dmRespColsWrapper" id="1313874478"> <div class="u_1872593974 dmRespCol small-12 hide-for-small large-7 medium-7" id="1872593974"> <div data-element-type="spacer" class="dmSpacer" id="1265265063"></div> 
+</div> 
+ <div class="u_1312424720 dmRespCol small-12 large-5 medium-5" id="1312424720"> <div class="u_1525514902 graphicWidget" data-element-type="graphic" data-widget-type="graphic" id="1525514902"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1408 1792" id="1252574360" class="svg u_1252574360" data-icon-name="fa-phone" alt="Icona Telefono"> <path fill="inherit" d="M1408 1240q0 27-10 70.5t-21 68.5q-21 50-122 106-94 51-186 51-27 0-52.5-3.5t-57.5-12.5-47.5-14.5-55.5-20.5-49-18q-98-35-175-83-128-79-264.5-215.5t-215.5-264.5q-48-77-83-175-3-9-18-49t-20.5-55.5-14.5-47.5-12.5-57.5-3.5-52.5q0-92 51-186 56-101 106-122 25-11 68.5-21t70.5-10q14 0 21 3 18 6 53 76 11 19 30 54t35 63.5 31 53.5q3 4 17.5 25t21.5 35.5 7 28.5q0 20-28.5 50t-62 55-62 53-28.5 46q0 9 5 22.5t8.5 20.5 14 24 11.5 19q76 137 174 235t235 174q2 1 19 11.5t24 14 20.5 8.5 22.5 5q18 0 46-28.5t53-62 55-62 50-28.5q14 0 28.5 7t35.5 21.5 25 17.5q25 15 53.5 31t63.5 35 54 30q70 35 76 53 3 7 3 21z"></path> 
+</svg> 
+</div> 
+ <div class="u_1620365571 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1620365571" style="transition: none 0s ease 0s; text-align: left; display: block;"><p class="text-align-center size-24 m-size-17" style="line-height: 1.5;"><span class="font-size-24 m-font-size-17" style="font-weight: normal; display: initial;">Vuoi creare sottovuoti confermando in modo eccellente i tuoi alimenti? Contattaci ai nostri recapiti, troveremo tra tante proposta quella pi&ugrave; adatta alle tue esigenze</span></p></div> 
+ <a data-display-type="block" class="u_1741774424 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="contatti.html" data-element-type="dButtonLinkId" id="1741774424"> <span class="iconBg" id="1804778363"> <span class="icon hasFontIcon icon-star" id="1862730522"></span> 
+</span> 
+ <span class="text" id="1212905823">Contattaci</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="dmRespRow u_1239492040" id="1239492040"> <div class="dmRespColsWrapper" id="1785801264"> <div class="dmRespCol large-12 medium-12 small-12 u_1310625044" id="1310625044"> <div class="u_1198715353 imageWidget align-center" data-widget-type="image" id="1198715353" data-element-type="image" data-binding="W3siYmluZGluZ05hbWUiOiJpbWFnZSIsInZhbHVlIjoic2l0ZV9pbWFnZXMubG9nbyJ9XQ=="> <a href="index.htm" id="1002634478"><img src="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" id="1938463201" class="" data-dm-image-path="https://irp.cdn-website.com/158cafef/dms3rep/multi/Logo_EUREKA-080421-R0-RossoBianco.png" alt="EUREKA  CONFEZIONAMENTO e IMBALLAGGIO-LOGO" data-diy-image="" onerror="handleImageLoadError(this)"></a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1528771706" id="1528771706"> <div class="dmRespColsWrapper" id="1650493637"> <div class="dmRespCol small-12 large-4 medium-4 u_1090901638" id="1090901638"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1715938640" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="text-align-center"><span style="display: initial; color: rgb(244, 244, 244);">Sede</span></h3> 
+</div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1433292483" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center" style="line-height: 1.5;"><span style="color: rgb(244, 244, 244); display: initial;">Via della Croce 35&nbsp;</span></p><p class="text-align-center" style="line-height: 1.5;"><span style="color: rgb(244, 244, 244); display: initial;">33030 Campoformido (UD)</span></p></div> 
+</div> 
+ <div class="dmRespCol small-12 large-4 medium-4 u_1766567086" id="1766567086"> <div data-element-type="spacer" class="u_1483892449 dmSpacer hide-for-medium hide-for-large" id="1483892449"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1371884299" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="text-align-center"><span style="display: initial; color: rgb(244, 244, 244);">Recapiti</span></h3> 
+</div> 
+ <div class="dmNewParagraph ql-disabled" data-element-type="paragraph" data-version="5" id="1863434580" style="transition: opacity 1s ease-in-out 0s;"><p class="text-align-center" style="line-height: 1.5;"><span style="font-weight: bold; display: initial; color: rgb(244, 244, 244);">+39 0432 570313</span></p><p class="text-align-center" style="line-height: 1.5;"><a href="mailto:info@eureka-pack.it" type="email" style="font-weight: bold; text-decoration: underline; display: initial;">info@eureka-pack.it</a></p></div> 
+ <div class="u_1147249003 align-center text-align-center dmSocialHub gapSpacing" id="1147249003" dmle_extension="social_hub" data-element-type="social_hub" wr="true" networks="" icon="true" surround="true" adwords=""> <div class="socialHubWrapper"> <div class="socialHubInnerDiv "> <a href="https://www.facebook.com/eureka.pack/" target="_blank" dm_dont_rewrite_url="true" aria-label="facebook" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Facebook&apos;)"> <span class="dmSocialFacebook dm-social-icons-facebook oneIcon socialHubIcon style3" aria-hidden="true" data-hover-effect="zoomout"></span> 
+</a> 
+ <a href="https://twitter.com/eureka_pack" target="_blank" dm_dont_rewrite_url="true" aria-label="twitter" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Twitter&apos;)"> <span class="dmSocialTwitter dm-social-icons-twitter oneIcon socialHubIcon style3" aria-hidden="true" data-hover-effect="zoomout"></span> 
+</a> 
+ <a href="https://wa.me/+393387280744" target="_blank" dm_dont_rewrite_url="true" aria-label="whatsapp" onclick="dm_gaq_push_event &amp;&amp; dm_gaq_push_event(&apos;socialLink&apos;, &apos;click&apos;, &apos;Whatsapp&apos;)"> <span class="dmSocialWhatsapp dm-social-icons-whatsapp oneIcon socialHubIcon style3" aria-hidden="true" data-hover-effect="zoomout"></span> 
+</a> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespCol large-4 medium-4 small-12 u_1640342102" id="1640342102"> <div data-element-type="spacer" class="u_1041309721 dmSpacer hide-for-medium hide-for-large" id="1041309721"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1855686629" style="transition: opacity 1s ease-in-out 0s;"> <h3 class="text-align-center"><span style="display: initial; color: rgb(244, 244, 244);">Orari di apertura<br></span></h3> 
+</div> 
+ <div class="u_1095801967 default dmHoursOfOperation" id="1095801967" dmle_extension="open_hours" data-element-type="open_hours" data-binding="W3siYmluZGluZ05hbWUiOiJidXNpbmVzc19ob3VycyIsInZhbHVlIjoiY29udGVudF9saWJyYXJ5Lmdsb2JhbC5idXNpbmVzc19ob3VycyJ9XQ==" time_format="24" wr="true" displaytitle="false" forcedisplay="false" icon="true" surround="true" adwords=""> <dl class="open-hours-data"> <div class="open-hours-item"> <dt day="0">Lun - Ven</dt> 
+ <dd> <span class="splitHours"> <time>08:00</time> 
+- <time>12:00</time> 
+</span> 
+ <span class="splitHours"> <time>13:00</time> 
+- <time>17:00</time> 
+</span> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="5">Sab - Dom</dt> 
+ <dd>Chiuso</dd> 
+</div> 
+</dl> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1003417261" id="1003417261"> <div class="dmRespColsWrapper" id="1944049781"> <div class="dmRespCol large-12 medium-12 small-12 u_1787526944" id="1787526944"> <div class="u_1090203448 dmNewParagraph center" id="1090203448"><div style="text-align: center; "> <font style="color: rgb(244, 244, 244);" class="lh-1 font-size-14"> <span style="background-color: rgba(0, 0, 0, 0);"> <font style="">P.I. 01793480300 |</font> 
+</span> 
+ <a class="legalNotes" style="background-color: rgba(0, 0, 0, 0); color: rgb(244, 244, 244);">Informazioni Legali</a> 
+ <span style="background-color: rgba(0, 0, 0, 0);">|</span> 
+ <a class="cookiePolicy" style="background-color: rgba(0, 0, 0, 0); color: rgb(244, 244, 244);">Privacy Policy e Cookie Policy</a></font> 
+</div></div></div> 
+</div> 
+</div> 
+ <a class="dmBackToTop" style="background: #000000 !important;" id="dmBackToTop"></a> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"> <div class="poweredBy"> <center> <div class="customFooter">Designed by <a class="logo" href="https://www.italiaonline.it" target="_blank"><img src="site-resources/footer_italiaonline.png" alt="Italiaonline" height="18px" onerror="handleImageLoadError(this)"></a> 
+ <span>|</span> 
+Questa azienda &egrave; presente anche su <a href="https://www.paginegialle.it" target="_blank"><img src="site-resources/footer_pg.png" alt="Pagine Gialle" style="vertical-align:middle" height="25px" onerror="handleImageLoadError(this)"></a> 
+e <a href="https://www.paginebianche.it" target="_blank"><img src="site-resources/footer_pb.png" alt="Pagine Bianche" style="vertical-align:middle" height="25px" onerror="handleImageLoadError(this)"></a> 
+</div> 
+</center> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ITALIAN"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5790";
+    var build = "2025-09-11T12_48_39";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-09-11T12_48_39";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery' src="libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<script id="d-js-ecwid-cb-glue" data-swh-uuid="e2c3b5549f124b00ad840e1ca74def36">
+
+window.ec=window.ec||{},window.ec.config=ec.config||{},window.ec.config.tracking=ec.config.tracking||{},window.ec.config.tracking.ask_consent=!0;let _ecwidLoadedForCb=!1;function _acceptConsentForEcwid(e){e.preferences&&e.statistics&&!e.marketing?Ecwid.setTrackingConsent("ANALYTICS_ONLY"):!e.preferences||e.statistics||e.marketing?Ecwid.setTrackingConsent("ACCEPT"):Ecwid.setTrackingConsent("PERSONALIZATION_ONLY")}function _onEcwidLoadedCb(){Cookiebot&&Cookiebot.consented?"function"==typeof Ecwid.setTrackingConsent?_acceptConsentForEcwid(Cookiebot.consent):window.Ecwid.OnAPILoaded.add(function(){_acceptConsentForEcwid(Cookiebot.consent)}):Cookiebot&&Cookiebot.declined?Ecwid.setTrackingConsent("DECLINE"):_ecwidLoadedForCb=!0}window.addEventListener("message",e=>{"ecwid-script-loaded"===e.data.type&&_onEcwidLoadedCb()}),window.addEventListener("CookiebotOnAccept",async()=>{_ecwidLoadedForCb&&_acceptConsentForEcwid(Cookiebot.consent)},!1),window.addEventListener("CookiebotOnDecline",async()=>{_ecwidLoadedForCb&&Ecwid.setTrackingConsent("DECLINE")},!1);
+
+</script>
+<script id="CookiebotConfiguration" type="application/json" data-cookieconsent="ignore" data-swh-uuid="e2c3b5549f124b00ad840e1ca74def36">
+
+{"TagConfiguration":[{"id":"d-js-core","ignore":true},{"id":"d-js-params","ignore":true},{"id":"d-js-jquery","ignore":true},{"id":"d-js-load-css","ignore":true},{"id":"d-js-dmapi","ignore":true},{"id":"d-js-datalayer-optimization","ignore":true}]}
+
+</script>
+<script data-cookieconsent="ignore" data-swh-uuid="e2c3b5549f124b00ad840e1ca74def36">
+
+function _cbSetGtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],_cbSetGtag("consent","default",{"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","personalization_storage":"denied","security_storage":"denied","wait_for_update":500}),_cbSetGtag("set","ads_data_redaction",!0),_cbSetGtag("set","url_passthrough",!0)
+
+</script>
+<script id="Cookiebot" src="uc.js" data-cbid="a854b7ba-7720-4bde-a5a6-f8250877a176" data-blockingmode="auto" type="text/javascript" data-swh-uuid="e2c3b5549f124b00ad840e1ca74def36">
+</script>
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'YOUR_MAPBOX_TOKEN.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5790';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5790';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =false;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+    rtCommonProps["booking.cal.api.domain"] = 'api.cal.com';
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'mapbox';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+    rtCommonProps["streamline.monolith.personalization.skipRuleConditionsForPreview.enabled"] =true;
+    rtCommonProps["streamline.personalization.decodeTimeZone.enabled"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["fnb.animations.tracking.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = true;
+    rtFlags["ecom.ecwid.accountPage.emptyBaseUrl.enabled"] = true;
+    rtFlags["ecom.ecwid.pages.links.disable.listeners"] = true;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["editor.classicHybrid.photogallery.fix"] =true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["editor.link.on.container"] =true;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+    rtFlags["runtime.ssr.productStore.internal.observer"] =true;
+    rtFlags["runtime.ssr.productCustomizations"] =true;
+    rtFlags["flex.megaMenu.a11y"] =true;
+    rtFlags["runtime.ssr.booking.dryrun.for.default.staffmember"] =false;
+</script>
+<script src="mnlt/production/5790/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js" id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="mnlt/production/5790/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js"></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript">
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '158cafef'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Chiudi (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Condividi"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Passa alla modalità a schermo intero"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom avanti/indietro"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Precedente (freccia sinistra)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Successivo (freccia destra)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root" data-locale="it_IT"></div>
+<!-- Alias: 158cafef -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<script type="text/javascript" src="https://qol3pvxuq3.execute-api.eu-west-1.amazonaws.com/{{ENVIRONMENT}}/js/{{PARTNERORDERID}}"></script>
+<noscript>
+    <iframe src="https://qol3pvxuq3.execute-api.eu-west-1.amazonaws.com/{{ENVIRONMENT}}/noscript/{{PARTNERORDERID}}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script type="text/javascript" id="iolScript" data-spon="{{SPON}}" data-lang="it" src="Partners/IOL/scripts/jquery.iol.custom.min.js"></script><!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Begin Product Custom HTML Markup -->
+
+<script type="text/javascript" src="script/iol-body-np.js" defer=""></script>
+<script type="text/javascript" src="script/iol-body.js" defer=""></script>
+<script>
+    if(document.URL.includes('signin')) {
+        var elementExists = document.getElementsByClassName("signup-state state");
+        if (elementExists !== null){
+            document.querySelectorAll('.btnText')[0].innerHTML = '<span class="btnText">Connettiti con Google</span>'
+            var divider=document.querySelectorAll(".or-divider")[0];
+            var dividertext="<span>Oppure</span>";
+            divider.innerHTML=dividertext;
+            var title=document.querySelectorAll(".title")[0];
+            var titletext="Iscriviti";
+            title.innerHTML=titletext;
+            var terms=document.querySelector(".terms-of-service");
+            var termstext="Continuando, accetti le nostre Condizioni d'uso e l'Informativa sulla privacy.";
+            terms.innerHTML=termstext;
+            $("#firstname").attr("placeholder", "Nome");
+            $("#lastname").attr("placeholder", "Cognome");
+            $("#submit-button > input[type=submit]").attr("value", "Registrati");
+            document.querySelector('.go-to-login-section.link-description').innerHTML = 'Sei gi&agrave; iscritto? <a class="login-link section-link">Log In</a>'
+        }
+        var loginlink = document.querySelector('.go-to-login-section.link-description');
+        loginlink.addEventListener("click", function() {
+            document.querySelector('.not-a-member-text.link-description').childNodes[0].nodeValue = 'Non sei ancora registrato?';
+            document.querySelector('.not-a-member-link.section-link').innerText = 'Iscriviti'
+            var title=document.querySelectorAll(".title")[1];
+            var titletext="Accesso";
+            title.innerHTML=titletext;
+            var divider=document.querySelectorAll(".or-divider")[1];
+            var dividertext="<span>Oppure</span>";
+            divider.innerHTML=dividertext;
+            document.querySelectorAll('.btnText')[2].innerHTML = '<span class="btnText">Connettiti con Google</span>'
+            document.querySelector('.forgot-password-link.section-link').innerHTML = 'Hai dimenticato la password?'
+        }, false);
+        var forgetlink = document.querySelector('.forgot-password-link.section-link');
+        forgetlink.addEventListener("click", function() {
+            document.querySelector('.go-to-login-section.section-link.link-description').innerHTML = 'Torna per accedere'
+            document.querySelector('.form-description').innerHTML = 'Inserisci il tuo indirizzo email'
+            var title=document.querySelectorAll(".title")[2];
+            var titletext="Resetta la password";
+            title.innerHTML=titletext;
+        }, false);
+    }
+</script>
+<script>
+
+    let __fixedCssLoad = false;
+
+    function __loadCSSLinks() {
+        setTimeout(() => {
+            if(!__fixedCssLoad && window.loadCSS) {
+                // fix css links
+                __fixCssLinks()
+
+            } else {
+                console.log("re-running self waiting for fix css to exist")
+                __loadCSSLinks()
+            }
+        },1)
+    }
+    function __fixCssLinks(cb) {
+        var links = document.getElementsByTagName("link");
+        for (var i = 0; i < links.length; i++) {
+            if(links[i].onload) {
+
+
+
+                loadCSS(links[i]);
+
+            }
+        }
+        __fixedCssLoad = true;
+    }
+
+    window.addEventListener('CookiebotOnDialogDisplay', function (e) {
+        __fixCssLinks()
+    }, false);
+
+    document.addEventListener("DOMContentLoaded", (event) => { 
+        if(dmAPI.getCurrentEnvironment() === 'live') { __loadCSSLinks(); }
+    })
+    
+</script>
+<!--Russ fix for conflicting CSS with cookiebot-->
+<style>#CybotCookiebotDialog .CybotCookiebotDialogHide:not(.CybotCookiebotDialogShow) { display:none!important} </style>
+<!--  End Product Custom HTML Markup -->
+</body>
+</html>
+
