@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --bg: #f3f7fc;
     --surface: #ffffff;
     --muted-color: #475d75;
@@ -52,7 +52,7 @@ a { color: inherit; text-decoration: none; }
     z-index: 50;
     backdrop-filter: blur(8px);
     background: #000;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
     box-shadow: var(--shadow-soft);
 }
 
@@ -93,11 +93,26 @@ a { color: inherit; text-decoration: none; }
     list-style: none;
 }
 
-.nav a {`r`n    padding: 0.52rem 0.8rem;`r`n    border-radius: 999px;`r`n    font-weight: 600;`r`n    color: #fff;`r`n    transition: .2s;`r`n    white-space: nowrap;`r`n}
+.site-header .nav a {
+    padding: 0.52rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    transition: .2s;
+    white-space: nowrap;
+}
 
-.nav a:hover,`r`n.nav a:focus-visible {`r`n    background: rgba(255, 255, 255, 0.16);`r`n    color: #fff;`r`n}
+.site-header .nav a:hover,
+.site-header .nav a:focus-visible {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+}
 
-.nav a[aria-current="page"] {`r`n    background: #ffffff;`r`n    color: #08354f;`r`n}
+.site-header .nav a[aria-current="page"] {
+    background: #ffffff;
+    color: #08354f;
+}
 
 main { margin-top: 1.9rem; margin-bottom: 2rem; }
 
@@ -172,7 +187,22 @@ h3 {
 .list li {
     padding-left: .6rem;
     border-left: 4px solid var(--primary);
-}`r`n`r`n.value-list {`r`n    display: grid;`r`n    grid-template-columns: repeat(2, minmax(0, 1fr));`r`n    gap: 0.7rem 0.9rem;`r`n}`r`n`r`n.value-list li {`r`n    background: var(--surface);`r`n    border: 1px solid var(--line);`r`n    border-left-width: 4px;`r`n    border-radius: 12px;`r`n    padding: 0.75rem 0.8rem;`r`n}
+}
+
+.value-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem 0.9rem;
+    align-items: stretch;
+}
+
+.value-list li {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left-width: 4px;
+    border-radius: 12px;
+    padding: 0.75rem 0.8rem;
+}
 
 .btn {
     display: inline-flex;
@@ -294,5 +324,9 @@ textarea { min-height: 130px; }
 
     .menu-toggle { display: inline-flex; }
     .header-inner { flex-wrap: wrap; }
-    .container { width: min(var(--maxw), calc(100% - 1.2rem)); }`r`n    .value-list { grid-template-columns: 1fr; }
+    .container { width: min(var(--maxw), calc(100% - 1.2rem)); }
+    .value-list { grid-template-columns: 1fr; }
 }
+
+
+
