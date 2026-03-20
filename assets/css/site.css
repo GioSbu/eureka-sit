@@ -183,8 +183,12 @@ h3 {
     padding: 1.2rem;
     box-shadow: 0 12px 30px rgba(20, 36, 52, 0.06);
 }
+`n.card p { line-height: 1.6; color: var(--muted-color); }
+.contact-short-card {
+    padding-top: calc(1.2rem - 15px);
+    padding-bottom: calc(1.2rem - 15px);
+}
 
-.card p { line-height: 1.6; color: var(--muted-color); }
 
 
 .list {
@@ -489,6 +493,8 @@ textarea { min-height: 130px; }
 .widget-title-btn:focus-visible {
     filter: brightness(1.06);
 }
+
+
 
 
 
