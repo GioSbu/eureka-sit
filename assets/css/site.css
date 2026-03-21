@@ -379,19 +379,28 @@ h3 {
 .product-viewer {
     margin-bottom: 1rem;
     padding: 1rem;
+    background: #c5161d;
+    border: 1px solid #8f0f14;
+    color: #fff;
 }
 
 .product-viewer__title {
     margin: 0;
     font-size: 1.1rem;
+    color: #fff;
 }
 
 .product-viewer__frame {
     width: 100%;
     min-height: 620px;
-    border: 1px solid #d6dce6;
+    margin-top: 0.75rem;
+    border: 0;
     border-radius: 12px;
     background: #fff;
+}
+
+.product-viewer__frame[hidden] {
+    display: none;
 }
 
 @media (max-width: 900px) {

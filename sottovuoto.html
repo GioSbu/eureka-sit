@@ -13,7 +13,7 @@
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="sottovuoto.html" />
-    <link rel="stylesheet" href="assets/css/site.css?v=10" />
+    <link rel="stylesheet" href="assets/css/site.css?v=11" />
 </head>
 <body>
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -62,31 +62,9 @@
             </div>
         </section>
 
-        <section id="product-viewer" class="card product-viewer" hidden aria-live="polite">
+        <section id="product-viewer" class="card product-viewer" aria-live="polite">
             <h2 class="product-viewer__title">Prodotto selezionato: <span id="product-viewer-selected">-</span></h2>
-            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna"></iframe>
-        </section>
-
-        <section class="grid" aria-labelledby="vantaggi">
-            <article class="card">
-                <h2 id="vantaggi">Prodotti:</h2>
-                <ul class="list">
-                    <li>Confezionatrici da banco e industriali per diversi volumi.</li>
-                    <li>Barriere film e accessori ad alta resa.</li>
-                    <li>Assistenza su set-up, manutenzione e messa in esercizio.</li>
-                    <li>Consulenza HACCP e supporto operativo continuo.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h2>Servizi inclusi</h2>
-                <ul class="list">
-                    <li>Consulenza iniziale gratuita sulla fattibilità.</li>
-                    <li>Prove in sito e definizione linee produttive.</li>
-                    <li>Contratto assistenza con piani programmati.</li>
-                    <li>Documentazione tecnica completa per audit e qualifiche.</li>
-                </ul>
-                <p><a class="btn" href="contatti.html">Contattaci per una consulenza</a></p>
-            </article>
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" hidden></iframe>
         </section>
     </main>
 
@@ -134,7 +112,7 @@
                     if (!url) return;
                     productViewerSelected.textContent = link.textContent.trim();
                     productViewerFrame.src = url;
-                    productViewer.hidden = false;
+                    productViewerFrame.hidden = false;
                     if (productMenu) productMenu.open = false;
                     productViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
