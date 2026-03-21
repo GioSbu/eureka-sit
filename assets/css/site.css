@@ -303,6 +303,59 @@ h3 {
     color: #fff;
 }
 
+.product-menu {
+    display: inline-block;
+    margin: 0.2rem 0 0.85rem;
+}
+
+.product-menu__toggle {
+    list-style: none;
+}
+
+.product-menu__toggle::-webkit-details-marker {
+    display: none;
+}
+
+.hero .product-menu__toggle.btn {
+    background: #d41818;
+    color: #000;
+    border: 1px solid #8c0f0f;
+}
+
+.product-menu[open] .product-menu__toggle.btn {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.product-menu__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    min-width: 260px;
+    border: 1px solid #d6dce6;
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(20, 36, 52, 0.14);
+}
+
+.product-menu__list li + li {
+    border-top: 1px solid #e6edf4;
+}
+
+.product-menu__list a {
+    display: block;
+    padding: 0.7rem 0.9rem;
+    color: #13243a;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.product-menu__list a:hover,
+.product-menu__list a:focus-visible {
+    background: #f3f8fd;
+}
+
 .btn:focus-visible,
 .menu-toggle:focus-visible,
 .nav a:focus-visible,
