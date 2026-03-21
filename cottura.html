@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="it">
 <head>
     <meta charset="UTF-8" />
@@ -44,7 +44,8 @@
                     <details class="product-menu">
                         <summary class="btn product-menu__toggle">Prodotti</summary>
                         <ul class="product-menu__list" aria-label="Categorie prodotti cottura">
-                            <li><a href="#">Voce TBD</a></li>
+                            <li><a href="https://www.orved.it/it/orved-cottura-sottovuoto">Cottura Orved</a></li>
+                            <li><a href="https://www.orved.it/it/orved-cottura-sottovuoto">Cottura Rational</a></li>
                         </ul>
                     </details>
                 </div>
@@ -56,26 +57,9 @@
                 </div>
             </div>
         </section>
-
-        <section class="grid" aria-labelledby="cottura-vantaggi">
-            <article class="card">
-                <h2 id="cottura-vantaggi">Punti forti</h2>
-                <ul class="list">
-                    <li>Forni e linee per diversi volumi produttivi.</li>
-                    <li>Controllo fine di temperatura, umidit&agrave; e tempi.</li>
-                    <li>Riduzione sprechi energetici con impostazioni ottimali.</li>
-                    <li>Supporto tecnico pre e post vendita.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h2>Servizi inclusi</h2>
-                <ul class="list">
-                    <li>Dimensionamento della linea in base al carico produttivo.</li>
-                    <li>Validazione ricette e parametri iniziali.</li>
-                    <li>Formazione operatori e manualistica applicata.</li>
-                </ul>
-                <p><a class="btn" href="contatti.html">Contattaci per una consulenza</a></p>
-            </article>
+        <section id="product-viewer" class="card product-viewer" aria-live="polite">
+            <h2 class="product-viewer__title">Prodotto selezionato: <span id="product-viewer-selected">-</span></h2>
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" hidden></iframe>
         </section>
     </main>
 
@@ -110,16 +94,34 @@
 
             const productMenu = document.querySelector('.product-menu');
             const productLinks = document.querySelectorAll('.product-menu__list a');
-            if (!productLinks.length) return;
+            const productViewer = document.getElementById('product-viewer');
+            const productViewerFrame = document.getElementById('product-viewer-frame');
+            const productViewerSelected = document.getElementById('product-viewer-selected');
+
+            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
             productLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
-                    if (link.getAttribute('href') === '#') event.preventDefault();
+                    event.preventDefault();
+                    const rawUrl = link.getAttribute('href');
+                    if (!rawUrl) return;
+                    const baseUrl = rawUrl.split('#')[0];
+                    const separator = baseUrl.includes('?') ? '&' : '?';
+                    const frameUrl = `${baseUrl}${separator}ep_view=${Date.now()}`;
+                    productViewerSelected.textContent = link.textContent.trim();
+                    productViewerFrame.hidden = false;
+                    productViewerFrame.src = 'about:blank';
+                    requestAnimationFrame(() => {
+                        productViewerFrame.src = frameUrl;
+                    });
                     if (productMenu) productMenu.open = false;
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
                     const selection = window.getSelection ? window.getSelection() : null;
                     if (selection) selection.removeAllRanges();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
                 });
             });
         })();
