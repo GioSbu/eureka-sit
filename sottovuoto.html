@@ -108,11 +108,17 @@
             productLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
                     event.preventDefault();
-                    const url = link.getAttribute('href');
-                    if (!url) return;
+                    const rawUrl = link.getAttribute('href');
+                    if (!rawUrl) return;
+                    const baseUrl = rawUrl.split('#')[0];
+                    const separator = baseUrl.includes('?') ? '&' : '?';
+                    const frameUrl = `${baseUrl}${separator}ep_view=${Date.now()}`;
                     productViewerSelected.textContent = link.textContent.trim();
-                    productViewerFrame.src = url;
                     productViewerFrame.hidden = false;
+                    productViewerFrame.src = 'about:blank';
+                    requestAnimationFrame(() => {
+                        productViewerFrame.src = frameUrl;
+                    });
                     if (productMenu) productMenu.open = false;
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
