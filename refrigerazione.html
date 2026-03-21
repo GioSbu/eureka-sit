@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Refrigerazione | Eureka Packaging</title>
-    <meta name="description" content="Soluzioni di refrigerazione industriale e gestione della catena del freddo per sicurezza e stabilità dei prodotti." />
+    <meta name="description" content="Soluzioni di refrigerazione industriale e gestione della catena del freddo per sicurezza e stabilit&agrave; dei prodotti." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:title" content="Refrigerazione | Eureka Packaging" />
-    <meta property="og:description" content="Monitoraggio temperatura, abbattimento e celle frigorifere per ottimizzare qualità, durata e tracciabilità." />
+    <meta property="og:description" content="Monitoraggio temperatura, abbattimento e celle frigorifere per ottimizzare qualit&agrave;, durata e tracciabilit&agrave;." />
     <meta property="og:url" content="refrigerazione.html" />
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -38,12 +38,22 @@
 
     <main id="contenuto" class="container">
         <section class="hero" aria-labelledby="page-title">
-            <p class="eyebrow"><a href="index.htm#soluzioni">Soluzioni</a> · Refrigerazione</p>
-            <h1 id="page-title">Refrigerazione industriale</h1>
-            <p class="section-subtitle">Sistemi per controllare la temperatura in modo stabile, garantendo qualità costante e riducendo i rischi.</p>
-            <div class="hero-actions">
-                <a class="btn" href="contatti.html">Richiedi preventivo</a>
-                <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+            <div>
+                <div class="hero-topline">
+                    <p class="eyebrow"><a href="index.htm#soluzioni">Soluzioni</a> &middot; Refrigerazione</p>
+                    <details class="product-menu">
+                        <summary class="btn product-menu__toggle">Prodotti</summary>
+                        <ul class="product-menu__list" aria-label="Categorie prodotti refrigerazione">
+                            <li><a href="#">Voce TBD</a></li>
+                        </ul>
+                    </details>
+                </div>
+                <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Refrigerazione industriale</h1>
+                <p class="section-subtitle">Sistemi per controllare la temperatura in modo stabile, garantendo qualit&agrave; costante e riducendo i rischi.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="contatti.html">Richiedi preventivo</a>
+                    <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+                </div>
             </div>
         </section>
 
@@ -53,7 +63,7 @@
                 <ul class="list">
                     <li>Abbattitori e celle frigorifere su misura.</li>
                     <li>Monitoraggio continuo e allarmi su condizioni critiche.</li>
-                    <li>Conformità HACCP e riduzione dei rischi igienico-sanitari.</li>
+                    <li>Conformit&agrave; HACCP e riduzione dei rischi igienico-sanitari.</li>
                     <li>Interventi rapidi e manutenzione programmata.</li>
                 </ul>
             </article>
@@ -71,7 +81,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Eureka Packaging · Campoformido (UD)</p>
+            <p>&copy; 2026 Eureka Packaging &middot; Campoformido (UD)</p>
         </div>
     </footer>
 
@@ -79,21 +89,37 @@
         (function () {
             const toggle = document.getElementById('menu-toggle');
             const nav = document.getElementById('site-nav');
-            if (!toggle || !nav) return;
-            const closeMenu = () => {
-                nav.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-                toggle.textContent = 'Apri menu';
-            };
-            toggle.addEventListener('click', () => {
-                const isOpen = nav.classList.toggle('open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
-            });
-            nav.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', () => {
-                    if (!nav.classList.contains('open')) return;
-                    closeMenu();
+            if (toggle && nav) {
+                const closeMenu = () => {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.textContent = 'Apri menu';
+                };
+                toggle.addEventListener('click', () => {
+                    const isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
+                });
+                nav.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        if (!nav.classList.contains('open')) return;
+                        closeMenu();
+                    });
+                });
+            }
+
+            const productMenu = document.querySelector('.product-menu');
+            const productLinks = document.querySelectorAll('.product-menu__list a');
+            if (!productLinks.length) return;
+
+            productLinks.forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    if (link.getAttribute('href') === '#') event.preventDefault();
+                    if (productMenu) productMenu.open = false;
+                    const activeEl = document.activeElement;
+                    if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
+                    const selection = window.getSelection ? window.getSelection() : null;
+                    if (selection) selection.removeAllRanges();
                 });
             });
         })();

@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cottura industriale | Eureka Packaging</title>
-    <meta name="description" content="Cottura industriale con linee ad alta affidabilità per cucina professionale, catering e trasformazione alimentare." />
+    <meta name="description" content="Cottura industriale con linee ad alta affidabilit&agrave; per cucina professionale, catering e trasformazione alimentare." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:title" content="Cottura industriale | Eureka Packaging" />
-    <meta property="og:description" content="Tecnologie di cottura industriale per controllo dei tempi, uniformità e qualità costante nel ciclo produttivo." />
+    <meta property="og:description" content="Tecnologie di cottura industriale per controllo dei tempi, uniformit&agrave; e qualit&agrave; costante nel ciclo produttivo." />
     <meta property="og:url" content="cottura.html" />
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -38,12 +38,22 @@
 
     <main id="contenuto" class="container">
         <section class="hero" aria-labelledby="page-title">
-            <p class="eyebrow"><a href="index.htm#soluzioni">Soluzioni</a> · Cottura</p>
-            <h1 id="page-title">Cottura industriale</h1>
-            <p class="section-subtitle">Processi stabili, riproducibilità elevata e maggiore resa per produzioni intensive e continuità operativa.</p>
-            <div class="hero-actions">
-                <a class="btn" href="contatti.html">Richiedi preventivo</a>
-                <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+            <div>
+                <div class="hero-topline">
+                    <p class="eyebrow"><a href="index.htm#soluzioni">Soluzioni</a> &middot; Cottura</p>
+                    <details class="product-menu">
+                        <summary class="btn product-menu__toggle">Prodotti</summary>
+                        <ul class="product-menu__list" aria-label="Categorie prodotti cottura">
+                            <li><a href="#">Voce TBD</a></li>
+                        </ul>
+                    </details>
+                </div>
+                <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Cottura industriale</h1>
+                <p class="section-subtitle">Processi stabili, riproducibilit&agrave; elevata e maggiore resa per produzioni intensive e continuit&agrave; operativa.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="contatti.html">Richiedi preventivo</a>
+                    <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+                </div>
             </div>
         </section>
 
@@ -52,7 +62,7 @@
                 <h2 id="cottura-vantaggi">Punti forti</h2>
                 <ul class="list">
                     <li>Forni e linee per diversi volumi produttivi.</li>
-                    <li>Controllo fine di temperatura, umidità e tempi.</li>
+                    <li>Controllo fine di temperatura, umidit&agrave; e tempi.</li>
                     <li>Riduzione sprechi energetici con impostazioni ottimali.</li>
                     <li>Supporto tecnico pre e post vendita.</li>
                 </ul>
@@ -71,7 +81,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Eureka Packaging · Campoformido (UD)</p>
+            <p>&copy; 2026 Eureka Packaging &middot; Campoformido (UD)</p>
         </div>
     </footer>
 
@@ -79,21 +89,37 @@
         (function () {
             const toggle = document.getElementById('menu-toggle');
             const nav = document.getElementById('site-nav');
-            if (!toggle || !nav) return;
-            const closeMenu = () => {
-                nav.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-                toggle.textContent = 'Apri menu';
-            };
-            toggle.addEventListener('click', () => {
-                const isOpen = nav.classList.toggle('open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
-            });
-            nav.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', () => {
-                    if (!nav.classList.contains('open')) return;
-                    closeMenu();
+            if (toggle && nav) {
+                const closeMenu = () => {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.textContent = 'Apri menu';
+                };
+                toggle.addEventListener('click', () => {
+                    const isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
+                });
+                nav.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        if (!nav.classList.contains('open')) return;
+                        closeMenu();
+                    });
+                });
+            }
+
+            const productMenu = document.querySelector('.product-menu');
+            const productLinks = document.querySelectorAll('.product-menu__list a');
+            if (!productLinks.length) return;
+
+            productLinks.forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    if (link.getAttribute('href') === '#') event.preventDefault();
+                    if (productMenu) productMenu.open = false;
+                    const activeEl = document.activeElement;
+                    if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
+                    const selection = window.getSelection ? window.getSelection() : null;
+                    if (selection) selection.removeAllRanges();
                 });
             });
         })();
