@@ -159,14 +159,22 @@ h3 {
     max-width: 80ch;
     line-height: 1.65;
 }
-
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.7rem;
 }
+.hero-home-style {
+    font-weight: 700;
+    font-size: 1.15rem;
+    font-style: italic;
+}
 
-.grid {
+#contatti-title.hero-home-style {
+    font-weight: 700;
+    font-size: 1.15rem;
+    font-style: italic;
+}.grid {
     display: grid;
     gap: 1rem;
     grid-template-columns: 1.1fr 1fr;
@@ -205,6 +213,21 @@ h3 {
     border-left: 4px solid var(--primary);
 }
 
+.contact-data-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: .6rem;
+    color: var(--text);
+}
+
+.contact-data-list li {
+    padding-left: 0;
+    border-left: 0;
+}
+
+
 .value-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -220,6 +243,36 @@ h3 {
     padding: 0.75rem 0.8rem;
 }
 
+.value-widget-card {
+    padding: 1rem;
+}
+
+.value-widget-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem 0.9rem;
+}
+
+.value-widget-list li {
+    padding: 0;
+    border-left: 0;
+}
+
+.value-widget-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 46px;
+    padding: 0.75rem 0.8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+}
 .btn {
     display: inline-flex;
     align-items: center;
@@ -235,6 +288,9 @@ h3 {
 
 .hero .btn,
 .card .btn { box-shadow: 0 12px 24px rgba(0, 95, 138, 0.2); }
+.contact-form .btn {
+    background: #000;
+}
 
 .btn-ghost {
     background: #fff;
@@ -493,6 +549,11 @@ textarea { min-height: 130px; }
 .widget-title-btn:focus-visible {
     filter: brightness(1.06);
 }
+
+
+
+
+
 
 
 
