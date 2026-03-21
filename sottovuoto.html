@@ -124,7 +124,9 @@
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
                     const selection = window.getSelection ? window.getSelection() : null;
                     if (selection) selection.removeAllRanges();
-                    productViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
                 });
             });
         })();
