@@ -48,8 +48,8 @@
                             <li><a href="https://www.orved.it/it/orved-termosigillatrici">Termosigillatrici</a></li>
                             <li><a href="https://www.orved.it/it/orved-macchine-ad-estrazione-esterna">Estrazione esterna</a></li>
                             <li><a href="https://www.orved.it/it/orved-macchine-uso-domestico">Linea Domestica</a></li>
-                            <li><a href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=a%20casa%20propria-,Per%20conservare,-BUSTE%20SOTTOVUOTO">Materiali di consumo</a></li>
-                            <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Servizio di assistenza</a></li>
+                            <li><a href="https://www.orved.it/it/orved-buste-sottovuoto">Materiali di consumo (Buste)</a></li>
+                            <li><a href="https://www.orved.it/it/orved-vaschette-sottovuoto">Materiali di consumo (Vaschette)</a></li>
                         </ul>
                     </details>
                 </div>
@@ -114,6 +114,10 @@
                     productViewerFrame.src = url;
                     productViewerFrame.hidden = false;
                     if (productMenu) productMenu.open = false;
+                    const activeEl = document.activeElement;
+                    if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
+                    const selection = window.getSelection ? window.getSelection() : null;
+                    if (selection) selection.removeAllRanges();
                     productViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
