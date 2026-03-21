@@ -13,7 +13,7 @@
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="sottovuoto.html" />
-    <link rel="stylesheet" href="assets/css/site.css?v=8" />
+    <link rel="stylesheet" href="assets/css/site.css?v=9" />
 </head>
 <body>
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -60,6 +60,13 @@
             </div>
         </section>
 
+        <section id="product-viewer" class="card product-viewer" hidden aria-live="polite">
+            <h2 class="product-viewer__title">Prodotto selezionato: <span id="product-viewer-selected">-</span></h2>
+            <p class="product-viewer__meta">Fonte: <a id="product-viewer-source" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing" target="_blank" rel="noopener">Apri il riferimento completo</a></p>
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna"></iframe>
+            <p class="product-viewer__hint">Se il contenuto esterno non viene mostrato, apri il riferimento completo dal link sopra.</p>
+        </section>
+
         <section class="grid" aria-labelledby="vantaggi">
             <article class="card">
                 <h2 id="vantaggi">Prodotti:</h2>
@@ -93,21 +100,45 @@
         (function () {
             const toggle = document.getElementById('menu-toggle');
             const nav = document.getElementById('site-nav');
-            if (!toggle || !nav) return;
-            const closeMenu = () => {
-                nav.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-                toggle.textContent = 'Apri menu';
-            };
-            toggle.addEventListener('click', () => {
-                const isOpen = nav.classList.toggle('open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
-            });
-            nav.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', () => {
-                    if (!nav.classList.contains('open')) return;
-                    closeMenu();
+            if (toggle && nav) {
+                const closeMenu = () => {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.textContent = 'Apri menu';
+                };
+                toggle.addEventListener('click', () => {
+                    const isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
+                });
+                nav.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        if (!nav.classList.contains('open')) return;
+                        closeMenu();
+                    });
+                });
+            }
+
+            const productMenu = document.querySelector('.product-menu');
+            const productLinks = document.querySelectorAll('.product-menu__list a');
+            const productViewer = document.getElementById('product-viewer');
+            const productViewerFrame = document.getElementById('product-viewer-frame');
+            const productViewerSource = document.getElementById('product-viewer-source');
+            const productViewerSelected = document.getElementById('product-viewer-selected');
+
+            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSource || !productViewerSelected) return;
+
+            productLinks.forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const url = link.getAttribute('href');
+                    if (!url) return;
+                    productViewerSelected.textContent = link.textContent.trim();
+                    productViewerSource.href = url;
+                    productViewerFrame.src = url;
+                    productViewer.hidden = false;
+                    if (productMenu) productMenu.open = false;
+                    productViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
         })();

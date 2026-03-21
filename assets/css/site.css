@@ -191,7 +191,8 @@ h3 {
     padding: 1.2rem;
     box-shadow: 0 12px 30px rgba(20, 36, 52, 0.06);
 }
-`n.card p { line-height: 1.6; color: var(--muted-color); }
+
+`n.card p { line-height: 1.6; color: var(--muted-color); }
 .contact-short-card {
     padding-top: calc(1.2rem - 15px);
     padding-bottom: calc(1.2rem - 15px);
@@ -304,8 +305,10 @@ h3 {
 }
 
 .product-menu {
-    display: inline-block;
-    margin: 0.2rem 0 0.85rem;
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin: 0.2rem 0 0.85rem auto;
 }
 
 .product-menu__toggle {
@@ -320,6 +323,10 @@ h3 {
     background: #d41818;
     color: #000;
     border: 1px solid #8c0f0f;
+    min-width: 170px;
+    padding-left: 1.35rem;
+    padding-right: 1.35rem;
+    text-align: center;
 }
 
 .product-menu[open] .product-menu__toggle.btn {
@@ -328,10 +335,14 @@ h3 {
 }
 
 .product-menu__list {
+    position: absolute;
+    top: calc(100% - 1px);
+    right: 0;
+    z-index: 30;
     margin: 0;
     padding: 0;
     list-style: none;
-    min-width: 260px;
+    min-width: 320px;
     border: 1px solid #d6dce6;
     border-top: 0;
     border-radius: 0 0 12px 12px;
@@ -354,6 +365,61 @@ h3 {
 .product-menu__list a:hover,
 .product-menu__list a:focus-visible {
     background: #f3f8fd;
+}
+
+.product-viewer {
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.product-viewer__title {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.product-viewer__meta {
+    margin: 0.45rem 0 0.8rem;
+    color: var(--muted-color);
+}
+
+.product-viewer__meta a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.product-viewer__frame {
+    width: 100%;
+    min-height: 620px;
+    border: 1px solid #d6dce6;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.product-viewer__hint {
+    margin: 0.6rem 0 0;
+    color: var(--muted-color);
+    font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+    .hero .product-menu__toggle.btn {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .product-menu {
+        width: min(100%, 320px);
+        margin-left: auto;
+    }
+
+    .product-menu__list {
+        min-width: 100%;
+    }
+
+    .product-viewer__frame {
+        min-height: 460px;
+    }
 }
 
 .btn:focus-visible,
