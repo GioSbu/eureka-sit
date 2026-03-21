@@ -13,7 +13,7 @@
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="sottovuoto.html" />
-    <link rel="stylesheet" href="assets/css/site.css?v=9" />
+    <link rel="stylesheet" href="assets/css/site.css?v=10" />
 </head>
 <body>
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -39,18 +39,20 @@
     <main id="contenuto" class="container">
         <section class="hero" aria-labelledby="page-title">
             <div>
-                <p class="eyebrow">SOLUZIONI - SOTTOVUOTO</p>
-                <details class="product-menu">
-                    <summary class="btn product-menu__toggle">Prodotti</summary>
-                    <ul class="product-menu__list" aria-label="Categorie prodotti">
-                        <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Sottovuoto a Campana</a></li>
-                        <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Termosigillatura</a></li>
-                        <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Estrazione esterna</a></li>
-                        <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Linea Domestica</a></li>
-                        <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Materiali di consumo</a></li>
-                        <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Servizio di assistenza</a></li>
-                    </ul>
-                </details>
+                <div class="hero-topline">
+                    <p class="eyebrow">SOLUZIONI - SOTTOVUOTO</p>
+                    <details class="product-menu">
+                        <summary class="btn product-menu__toggle">Prodotti</summary>
+                        <ul class="product-menu__list" aria-label="Categorie prodotti">
+                            <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Sottovuoto a Campana</a></li>
+                            <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Termosigillatura</a></li>
+                            <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Estrazione esterna</a></li>
+                            <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Linea Domestica</a></li>
+                            <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Materiali di consumo</a></li>
+                            <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Servizio di assistenza</a></li>
+                        </ul>
+                    </details>
+                </div>
                 <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Sottovuoto professionale</h1>
                 <p class="section-subtitle">Riduce ossigeno, ossidazione e perdita di qualità nei cicli di produzione e distribuzione.</p>
                 <div class="hero-actions">
@@ -62,9 +64,7 @@
 
         <section id="product-viewer" class="card product-viewer" hidden aria-live="polite">
             <h2 class="product-viewer__title">Prodotto selezionato: <span id="product-viewer-selected">-</span></h2>
-            <p class="product-viewer__meta">Fonte: <a id="product-viewer-source" href="https://www.orved.it/it/orved-sottovuoto-campana" target="_blank" rel="noopener">Apri il riferimento completo</a></p>
             <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna"></iframe>
-            <p class="product-viewer__hint">Se il contenuto esterno non viene mostrato, apri il riferimento completo dal link sopra.</p>
         </section>
 
         <section class="grid" aria-labelledby="vantaggi">
@@ -123,10 +123,9 @@
             const productLinks = document.querySelectorAll('.product-menu__list a');
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
-            const productViewerSource = document.getElementById('product-viewer-source');
             const productViewerSelected = document.getElementById('product-viewer-selected');
 
-            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSource || !productViewerSelected) return;
+            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
             productLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
@@ -134,7 +133,6 @@
                     const url = link.getAttribute('href');
                     if (!url) return;
                     productViewerSelected.textContent = link.textContent.trim();
-                    productViewerSource.href = url;
                     productViewerFrame.src = url;
                     productViewer.hidden = false;
                     if (productMenu) productMenu.open = false;
