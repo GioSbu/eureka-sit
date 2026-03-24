@@ -166,6 +166,7 @@ h3 {
 }
 
 .hero-actions > .btn {
+    width: 200px;
     height: 44px;
     padding-top: 0.55rem;
     padding-bottom: 0.55rem;
@@ -439,7 +440,7 @@ h3 {
     }
 
     .hero-actions--top .btn {
-        flex: 1 1 220px;
+        flex: 0 0 200px;
     }
 
     .hero-actions--bottom {
