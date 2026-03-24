@@ -323,8 +323,20 @@ h3 {
 
 .hero-gourmet-row {
     display: flex;
+    align-items: center;
     justify-content: flex-start;
-    margin: 0 0 0.35rem;
+    gap: 10px;
+    margin: 0;
+}
+
+.hero-actions--with-gourmet {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-actions--with-gourmet .product-menu {
+    margin-left: auto;
 }
 
 .gourmet-btn {
@@ -468,6 +480,17 @@ h3 {
         flex: 0 0 200px;
     }
 
+    .hero-actions--with-gourmet {
+        justify-content: flex-start;
+    }
+
+    .hero-actions--with-gourmet .hero-gourmet-row {
+        width: 100%;
+    }
+
+    .hero-actions--with-gourmet .product-menu {
+        margin-left: 0;
+    }
     .hero-actions--bottom {
         justify-content: flex-start;
     }
