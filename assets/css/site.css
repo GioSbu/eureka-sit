@@ -333,9 +333,11 @@ h3 {
     margin: 0;
 }
 
-.hero-actions--top .btn,
 .hero-actions--bottom .product-menu__toggle.btn {
-    min-height: 46px;
+    height: 44px;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    line-height: 1.2;
 }
 
 .product-menu {
