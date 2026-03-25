@@ -985,3 +985,29 @@ body.cottura-page .hero-actions--bottom.cottura-products-row .product-menu__togg
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
 }
+
+body.cottura-page .product-viewer--cottura {
+    margin-bottom: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: #000;
+}
+
+body.cottura-page .product-viewer--cottura .product-viewer__title {
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+    color: #000;
+}
+
+body.cottura-page .product-viewer--cottura #product-viewer-selected {
+    color: #000;
+}
+
+body.cottura-page .product-viewer--cottura .product-viewer__frame {
+    margin-top: 0;
+    background: #fff;
+}
