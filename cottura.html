@@ -99,6 +99,16 @@
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerSelected = document.getElementById('product-viewer-selected');
+            const openInNewTabHosts = new Set(['rational-online.com', 'www.rational-online.com']);
+
+            const shouldOpenInNewTab = (url) => {
+                try {
+                    const parsed = new URL(url, window.location.href);
+                    return openInNewTabHosts.has(parsed.hostname.toLowerCase());
+                } catch (error) {
+                    return false;
+                }
+            };
 
             if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
@@ -107,13 +117,20 @@
                     event.preventDefault();
                     const rawUrl = link.getAttribute('href');
                     if (!rawUrl) return;
-                    const frameUrl = rawUrl;
                     productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
-                    productViewerFrame.hidden = false;
-                    productViewerFrame.src = 'about:blank';
-                    requestAnimationFrame(() => {
-                        productViewerFrame.src = frameUrl;
-                    });
+
+                    if (shouldOpenInNewTab(rawUrl)) {
+                        window.open(rawUrl, '_blank', 'noopener,noreferrer');
+                        productViewerFrame.hidden = false;
+                        productViewerFrame.src = 'about:blank';
+                    } else {
+                        productViewerFrame.hidden = false;
+                        productViewerFrame.src = 'about:blank';
+                        requestAnimationFrame(() => {
+                            productViewerFrame.src = rawUrl;
+                        });
+                    }
+
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
                     const selection = window.getSelection ? window.getSelection() : null;
