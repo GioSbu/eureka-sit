@@ -140,10 +140,7 @@
                     const label = link.querySelector('span:last-child') ? link.querySelector('span:last-child').textContent.trim() : link.textContent.trim();
                     productViewerSelected.textContent = label;
                     productViewerFrame.hidden = false;
-                    productViewerFrame.src = 'about:blank';
-                    requestAnimationFrame(() => {
-                        productViewerFrame.src = frameUrl;
-                    });
+                    productViewerFrame.src = frameUrl;
                     if (productMenu) productMenu.open = false;
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
