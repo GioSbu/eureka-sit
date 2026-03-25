@@ -454,6 +454,8 @@ h3 {
 }
 
 .product-viewer {
+    width: calc(100vw - 60px);
+    margin-left: calc(50% - 50vw + 30px);
     margin-bottom: 1rem;
     padding: 1rem;
     background: #c5161d;
