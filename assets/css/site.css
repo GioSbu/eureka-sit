@@ -469,6 +469,20 @@ h3 {
     color: #fff;
 }
 
+.product-viewer__default-image {
+    display: block;
+    width: 100%;
+    min-height: 620px;
+    margin-top: 0.75rem;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #fff;
+}
+
+.product-viewer__default-image[hidden] {
+    display: none;
+}
+
 .product-viewer__frame {
     width: 100%;
     min-height: 620px;
@@ -519,6 +533,10 @@ h3 {
 
     .product-menu__list {
         min-width: 100%;
+    }
+
+    .product-viewer__default-image {
+        min-height: 460px;
     }
 
     .product-viewer__frame {
