@@ -145,6 +145,14 @@ main { margin-top: 1.9rem; margin-bottom: 2rem; }
     box-shadow: var(--shadow);
 }
 
+.hero--sottovuoto {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .hero h1,
 .section-title,
 .card h2,
@@ -329,6 +337,12 @@ h3 {
     margin: 0;
 }
 
+.hero--sottovuoto .hero-gourmet-row {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
 .hero-actions--with-gourmet {
     width: 100%;
     align-items: flex-start;
@@ -362,6 +376,24 @@ h3 {
 
 .gourmet-btn:visited {
     color: #000;
+}
+
+.gourmet-exit-btn {
+    height: 38px;
+    padding: 0 0.9rem;
+    border: 1px solid #9f1117;
+    border-radius: 999px;
+    background: #fff;
+    color: #9f1117;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+}
+
+.gourmet-exit-btn:hover,
+.gourmet-exit-btn:focus-visible {
+    background: #9f1117;
+    color: #fff;
 }
 
 .gourmet-btn__arrow {
@@ -461,6 +493,16 @@ h3 {
     background: #c5161d;
     border: 1px solid #8f0f14;
     color: #fff;
+}
+
+.product-viewer--sottovuoto {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.product-viewer--sottovuoto .product-viewer__title {
+    color: #13243a;
 }
 
 .product-viewer__title {

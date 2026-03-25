@@ -37,7 +37,7 @@
     </header>
 
     <main id="contenuto" class="container">
-        <section class="hero" aria-labelledby="page-title">
+        <section class="hero hero--sottovuoto" aria-labelledby="page-title">
             <div>
                 <div class="hero-topline">
                     <p class="eyebrow">SOLUZIONI - SOTTOVUOTO</p>
@@ -55,13 +55,14 @@
                             <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
                             <span>PRODOTTI ORVED</span>
                         </a>
+                        <button id="viewer-reset-button" class="gourmet-exit-btn" type="button" aria-controls="product-viewer-frame">ESCI</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="product-viewer" class="card product-viewer" aria-live="polite">
-            <h2 class="product-viewer__title">Proposte Orved <span id="product-viewer-selected" hidden></span></h2>
+        <section id="product-viewer" class="card product-viewer product-viewer--sottovuoto" aria-live="polite">
+            <h2 id="product-viewer-title" class="product-viewer__title" hidden>Proposte Orved</h2>
             <img id="product-viewer-default-image" class="product-viewer__default-image" src="158cafef/dms3rep/multi/opt/confezionamento%20gas-2880w.jpg" alt="Confezionamento sottovuoto Orved" />
             <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" hidden></iframe>
         </section>
@@ -97,13 +98,28 @@
             }
 
             const viewerLinks = document.querySelectorAll('.hero-gourmet-row .gourmet-btn[href]');
-            const productViewer = document.getElementById('product-viewer');
+            const viewerResetButton = document.getElementById('viewer-reset-button');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerDefaultImage = document.getElementById('product-viewer-default-image');
-            const productViewerSelected = document.getElementById('product-viewer-selected');
+            const productViewerTitle = document.getElementById('product-viewer-title');
 
-            if (!viewerLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
+            if (!viewerLinks.length || !productViewerFrame || !productViewerDefaultImage || !productViewerTitle) return;
 
+            const resetViewer = () => {
+                productViewerFrame.hidden = true;
+                productViewerFrame.src = 'about:blank';
+                productViewerTitle.hidden = true;
+                productViewerDefaultImage.hidden = false;
+            };
+
+            if (viewerResetButton) {
+                viewerResetButton.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    resetViewer();
+                });
+            }
+
+            resetViewer();
 
             viewerLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
@@ -111,9 +127,8 @@
                     const rawUrl = link.getAttribute('href');
                     if (!rawUrl) return;
                     const frameUrl = rawUrl;
-                    const label = link.querySelector('span:last-child') ? link.querySelector('span:last-child').textContent.trim() : link.textContent.trim();
-                    productViewerSelected.textContent = label;
-                    if (productViewerDefaultImage) productViewerDefaultImage.hidden = true;
+                    productViewerTitle.hidden = false;
+                    productViewerDefaultImage.hidden = true;
                     productViewerFrame.hidden = false;
                     productViewerFrame.src = frameUrl;
                     const activeEl = document.activeElement;
