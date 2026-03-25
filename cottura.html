@@ -52,7 +52,7 @@
                 </div>
                 <div class="hero-actions hero-actions--with-gourmet cottura-link-actions">
                     <div class="hero-gourmet-row cottura-link-row" aria-label="Categorie prodotti cottura">
-                        <a class="gourmet-btn cottura-product-link" data-label="COTTURA RATIONAL" href="https://www.rational-online.com/it_it/products/"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA RATIONAL</span></a>
+                        <a class="gourmet-btn" data-label="COTTURA RATIONAL" href="https://www.rational-online.com/it_it/products/" target="_self"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA RATIONAL</span></a>
                         <a class="gourmet-btn cottura-product-link" data-label="COTTURA UNOX" href="https://www.unox.com/it_it/forni/"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA UNOX</span></a>
                         <a class="gourmet-btn cottura-product-link" data-label="COTTURA ANGELOPO" href="https://www.eureka-pack.it/cottura.html"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA ANGELOPO</span></a>
                         <a class="gourmet-btn cottura-product-link" data-label="COTTURA SOTTOVUOTO ORVED" href="https://www.orved.it/it/orved-cottura-sottovuoto"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA SOTTOVUOTO ORVED</span></a>
@@ -99,16 +99,6 @@
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerSelected = document.getElementById('product-viewer-selected');
-            const openInNewTabHosts = new Set(['rational-online.com', 'www.rational-online.com']);
-
-            const shouldOpenInNewTab = (url) => {
-                try {
-                    const parsed = new URL(url, window.location.href);
-                    return openInNewTabHosts.has(parsed.hostname.toLowerCase());
-                } catch (error) {
-                    return false;
-                }
-            };
 
             if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
@@ -119,16 +109,11 @@
                     if (!rawUrl) return;
                     productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
 
-                    if (shouldOpenInNewTab(rawUrl)) {
-                        window.location.href = rawUrl;
-                        return;
-                    } else {
-                        productViewerFrame.hidden = false;
-                        productViewerFrame.src = 'about:blank';
-                        requestAnimationFrame(() => {
-                            productViewerFrame.src = rawUrl;
-                        });
-                    }
+                    productViewerFrame.hidden = false;
+                    productViewerFrame.src = 'about:blank';
+                    requestAnimationFrame(() => {
+                        productViewerFrame.src = rawUrl;
+                    });
 
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
