@@ -130,22 +130,13 @@
 
             if (!viewerLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
-            const buildFrameUrl = (rawUrl) => {
-                try {
-                    const url = new URL(rawUrl, window.location.href);
-                    url.searchParams.set('ep_view', Date.now().toString());
-                    return url.toString();
-                } catch (error) {
-                    return rawUrl;
-                }
-            };
 
             viewerLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
                     event.preventDefault();
                     const rawUrl = link.getAttribute('href');
                     if (!rawUrl) return;
-                    const frameUrl = buildFrameUrl(rawUrl);
+                    const frameUrl = rawUrl;
                     const label = link.querySelector('span:last-child') ? link.querySelector('span:last-child').textContent.trim() : link.textContent.trim();
                     productViewerSelected.textContent = label;
                     productViewerFrame.hidden = false;
@@ -158,13 +149,9 @@
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
                     const selection = window.getSelection ? window.getSelection() : null;
                     if (selection) selection.removeAllRanges();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    document.documentElement.scrollTop = 0;
-                    document.body.scrollTop = 0;
                 });
             });
         })();
     </script>
 </body>
 </html>
-
