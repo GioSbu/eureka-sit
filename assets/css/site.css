@@ -820,3 +820,101 @@ textarea { min-height: 130px; }
 
 
 
+
+/* Sottovuoto: full-height layout without outer vertical scroll */
+html.sottovuoto-page,
+body.sottovuoto-page {
+    height: 100%;
+    overflow: hidden;
+}
+
+body.sottovuoto-page {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.sottovuoto-page .site-header,
+body.sottovuoto-page .footer {
+    flex: 0 0 auto;
+}
+
+body.sottovuoto-page .header-inner {
+    min-height: 64px;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+}
+
+body.sottovuoto-page main#contenuto.container {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+body.sottovuoto-page .hero--sottovuoto {
+    margin-bottom: 0.2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+body.sottovuoto-page .hero-topline {
+    gap: 0.4rem;
+    margin-bottom: 0;
+}
+
+body.sottovuoto-page .hero-actions--top {
+    gap: 0.45rem;
+}
+
+body.sottovuoto-page .hero-actions--top .btn {
+    height: 36px;
+    min-width: 168px;
+    width: auto;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+body.sottovuoto-page #page-title {
+    margin: 0 0 0.25rem !important;
+    font-size: 1rem !important;
+}
+
+body.sottovuoto-page .section-subtitle {
+    margin: 0;
+    line-height: 1.3;
+    font-size: 0.92rem;
+}
+
+body.sottovuoto-page .product-viewer--sottovuoto {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-bottom: 0;
+    padding-top: 0.2rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body.sottovuoto-page .product-viewer__title {
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+}
+
+body.sottovuoto-page .product-viewer__frame {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+    margin-top: 0;
+}
+
+body.sottovuoto-page .footer {
+    padding-top: 0.25rem;
+    padding-bottom: 0.45rem;
+}
+
+body.sottovuoto-page .footer p {
+    margin: 0;
+}
