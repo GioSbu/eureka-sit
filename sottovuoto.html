@@ -51,23 +51,23 @@
                 <p class="section-subtitle">Riduce ossigeno, ossidazione e perdita di qualità nei cicli di produzione e distribuzione.</p>
                 <div class="hero-actions hero-actions--bottom hero-actions--with-gourmet">
                     <div class="hero-gourmet-row">
-                        <a class="gourmet-btn" href="https://www.orved.it/it/i-nostri-prodotti/linea-cuisson_39_28.htm">
+                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=PER%20CONSERVARE-,Vacuum%20Gourmet,-CUISSON">
                             <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
                             <span>GOURMET</span>
                         </a>
-                        <a class="gourmet-btn" href="https://www.orved.it/it/i-nostri-prodotti/pastry-collection_39_33.htm">
+                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=Vacuum%20Pastry%20%26%20Bakery">
                             <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
                             <span>PASTRY</span>
                         </a>
-                        <a class="gourmet-btn" href="https://www.orved.it/it/i-nostri-prodotti/linea-idea_39_31.htm">
+                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=PASTRY%20%26%20BAKERY-,Vacuum%20Bistrot,-IDEA">
                             <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
                             <span>BISTROT</span>
                         </a>
-                        <a class="gourmet-btn" href="https://www.orved.it/it/i-nostri-prodotti/linea-vm_39_34.htm">
+                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=SV%20LAB%20ESSENTIAL-,Per%20confezionare,-VM">
                             <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
                             <span>PACKAGING</span>
                         </a>
-                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-buste-sottovuoto">
+                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=a%20casa%20propria-,Per%20conservare,-BUSTE%20SOTTOVUOTO">
                             <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
                             <span>PER CONSERVARE</span>
                         </a>
@@ -123,22 +123,31 @@
             }
 
             const productMenu = document.querySelector('.product-menu');
-            const productLinks = document.querySelectorAll('.product-menu__list a');
+            const viewerLinks = document.querySelectorAll('.product-menu__list a, .hero-gourmet-row .gourmet-btn[href]');
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerSelected = document.getElementById('product-viewer-selected');
 
-            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
+            if (!viewerLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
-            productLinks.forEach((link) => {
+            const buildFrameUrl = (rawUrl) => {
+                try {
+                    const url = new URL(rawUrl, window.location.href);
+                    url.searchParams.set('ep_view', Date.now().toString());
+                    return url.toString();
+                } catch (error) {
+                    return rawUrl;
+                }
+            };
+
+            viewerLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
                     event.preventDefault();
                     const rawUrl = link.getAttribute('href');
                     if (!rawUrl) return;
-                    const baseUrl = rawUrl.split('#')[0];
-                    const separator = baseUrl.includes('?') ? '&' : '?';
-                    const frameUrl = `${baseUrl}${separator}ep_view=${Date.now()}`;
-                    productViewerSelected.textContent = link.textContent.trim();
+                    const frameUrl = buildFrameUrl(rawUrl);
+                    const label = link.querySelector('span:last-child') ? link.querySelector('span:last-child').textContent.trim() : link.textContent.trim();
+                    productViewerSelected.textContent = label;
                     productViewerFrame.hidden = false;
                     productViewerFrame.src = 'about:blank';
                     requestAnimationFrame(() => {
