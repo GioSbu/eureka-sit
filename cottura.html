@@ -13,7 +13,7 @@
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="cottura.html" />
-    <link rel="stylesheet" href="assets/css/site.css?v=13" />
+    <link rel="stylesheet" href="assets/css/site.css?v=14" />
 </head>
 <body class="cottura-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -49,21 +49,20 @@
                 <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Cottura industriale</h1>
                 <div class="cottura-subline">
                     <p class="section-subtitle section-subtitle--singleline">Processi stabili, riproducibilit&agrave; elevata e maggiore resa per produzioni intensive e continuit&agrave; operativa.</p>
-                    <div class="hero-actions hero-actions--bottom cottura-products-row">
-                        <details class="product-menu">
-                            <summary class="btn product-menu__toggle">Prodotti</summary>
-                            <ul class="product-menu__list" aria-label="Categorie prodotti cottura">
-                                <li><a href="https://www.orved.it/it/orved-cottura-sottovuoto">Cottura Orved</a></li>
-                                <li><a href="https://www.orved.it/it/orved-cottura-sottovuoto">Cottura Rational</a></li>
-                            </ul>
-                        </details>
+                </div>
+                <div class="hero-actions hero-actions--with-gourmet cottura-link-actions">
+                    <div class="hero-gourmet-row cottura-link-row" aria-label="Categorie prodotti cottura">
+                        <a class="gourmet-btn cottura-product-link" data-label="COTTURA RATIONAL" href="https://www.eureka-pack.it/cottura.html?_gl=1*1gljhtk*_up*MQ..*_ga*MTQyMTkyNTY2Mi4xNzc0NDM2NjI5*_ga_23LNSPS7Q6*czE3NzQ0MzY2MjgkbzEkZzEkdDE3NzQ0MzY2MzQkajU0JGwwJGgw#:~:text=del%20sito%20web.-,Partner%20per%20la%20COTTURA%20TRADIZIONALE,-...%20%22non%20ci"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA RATIONAL</span></a>
+                        <a class="gourmet-btn cottura-product-link" data-label="COTTURA UNOX" href="https://www.eureka-pack.it/cottura.html?_gl=1*1gljhtk*_up*MQ..*_ga*MTQyMTkyNTY2Mi4xNzc0NDM2NjI5*_ga_23LNSPS7Q6*czE3NzQ0MzY2MjgkbzEkZzEkdDE3NzQ0MzY2MzQkajU0JGwwJGgw#:~:text=Accessori-,Partner%20per%20la%20COTTURA%20TRADIZIONALE,-...%20%22Progettiamo%20e"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA UNOX</span></a>
+                        <a class="gourmet-btn cottura-product-link" data-label="COTTURA ANGELOPO" href="https://www.eureka-pack.it/cottura.html"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA ANGELOPO</span></a>
+                        <a class="gourmet-btn cottura-product-link" data-label="COTTURA SOTTOVUOTO ORVED" href="https://www.orved.it/it/orved-cottura-sottovuoto"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA SOTTOVUOTO ORVED</span></a>
                     </div>
                 </div>
             </div>
         </section>
         <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
             <h2 class="product-viewer__title">Prodotto selezionato: <span id="product-viewer-selected">-</span></h2>
-            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" hidden></iframe>
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
         </section>
     </main>
 
@@ -96,8 +95,7 @@
                 });
             }
 
-            const productMenu = document.querySelector('.product-menu');
-            const productLinks = document.querySelectorAll('.product-menu__list a');
+            const productLinks = document.querySelectorAll('.cottura-product-link');
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerSelected = document.getElementById('product-viewer-selected');
@@ -109,16 +107,13 @@
                     event.preventDefault();
                     const rawUrl = link.getAttribute('href');
                     if (!rawUrl) return;
-                    const baseUrl = rawUrl.split('#')[0];
-                    const separator = baseUrl.includes('?') ? '&' : '?';
-                    const frameUrl = `${baseUrl}${separator}ep_view=${Date.now()}`;
-                    productViewerSelected.textContent = link.textContent.trim();
+                    const frameUrl = rawUrl;
+                    productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
                     productViewerFrame.hidden = false;
                     productViewerFrame.src = 'about:blank';
                     requestAnimationFrame(() => {
                         productViewerFrame.src = frameUrl;
                     });
-                    if (productMenu) productMenu.open = false;
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
                     const selection = window.getSelection ? window.getSelection() : null;

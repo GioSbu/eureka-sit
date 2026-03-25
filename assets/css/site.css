@@ -987,7 +987,7 @@ body.cottura-page .hero-actions--bottom.cottura-products-row .product-menu__togg
 }
 
 body.cottura-page .product-viewer--cottura {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     padding-top: 0.2rem;
     padding-bottom: 0;
     display: flex;
@@ -1010,4 +1010,20 @@ body.cottura-page .product-viewer--cottura #product-viewer-selected {
 body.cottura-page .product-viewer--cottura .product-viewer__frame {
     margin-top: 0;
     background: #fff;
+}
+body.cottura-page .cottura-link-actions {
+    width: 100%;
+    margin-top: 0.2rem;
+}
+
+body.cottura-page .cottura-link-row {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+}
+
+body.cottura-page .cottura-link-row .gourmet-btn {
+    height: auto;
+    padding: 0;
 }
