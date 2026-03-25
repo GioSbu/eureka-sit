@@ -331,8 +331,12 @@ h3 {
 
 .hero-actions--with-gourmet {
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.hero-actions--with-gourmet .hero-gourmet-row {
+    margin-right: auto;
 }
 
 .hero-actions--with-gourmet .product-menu {
@@ -342,12 +346,14 @@ h3 {
 .gourmet-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 0.45rem;
     height: 44px;
     padding: 0 0.2rem 0 0;
     border: 0;
     background: transparent;
     color: #000;
+    text-align: left;
     font-weight: 800;
     letter-spacing: 0.02em;
     cursor: pointer;
