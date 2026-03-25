@@ -120,9 +120,8 @@
                     productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
 
                     if (shouldOpenInNewTab(rawUrl)) {
-                        window.open(rawUrl, '_blank', 'noopener,noreferrer');
-                        productViewerFrame.hidden = false;
-                        productViewerFrame.src = 'about:blank';
+                        window.location.href = rawUrl;
+                        return;
                     } else {
                         productViewerFrame.hidden = false;
                         productViewerFrame.src = 'about:blank';
