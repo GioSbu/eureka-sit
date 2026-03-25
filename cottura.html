@@ -104,7 +104,16 @@
             if (rationalDirectLink) {
                 rationalDirectLink.addEventListener('click', (event) => {
                     event.preventDefault();
-                    window.location.assign(rationalDirectLink.href);
+                    const targetUrl = rationalDirectLink.href;
+                    try {
+                        if (window.top && window.top !== window) {
+                            window.top.location.href = targetUrl;
+                            return;
+                        }
+                    } catch (error) {
+                        // Fallback to current context if top navigation is blocked.
+                    }
+                    window.location.href = targetUrl;
                 });
             }
 
