@@ -55,34 +55,7 @@
                             <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
                             <span>PRODOTTI ORVED</span>
                         </a>
-                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=Vacuum%20Pastry%20%26%20Bakery">
-                            <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
-                            <span>PASTRY</span>
-                        </a>
-                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=PASTRY%20%26%20BAKERY-,Vacuum%20Bistrot,-IDEA">
-                            <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
-                            <span>BISTROT</span>
-                        </a>
-                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=SV%20LAB%20ESSENTIAL-,Per%20confezionare,-VM">
-                            <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
-                            <span>PACKAGING</span>
-                        </a>
-                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=a%20casa%20propria-,Per%20conservare,-BUSTE%20SOTTOVUOTO">
-                            <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
-                            <span>PER CONSERVARE</span>
-                        </a>
                     </div>
-                    <details class="product-menu">
-                        <summary class="btn product-menu__toggle">Prodotti</summary>
-                        <ul class="product-menu__list" aria-label="Categorie prodotti">
-                            <li><a href="https://www.orved.it/it/orved-sottovuoto-campana">Sottovuoto a Campana</a></li>
-                            <li><a href="https://www.orved.it/it/orved-termosigillatrici">Termosigillatrici</a></li>
-                            <li><a href="https://www.orved.it/it/orved-macchine-ad-estrazione-esterna">Estrazione esterna</a></li>
-                            <li><a href="https://www.orved.it/it/orved-macchine-uso-domestico">Linea Domestica</a></li>
-                            <li><a href="https://www.orved.it/it/orved-buste-sottovuoto">Materiali di consumo (Buste)</a></li>
-                            <li><a href="https://www.orved.it/it/orved-vaschette-sottovuoto">Materiali di consumo (Vaschette)</a></li>
-                        </ul>
-                    </details>
                 </div>
             </div>
         </section>
@@ -122,8 +95,7 @@
                 });
             }
 
-            const productMenu = document.querySelector('.product-menu');
-            const viewerLinks = document.querySelectorAll('.product-menu__list a, .hero-gourmet-row .gourmet-btn[href]');
+            const viewerLinks = document.querySelectorAll('.hero-gourmet-row .gourmet-btn[href]');
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerSelected = document.getElementById('product-viewer-selected');
@@ -141,7 +113,6 @@
                     productViewerSelected.textContent = label;
                     productViewerFrame.hidden = false;
                     productViewerFrame.src = frameUrl;
-                    if (productMenu) productMenu.open = false;
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
                     const selection = window.getSelection ? window.getSelection() : null;
