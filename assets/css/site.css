@@ -354,9 +354,14 @@ h3 {
     background: transparent;
     color: #000;
     text-align: left;
+    text-decoration: none;
     font-weight: 800;
     letter-spacing: 0.02em;
     cursor: pointer;
+}
+
+.gourmet-btn:visited {
+    color: #000;
 }
 
 .gourmet-btn__arrow {
