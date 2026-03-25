@@ -49,21 +49,12 @@
 
                 <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Sottovuoto professionale</h1>
                 <p class="section-subtitle">Riduce ossigeno, ossidazione e perdita di qualità nei cicli di produzione e distribuzione.</p>
-                <div class="hero-actions hero-actions--bottom hero-actions--with-gourmet">
-                    <div class="hero-gourmet-row">
-                        <a class="gourmet-btn" href="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=PER%20CONSERVARE-,Vacuum%20Gourmet,-CUISSON">
-                            <span class="gourmet-btn__arrow" aria-hidden="true">▼</span>
-                            <span>PRODOTTI ORVED</span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
 
         <section id="product-viewer" class="card product-viewer product-viewer--sottovuoto" aria-live="polite">
-            <h2 id="product-viewer-title" class="product-viewer__title" hidden>Proposte Orved</h2>
-            <img id="product-viewer-default-image" class="product-viewer__default-image" src="158cafef/dms3rep/multi/opt/Confezionamento-in-atmosfera-modificata-1068x712-640w.jpg" alt="Confezionamento sottovuoto Orved" />
-            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" hidden></iframe>
+            <h2 id="product-viewer-title" class="product-viewer__title">Proposte Eureka & Orved</h2>
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="https://www.orved.it/it/orved-categorie-prodotti/soluzioni-food-processing#:~:text=PER%20CONSERVARE-,Vacuum%20Gourmet,-CUISSON"></iframe>
         </section>
     </main>
 
@@ -96,38 +87,6 @@
                 });
             }
 
-            const viewerLinks = document.querySelectorAll('.hero-gourmet-row .gourmet-btn[href]');
-            const productViewerFrame = document.getElementById('product-viewer-frame');
-            const productViewerDefaultImage = document.getElementById('product-viewer-default-image');
-            const productViewerTitle = document.getElementById('product-viewer-title');
-
-            if (!viewerLinks.length || !productViewerFrame || !productViewerDefaultImage || !productViewerTitle) return;
-
-            const resetViewer = () => {
-                productViewerFrame.hidden = true;
-                productViewerFrame.src = 'about:blank';
-                productViewerTitle.hidden = true;
-                productViewerDefaultImage.hidden = false;
-            };
-
-            resetViewer();
-
-            viewerLinks.forEach((link) => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    const rawUrl = link.getAttribute('href');
-                    if (!rawUrl) return;
-                    const frameUrl = rawUrl;
-                    productViewerTitle.hidden = false;
-                    productViewerDefaultImage.hidden = true;
-                    productViewerFrame.hidden = false;
-                    productViewerFrame.src = frameUrl;
-                    const activeEl = document.activeElement;
-                    if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
-                    const selection = window.getSelection ? window.getSelection() : null;
-                    if (selection) selection.removeAllRanges();
-                });
-            });
         })();
     </script>
 </body>
