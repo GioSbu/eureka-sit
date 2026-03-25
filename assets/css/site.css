@@ -378,24 +378,6 @@ h3 {
     color: #000;
 }
 
-.gourmet-exit-btn {
-    height: 38px;
-    padding: 0 0.9rem;
-    border: 1px solid #9f1117;
-    border-radius: 999px;
-    background: #fff;
-    color: #9f1117;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-}
-
-.gourmet-exit-btn:hover,
-.gourmet-exit-btn:focus-visible {
-    background: #9f1117;
-    color: #fff;
-}
-
 .gourmet-btn__arrow {
     color: #d41818;
     font-size: 0.95rem;
@@ -832,7 +814,6 @@ textarea { min-height: 130px; }
 .widget-title-btn:focus-visible {
     filter: brightness(1.06);
 }
-
 
 
 
