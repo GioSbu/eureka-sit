@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg: #f3e7d2;
     --surface: #ffffff;
     --muted-color: #475d75;
@@ -917,4 +917,71 @@ body.sottovuoto-page .footer {
 
 body.sottovuoto-page .footer p {
     margin: 0;
+}
+
+html.cottura-page,
+body.cottura-page {
+    background: #fff;
+}
+
+body.cottura-page .hero--cottura {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0.2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+body.cottura-page .hero-topline {
+    gap: 0.4rem;
+    margin-bottom: 0;
+}
+
+body.cottura-page .hero-actions--top {
+    gap: 0.45rem;
+}
+
+body.cottura-page .hero-actions--top .btn {
+    height: 36px;
+    min-width: 168px;
+    width: auto;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+body.cottura-page #page-title {
+    margin: 0 0 0.25rem !important;
+    font-size: 1rem !important;
+}
+
+body.cottura-page .cottura-subline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+
+body.cottura-page .section-subtitle--singleline {
+    margin: 0;
+    line-height: 1.3;
+    font-size: 0.92rem;
+    max-width: none;
+    white-space: nowrap;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+body.cottura-page .hero-actions--bottom.cottura-products-row {
+    margin: 0;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+body.cottura-page .hero-actions--bottom.cottura-products-row .product-menu__toggle.btn {
+    height: 36px;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
 }
