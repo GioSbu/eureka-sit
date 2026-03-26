@@ -52,9 +52,9 @@
                 </div>
                 <div class="hero-actions hero-actions--with-gourmet cottura-link-actions">
                     <div class="hero-gourmet-row cottura-link-row" aria-label="Categorie prodotti cottura">
-                        <a class="gourmet-btn rational-direct-link" data-label="COTTURA RATIONAL" href="https://www.rational-online.com/it_it/products/"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA RATIONAL</span></a>
+                        <a class="gourmet-btn cottura-product-link" data-label="COTTURA RATIONAL" href="https://www.rational-online.com/it_it/products/"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA RATIONAL</span></a>
                         <a class="gourmet-btn cottura-product-link" data-label="COTTURA UNOX" href="https://www.unox.com/it_it/forni/"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA UNOX</span></a>
-                        <a class="gourmet-btn cottura-product-link" data-label="COTTURA ANGELOPO" href="https://www.eureka-pack.it/cottura.html"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA ANGELOPO</span></a>
+                        <a class="gourmet-btn cottura-product-link" data-label="COTTURA ANGELOPO" href="https://www.angelopo.com/it/ca/2493/prodotti/"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA ANGELOPO</span></a>
                         <a class="gourmet-btn cottura-product-link" data-label="COTTURA SOTTOVUOTO ORVED" href="https://www.orved.it/it/orved-cottura-sottovuoto"><span class="gourmet-btn__arrow">&#9662;</span><span>COTTURA SOTTOVUOTO ORVED</span></a>
                     </div>
                 </div>
@@ -99,24 +99,6 @@
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerSelected = document.getElementById('product-viewer-selected');
-            const rationalDirectLink = document.querySelector('.rational-direct-link');
-
-            if (rationalDirectLink) {
-                rationalDirectLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    const targetUrl = rationalDirectLink.href;
-                    try {
-                        if (window.top && window.top !== window) {
-                            window.top.location.href = targetUrl;
-                            return;
-                        }
-                    } catch (error) {
-                        // Fallback to current context if top navigation is blocked.
-                    }
-                    window.location.href = targetUrl;
-                });
-            }
-
             if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
             productLinks.forEach((link) => {
