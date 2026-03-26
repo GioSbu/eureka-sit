@@ -1027,3 +1027,40 @@ body.cottura-page .cottura-link-row .gourmet-btn {
     height: auto;
     padding: 0;
 }
+
+/* Cottura viewer height sync with Sottovuoto */
+html.cottura-page,
+body.cottura-page {
+    height: 100%;
+}
+
+body.cottura-page {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.cottura-page .site-header,
+body.cottura-page .footer {
+    flex: 0 0 auto;
+}
+
+body.cottura-page main#contenuto.container {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+body.cottura-page .product-viewer--cottura {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+body.cottura-page .product-viewer--cottura .product-viewer__frame {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+}
