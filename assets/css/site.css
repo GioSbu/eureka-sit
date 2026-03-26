@@ -1008,6 +1008,9 @@ body.cottura-page .product-viewer--cottura #product-viewer-selected {
 }
 
 body.cottura-page .product-viewer--cottura .product-viewer__frame {
+    flex: 1 1 auto;
+    min-height: 620px;
+    height: auto;
     margin-top: 0;
     background: #fff;
 }
@@ -1061,6 +1064,14 @@ body.cottura-page .product-viewer--cottura {
 
 body.cottura-page .product-viewer--cottura .product-viewer__frame {
     flex: 1 1 auto;
-    min-height: 0;
+    min-height: 620px;
     height: auto;
+    margin-top: 0;
+    background: #fff;
+}
+
+@media (max-width: 900px) {
+    body.cottura-page .product-viewer--cottura .product-viewer__frame {
+        min-height: 460px;
+    }
 }
