@@ -921,7 +921,7 @@ body.sottovuoto-page .footer p {
 
 html.cottura-page,
 body.cottura-page {
-    background: #fff;
+    background: var(--bg);
 }
 
 body.cottura-page .hero--cottura {
