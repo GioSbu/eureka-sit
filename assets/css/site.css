@@ -998,9 +998,12 @@ body.cottura-page .product-viewer--cottura {
 }
 
 body.cottura-page .product-viewer__title--outside {
-    margin-bottom: 0.2rem;
+    margin: 0 0 0.2rem;
     font-size: 1rem;
     color: #000;
+    text-align: left;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
 }
 
 body.cottura-page #product-viewer-selected {
@@ -1064,7 +1067,7 @@ body.cottura-page .product-viewer--cottura {
 
 body.cottura-page .product-viewer--cottura .product-viewer__frame {
     flex: 1 1 auto;
-    min-height: 620px;
+    min-height: 700px;
     height: auto;
     margin-top: 0;
     background: #fff;
@@ -1072,6 +1075,6 @@ body.cottura-page .product-viewer--cottura .product-viewer__frame {
 
 @media (max-width: 900px) {
     body.cottura-page .product-viewer--cottura .product-viewer__frame {
-        min-height: 460px;
+        min-height: 520px;
     }
 }
