@@ -988,7 +988,7 @@ body.cottura-page .hero-actions--bottom.cottura-products-row .product-menu__togg
 
 body.cottura-page .product-viewer--cottura {
     margin-bottom: 0;
-    padding-top: 0.2rem;
+    padding-top: 0;
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
@@ -997,13 +997,13 @@ body.cottura-page .product-viewer--cottura {
     color: #000;
 }
 
-body.cottura-page .product-viewer--cottura .product-viewer__title {
+body.cottura-page .product-viewer__title--outside {
     margin-bottom: 0.2rem;
     font-size: 1rem;
     color: #000;
 }
 
-body.cottura-page .product-viewer--cottura #product-viewer-selected {
+body.cottura-page #product-viewer-selected {
     color: #000;
 }
 
