@@ -988,12 +988,12 @@ body.cottura-page .hero-actions--bottom.cottura-products-row .product-menu__togg
 
 body.cottura-page .product-viewer--cottura {
     margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    background: #fff;
-    border: 1px solid var(--line);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
     color: #000;
 }
 
