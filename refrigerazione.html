@@ -1,21 +1,21 @@
-﻿<!doctype html>
-<html lang="it">
+<!doctype html>
+<html lang="it" class="refrigerazione-page cottura-page">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Refrigerazione | Eureka Packaging</title>
-    <meta name="description" content="Soluzioni di refrigerazione industriale e gestione della catena del freddo per sicurezza e stabilit&agrave; dei prodotti." />
+    <title>Refrigerazione industriale | Eureka Packaging</title>
+    <meta name="description" content="Sistemi di refrigerazione industriale per controllo stabile della temperatura, qualit&agrave; costante e riduzione dei rischi operativi." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
-    <meta property="og:title" content="Refrigerazione | Eureka Packaging" />
-    <meta property="og:description" content="Monitoraggio temperatura, abbattimento e celle frigorifere per ottimizzare qualit&agrave;, durata e tracciabilit&agrave;." />
+    <meta property="og:title" content="Refrigerazione industriale | Eureka Packaging" />
+    <meta property="og:description" content="Sistemi per controllare la temperatura in modo stabile, garantendo qualit&agrave; costante e riducendo i rischi." />
     <meta property="og:url" content="refrigerazione.html" />
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="refrigerazione.html" />
-    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/site.css?v=18" />
 </head>
-<body>
+<body class="refrigerazione-page cottura-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
         <div class="container header-inner">
@@ -37,7 +37,7 @@
     </header>
 
     <main id="contenuto" class="container">
-        <section class="hero" aria-labelledby="page-title">
+        <section class="hero hero--cottura" aria-labelledby="page-title">
             <div>
                 <div class="hero-topline">
                     <p class="eyebrow"><a href="index.htm#soluzioni">Soluzioni</a> &middot; Refrigerazione</p>
@@ -47,37 +47,20 @@
                     </div>
                 </div>
                 <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Refrigerazione industriale</h1>
-                <p class="section-subtitle">Sistemi per controllare la temperatura in modo stabile, garantendo qualit&agrave; costante e riducendo i rischi.</p>
-                <div class="hero-actions hero-actions--bottom">
-                    <details class="product-menu">
-                        <summary class="btn product-menu__toggle">Prodotti</summary>
-                        <ul class="product-menu__list" aria-label="Categorie prodotti refrigerazione">
-                            <li><a href="#">Voce TBD</a></li>
-                        </ul>
-                    </details>
+                <div class="cottura-subline">
+                    <p class="section-subtitle section-subtitle--singleline">Sistemi per controllare la temperatura in modo stabile, garantendo qualit&agrave; costante e riducendo i rischi.</p>
+                </div>
+                <div class="hero-actions hero-actions--with-gourmet cottura-link-actions">
+                    <div class="hero-gourmet-row cottura-link-row" aria-label="Categorie prodotti refrigerazione">
+                        <a class="gourmet-btn cottura-product-link" data-label="REFRIGERAZIONE IRINOX" href="#"><span class="gourmet-btn__arrow">&#9662;</span><span>REFRIGERAZIONE IRINOX</span></a>
+                        <a class="gourmet-btn cottura-product-link" data-label="REFRIGERAZIONE FRIULINOX" href="#"><span class="gourmet-btn__arrow">&#9662;</span><span>REFRIGERAZIONE FRIULINOX</span></a>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section class="grid" aria-labelledby="frigo-vantaggi">
-            <article class="card">
-                <h2 id="frigo-vantaggi">Punti forti</h2>
-                <ul class="list">
-                    <li>Abbattitori e celle frigorifere su misura.</li>
-                    <li>Monitoraggio continuo e allarmi su condizioni critiche.</li>
-                    <li>Conformit&agrave; HACCP e riduzione dei rischi igienico-sanitari.</li>
-                    <li>Interventi rapidi e manutenzione programmata.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h2>Servizi inclusi</h2>
-                <ul class="list">
-                    <li>Analisi delle temperature critiche del reparto.</li>
-                    <li>Consulenza per corretto dimensionamento e layout.</li>
-                    <li>Procedure di avviamento e check list operative.</li>
-                </ul>
-                <p><a class="btn" href="contatti.html">Contattaci per una consulenza</a></p>
-            </article>
+        <h2 class="product-viewer__title product-viewer__title--outside">Processo selezionato: <span id="product-viewer-selected">-</span></h2>
+        <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
         </section>
     </main>
 
@@ -110,21 +93,39 @@
                 });
             }
 
-            const productMenu = document.querySelector('.product-menu');
-            const productLinks = document.querySelectorAll('.product-menu__list a');
-            if (!productLinks.length) return;
+            const productLinks = document.querySelectorAll('.cottura-product-link');
+            const productViewer = document.getElementById('product-viewer');
+            const productViewerFrame = document.getElementById('product-viewer-frame');
+            const productViewerSelected = document.getElementById('product-viewer-selected');
+            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
             productLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
-                    if (link.getAttribute('href') === '#') event.preventDefault();
-                    if (productMenu) productMenu.open = false;
+                    event.preventDefault();
+                    const rawUrl = link.getAttribute('href');
+                    if (!rawUrl) return;
+
+                    productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
+
+                    productViewerFrame.hidden = false;
+                    productViewerFrame.src = 'about:blank';
+                    if (rawUrl !== '#') {
+                        requestAnimationFrame(() => {
+                            productViewerFrame.src = rawUrl;
+                        });
+                    }
+
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
                     const selection = window.getSelection ? window.getSelection() : null;
                     if (selection) selection.removeAllRanges();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
                 });
             });
         })();
     </script>
+    <script src="assets/js/cookie-auto-accept.js"></script>
 </body>
 </html>
