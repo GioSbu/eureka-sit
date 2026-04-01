@@ -1146,8 +1146,8 @@ body.cottura-page .product-viewer__fallback-link {
 body.home-page .hero--home {
     margin-bottom: 0.3rem;
     padding: 0.6rem 0.9rem;
-    border: 1px solid #d8b748;
-    background: linear-gradient(180deg, #f9e08f 0%, #f2cf66 100%);
+    border: 1px solid var(--line);
+    background: var(--bg);
     box-shadow: none;
 }
 
@@ -1175,9 +1175,9 @@ body.home-page .home-hero-actions > .btn {
 }
 
 body.home-page .home-consult-btn {
-    background: #fff;
-    border: 1px solid #cfb04a;
-    color: #1f3550;
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
     box-shadow: none;
 }
 
@@ -1189,8 +1189,9 @@ body.home-page .home-sol-title {
 
 body.home-page .home-soluzioni-subtitle {
     margin: 0 0 0.4rem;
-    font-size: 0.84rem;
+    font-size: 0.8rem;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 body.home-page .home-soluzioni-grid {
