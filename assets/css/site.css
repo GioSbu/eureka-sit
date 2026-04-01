@@ -840,9 +840,9 @@ body.sottovuoto-page .footer {
 }
 
 body.sottovuoto-page .header-inner {
-    min-height: 64px;
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    min-height: 74px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
 }
 
 body.sottovuoto-page main#contenuto.container {
