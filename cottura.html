@@ -63,6 +63,14 @@
         <h2 class="product-viewer__title product-viewer__title--outside">Processo selezionato: <span id="product-viewer-selected">-</span></h2>
         <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
             <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
+            <div id="product-viewer-fallback" class="product-viewer__fallback" hidden>
+                <div class="product-viewer__fallback-card">
+                    <p class="product-viewer__fallback-kicker">Visualizzazione esterna</p>
+                    <h3 id="product-viewer-fallback-title" class="product-viewer__fallback-title">Contenuto non disponibile nella view integrata</h3>
+                    <p class="product-viewer__fallback-text">Il sito selezionato blocca la visualizzazione in questa finestra. Aprilo in una nuova scheda per vedere il contenuto completo.</p>
+                    <a id="product-viewer-fallback-link" class="btn product-viewer__fallback-link" href="#" target="_blank" rel="noopener noreferrer">Apri sito in nuova scheda</a>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -98,8 +106,41 @@
             const productLinks = document.querySelectorAll('.cottura-product-link');
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
+            const productViewerFallback = document.getElementById('product-viewer-fallback');
+            const productViewerFallbackTitle = document.getElementById('product-viewer-fallback-title');
+            const productViewerFallbackLink = document.getElementById('product-viewer-fallback-link');
             const productViewerSelected = document.getElementById('product-viewer-selected');
             if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
+
+            const blockedEmbedHosts = new Set(['rational-online.com']);
+            const normalizeHost = (hostname) => hostname.replace(/^www\./i, '').toLowerCase();
+            const shouldUseFallback = (url) => {
+                try {
+                    const parsed = new URL(url, window.location.href);
+                    return blockedEmbedHosts.has(normalizeHost(parsed.hostname));
+                } catch (error) {
+                    return false;
+                }
+            };
+
+            const showFallback = (label, url) => {
+                if (!productViewerFallback || !productViewerFallbackLink || !productViewerFallbackTitle) return;
+                productViewerFrame.hidden = true;
+                productViewerFrame.src = 'about:blank';
+                productViewerFallback.hidden = false;
+                productViewerFallbackTitle.textContent = `${label}: apertura in nuova scheda`;
+                productViewerFallbackLink.href = url;
+                productViewerFallbackLink.textContent = `Apri ${label} in nuova scheda`;
+            };
+
+            const showFrame = (url) => {
+                if (productViewerFallback) productViewerFallback.hidden = true;
+                productViewerFrame.hidden = false;
+                productViewerFrame.src = 'about:blank';
+                requestAnimationFrame(() => {
+                    productViewerFrame.src = url;
+                });
+            };
 
             productLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
@@ -107,14 +148,14 @@
                     const rawUrl = link.getAttribute('href');
                     if (!rawUrl) return;
 
+                    const selectedLabel = link.dataset.label || link.textContent.trim();
+                    productViewerSelected.textContent = selectedLabel;
 
-                    productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
-
-                    productViewerFrame.hidden = false;
-                    productViewerFrame.src = 'about:blank';
-                    requestAnimationFrame(() => {
-                        productViewerFrame.src = rawUrl;
-                    });
+                    if (shouldUseFallback(rawUrl)) {
+                        showFallback(selectedLabel, rawUrl);
+                    } else {
+                        showFrame(rawUrl);
+                    }
 
                     const activeEl = document.activeElement;
                     if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();

@@ -1075,8 +1075,69 @@ body.cottura-page .product-viewer--cottura .product-viewer__frame {
     background: #fff;
 }
 
+body.cottura-page .product-viewer--cottura .product-viewer__fallback {
+    flex: 1 1 auto;
+    min-height: 700px;
+    margin-top: 0;
+    border: 1px solid #d6dce6;
+    border-radius: 12px;
+    background: radial-gradient(circle at 12% 8%, rgba(197, 22, 29, 0.14), transparent 46%), linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+    display: grid;
+    place-items: center;
+    padding: 1.2rem;
+}
+
+body.cottura-page .product-viewer--cottura .product-viewer__fallback[hidden] {
+    display: none;
+}
+
+body.cottura-page .product-viewer__fallback-card {
+    width: min(680px, 100%);
+    border: 1px solid #e3e8f0;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(19, 36, 58, 0.12);
+    padding: 1.2rem 1.3rem;
+}
+
+body.cottura-page .product-viewer__fallback-kicker {
+    margin: 0 0 0.45rem;
+    color: #7a8ca0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+body.cottura-page .product-viewer__fallback-title {
+    margin: 0;
+    color: #13243a;
+    font-size: 1.15rem;
+    line-height: 1.3;
+}
+
+body.cottura-page .product-viewer__fallback-text {
+    margin: 0.6rem 0 0;
+    color: #334a62;
+    line-height: 1.45;
+}
+
+body.cottura-page .product-viewer__fallback-link {
+    margin-top: 0.95rem;
+    display: inline-flex;
+}
+
 @media (max-width: 900px) {
     body.cottura-page .product-viewer--cottura .product-viewer__frame {
         min-height: 520px;
+    }
+
+    body.cottura-page .product-viewer--cottura .product-viewer__fallback {
+        min-height: 520px;
+        padding: 0.9rem;
+    }
+
+    body.cottura-page .product-viewer__fallback-card {
+        padding: 1rem;
     }
 }
