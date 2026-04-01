@@ -1141,3 +1141,179 @@ body.cottura-page .product-viewer__fallback-link {
         padding: 1rem;
     }
 }
+
+/* Home: compact full-view layout */
+body.home-page .hero--home {
+    margin-bottom: 0.3rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #d8b748;
+    background: linear-gradient(180deg, #f9e08f 0%, #f2cf66 100%);
+    box-shadow: none;
+}
+
+body.home-page .home-hero-copy {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-style: italic;
+    color: #13243a;
+}
+
+body.home-page .home-hero-actions {
+    margin-left: auto;
+    justify-content: flex-end;
+    gap: 0.45rem;
+}
+
+body.home-page .home-hero-actions > .btn {
+    width: auto;
+    min-width: 168px;
+    height: 36px;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+body.home-page .home-consult-btn {
+    background: #fff;
+    border: 1px solid #cfb04a;
+    color: #1f3550;
+    box-shadow: none;
+}
+
+body.home-page .home-sol-title {
+    margin-bottom: 0.2rem;
+    font-size: 1.02rem;
+    letter-spacing: 0.05em;
+}
+
+body.home-page .home-soluzioni-subtitle {
+    margin: 0 0 0.4rem;
+    font-size: 0.84rem;
+    line-height: 1.2;
+}
+
+body.home-page .home-soluzioni-grid {
+    gap: 0.6rem 0.75rem;
+}
+
+body.home-page #soluzioni .card {
+    padding: 0.68rem 0.78rem;
+    border-radius: 14px;
+}
+
+body.home-page #soluzioni .card p {
+    margin-top: 0.35rem !important;
+    margin-bottom: 0 !important;
+    font-size: 0.82rem;
+    line-height: 1.2;
+}
+
+body.home-page #soluzioni .card img {
+    width: 76px !important;
+    height: 76px !important;
+}
+
+body.home-page #soluzioni .card [style*="width:100px;height:100px"] {
+    width: 76px !important;
+    height: 76px !important;
+}
+
+body.home-page .widget-title-btn {
+    font-size: 0.95rem;
+    padding: 0.22rem 0.5rem;
+    margin-top: 0;
+}
+
+body.home-page #valore {
+    margin-top: 0.25rem;
+}
+
+body.home-page #valore .section-title {
+    margin: 0 0 0.25rem;
+    font-size: 0.98rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+body.home-page .value-widget-card {
+    padding: 0.55rem;
+}
+
+body.home-page .value-widget-list {
+    gap: 0.45rem 0.6rem;
+}
+
+body.home-page .value-widget-btn {
+    min-height: 34px;
+    padding: 0.42rem 0.55rem;
+    font-size: 0.78rem;
+}
+
+body.home-page .contact-home {
+    margin-top: 0.2rem;
+    padding: 0.28rem 0.7rem;
+}
+
+body.home-page .contact-home .contact-line {
+    font-size: 0.82rem;
+    line-height: 1.22;
+}
+
+@media (min-width: 901px) {
+    html.home-page,
+    body.home-page {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body.home-page {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body.home-page .header-inner {
+        min-height: 66px;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+
+    body.home-page .site-header,
+    body.home-page .footer {
+        flex: 0 0 auto;
+    }
+
+    body.home-page main#contenuto.container {
+        flex: 1 1 auto;
+        min-height: 0;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    body.home-page .home-soluzioni {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body.home-page .home-soluzioni-grid {
+        flex: 1 1 auto;
+        min-height: 0;
+    }
+
+    body.home-page .footer {
+        margin-top: 0.2rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.3rem;
+    }
+
+    body.home-page .footer p {
+        margin: 0;
+        font-size: 0.86rem;
+    }
+}

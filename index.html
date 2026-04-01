@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="home-page">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,9 +17,9 @@
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
     <meta http-equiv="Pragma" content="no-cache" />
     <link rel="canonical" href="index.htm" />
-    <link rel="stylesheet" href="assets/css/site.css?v=6" />
+    <link rel="stylesheet" href="assets/css/site.css?v=19" />
 </head>
-<body>
+<body class="home-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
         <div class="container header-inner">
@@ -40,20 +40,22 @@
         </div>
     </header>
     <main id="contenuto" class="container">
-        <section class="hero">
+        <section class="hero hero--home">
             <div>
-                <p class="eyebrow">Eureka Packaging</p>
-                <p style="font-weight:700; font-size:1.15rem; font-style: italic;">Offriamo soluzioni professionali con un approccio orientato alla qualità e all'efficienza operativa.</p>
-                <div class="hero-actions">
-                    <a class="btn" href="#soluzioni">Scopri le soluzioni</a>
-                    <a class="btn btn-ghost" href="contatti.html">Richiedi un consulto</a>
+                <div class="hero-topline">
+                    <p class="eyebrow">Eureka Packaging</p>
+                    <div class="hero-actions hero-actions--top home-hero-actions">
+                        <a class="btn btn-ghost home-consult-btn" href="contatti.html">Richiedi un consulto</a>
+                    </div>
                 </div>
-            </div>        </section>
+                <p class="home-hero-copy">Offriamo soluzioni professionali con un approccio orientato alla qualità e all'efficienza operativa.</p>
+            </div>
+        </section>
 
-        <section id="soluzioni" aria-labelledby="sol-title">
-            <h2 class="section-title" id="sol-title">Soluzioni principali</h2>
-            <p class="section-subtitle" style="white-space: nowrap;">Dalla progettazione alla vendita con un occhio di riguardo al post-vendita: contenuti chiari, rapido accesso ai riferimenti tecnici e assistenza dedicata.</p>
-            <div class="grid">
+        <section id="soluzioni" class="home-soluzioni" aria-labelledby="sol-title">
+            <h2 class="section-title home-sol-title" id="sol-title">SOLUZIONI PRINCIPALI</h2>
+            <p class="section-subtitle home-soluzioni-subtitle">Dalla progettazione alla vendita con un occhio di riguardo al post-vendita: contenuti chiari, rapido accesso ai riferimenti tecnici e assistenza dedicata.</p>
+            <div class="grid home-soluzioni-grid">
                 <article class="card">
                     <div style="display:flex;align-items:flex-start; gap:10px;">
                         <div style="position:relative;border-radius:10px;overflow:visible;margin-bottom:0;width:100px;height:100px;flex-shrink:0;">
@@ -147,7 +149,6 @@
     <footer class="footer">
         <div class="container">
             <p>© 2026 Eureka Packaging · Campoformido (UD)</p>
-            <p><a href="contatti.html">Richiedi una consulenza</a></p>
         </div>
     </footer>
 
