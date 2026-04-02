@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="refrigerazione-page cottura-page">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Macchine usate | Eureka Packaging</title>
-    <meta name="description" content="Macchine industriali ricondizionate con verifica tecnica e trasparenza su stato, prestazioni e valore." />
+    <meta name="description" content="Opportunit&agrave; controllate per aumentare la produttivit&agrave; senza compromettere qualit&agrave; e sicurezza." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:title" content="Macchine usate | Eureka Packaging" />
-    <meta property="og:description" content="Selezione tecnica, test prestazionali e opzioni di riattivazione per ridurre i costi d’impianto." />
+    <meta property="og:description" content="Opportunit&agrave; controllate per aumentare la produttivit&agrave; senza compromettere qualit&agrave; e sicurezza." />
     <meta property="og:url" content="usato.html" />
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="usato.html" />
-    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/site.css?v=18" />
 </head>
-<body>
+<body class="refrigerazione-page cottura-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
         <div class="container header-inner">
@@ -37,43 +37,30 @@
     </header>
 
     <main id="contenuto" class="container">
-        <section class="hero" aria-labelledby="page-title">
-            <div class="hero-topline">
-                <p class="eyebrow"><a href="index.htm#soluzioni">Soluzioni</a> · Macchine usate</p>
-                <div class="hero-actions hero-actions--top">
-                    <a class="btn" href="contatti.html">Richiedi preventivo</a>
-                    <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+        <section class="hero hero--cottura" aria-labelledby="page-title">
+            <div>
+                <div class="hero-topline">
+                    <p class="eyebrow"><a href="index.htm#soluzioni">SOLUZIONI</a> - MACCHINE USATE</p>
+                    <div class="hero-actions hero-actions--top">
+                        <a class="btn" href="contatti.html">Richiedi preventivo</a>
+                        <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+                    </div>
+                </div>
+                <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Macchine ricondizionate</h1>
+                <div class="cottura-subline">
+                    <p class="section-subtitle section-subtitle--singleline">Opportunit&agrave; controllate per aumentare la produttivit&agrave; senza compromettere qualit&agrave; e sicurezza.</p>
                 </div>
             </div>
-            <h1 id="page-title">Macchine ricondizionate</h1>
-            <p class="section-subtitle">Opportunità controllate per aumentare la produttività senza compromettere qualità e sicurezza.</p>
         </section>
-
-        <section class="grid" aria-labelledby="used-vantaggi">
-            <article class="card">
-                <h2 id="used-vantaggi">Punti forti</h2>
-                <ul class="list">
-                    <li>Selezione tecnica prima della vendita.</li>
-                    <li>Verifica collaudi e prestazioni documentata.</li>
-                    <li>Opzioni di upgrade e ricondizionamento.</li>
-                    <li>Prezzo ottimizzato con condizioni chiare.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h2>Servizi inclusi</h2>
-                <ul class="list">
-                    <li>Ispezione completa macchina e controlli funzionali.</li>
-                    <li>Tracciabilità degli interventi e stato componenti.</li>
-                    <li>Possibilità di estendere garanzia su parte impianto.</li>
-                </ul>
-                <p><a class="btn" href="contatti.html">Contattaci per una consulenza</a></p>
-            </article>
+        <h2 class="product-viewer__title product-viewer__title--outside">Processo selezionato: <span id="product-viewer-selected">-</span></h2>
+        <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Eureka Packaging · Campoformido (UD)</p>
+            <p>&copy; 2026 Eureka Packaging &middot; Campoformido (UD)</p>
         </div>
     </footer>
 
@@ -81,21 +68,54 @@
         (function () {
             const toggle = document.getElementById('menu-toggle');
             const nav = document.getElementById('site-nav');
-            if (!toggle || !nav) return;
-            const closeMenu = () => {
-                nav.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-                toggle.textContent = 'Apri menu';
-            };
-            toggle.addEventListener('click', () => {
-                const isOpen = nav.classList.toggle('open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
-            });
-            nav.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', () => {
-                    if (!nav.classList.contains('open')) return;
-                    closeMenu();
+            if (toggle && nav) {
+                const closeMenu = () => {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.textContent = 'Apri menu';
+                };
+                toggle.addEventListener('click', () => {
+                    const isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
+                });
+                nav.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        if (!nav.classList.contains('open')) return;
+                        closeMenu();
+                    });
+                });
+            }
+
+            const productLinks = document.querySelectorAll('.cottura-product-link');
+            const productViewer = document.getElementById('product-viewer');
+            const productViewerFrame = document.getElementById('product-viewer-frame');
+            const productViewerSelected = document.getElementById('product-viewer-selected');
+            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
+
+            productLinks.forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const rawUrl = link.getAttribute('href');
+                    if (!rawUrl) return;
+
+                    productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
+
+                    productViewerFrame.hidden = false;
+                    productViewerFrame.src = 'about:blank';
+                    if (rawUrl !== '#') {
+                        requestAnimationFrame(() => {
+                            productViewerFrame.src = rawUrl;
+                        });
+                    }
+
+                    const activeEl = document.activeElement;
+                    if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
+                    const selection = window.getSelection ? window.getSelection() : null;
+                    if (selection) selection.removeAllRanges();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
                 });
             });
         })();
@@ -103,4 +123,3 @@
     <script src="assets/js/cookie-auto-accept.js"></script>
 </body>
 </html>
-
