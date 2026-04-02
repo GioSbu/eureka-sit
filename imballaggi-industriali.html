@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="refrigerazione-page cottura-page">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Imballaggi industriali | Eureka Packaging</title>
-    <meta name="description" content="Packaging industriale per produzione alimentare e logistica: materiali, soluzioni e supporto operativo." />
+    <meta name="description" content="Progettiamo soluzioni di confezionamento adatte ai volumi elevati e alle esigenze logistiche della tua produzione." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:title" content="Imballaggi industriali | Eureka Packaging" />
-    <meta property="og:description" content="Imballaggi industriali orientati a produttività, sicurezza e compatibilità con i tuoi processi." />
+    <meta property="og:description" content="Progettiamo soluzioni di confezionamento adatte ai volumi elevati e alle esigenze logistiche della tua produzione." />
     <meta property="og:url" content="imballaggi-industriali.html" />
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-R0-RossoBianco-1920w.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="imballaggi-industriali.html" />
-    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/site.css?v=18" />
 </head>
-<body>
+<body class="refrigerazione-page cottura-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
         <div class="container header-inner">
@@ -37,43 +37,36 @@
     </header>
 
     <main id="contenuto" class="container">
-        <section class="hero" aria-labelledby="page-title">
-            <div class="hero-topline">
-                <p class="eyebrow"><a href="index.htm#soluzioni">Soluzioni</a> · Imballaggi industriali</p>
-                <div class="hero-actions hero-actions--top">
-                    <a class="btn" href="contatti.html">Richiedi preventivo</a>
-                    <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+        <section class="hero hero--cottura" aria-labelledby="page-title">
+            <div>
+                <div class="hero-topline">
+                    <p class="eyebrow"><a href="index.htm#soluzioni">SOLUZIONI</a> - IMBALLAGGI INDUSTRIALI</p>
+                    <div class="hero-actions hero-actions--top">
+                        <a class="btn" href="contatti.html">Richiedi preventivo</a>
+                        <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+                    </div>
+                </div>
+                <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Imballaggi industriali</h1>
+                <div class="cottura-subline">
+                    <p class="section-subtitle section-subtitle--singleline">Progettiamo soluzioni di confezionamento adatte ai volumi elevati e alle esigenze logistiche della tua produzione.</p>
+                </div>
+                <div class="hero-actions hero-actions--with-gourmet cottura-link-actions">
+                    <div class="hero-gourmet-row cottura-link-row" aria-label="Categorie prodotti imballaggi">
+                        <a class="gourmet-btn cottura-product-link" data-label="IMBALLAGGI MINIPACK" href="https://www.minipack-torre.it/it/macchine-confezionatrici"><span class="gourmet-btn__arrow">&#9662;</span><span>IMBALLAGGI MINIPACK</span></a>
+                        <a class="gourmet-btn cottura-product-link" data-label="IMBALLAGGI PKG" href="https://www.poolindustriale.it/aziende-leader/pkggroup/"><span class="gourmet-btn__arrow">&#9662;</span><span>IMBALLAGGI PKG</span></a>
+                    </div>
                 </div>
             </div>
-            <h1 id="page-title">Imballaggi industriali</h1>
-            <p class="section-subtitle">Progettiamo soluzioni di confezionamento adatte ai volumi elevati e alle esigenze logistiche della tua produzione.</p>
         </section>
-
-        <section class="grid" aria-labelledby="pack-vantaggi">
-            <article class="card">
-                <h2 id="pack-vantaggi">Punti forti</h2>
-                <ul class="list">
-                    <li>Linee Flow Pack e sistemi di confezionamento su misura.</li>
-                    <li>Macchine verticali e orizzontali con logiche di layout.</li>
-                    <li>Automazione per ottimizzare throughput e manodopera.</li>
-                    <li>Materiali compatibili con i tuoi processi produttivi.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h2>Servizi inclusi</h2>
-                <ul class="list">
-                    <li>Studio processo e mappatura delle fasi critiche.</li>
-                    <li>Proposta di materiali e supporti adatti al prodotto.</li>
-                    <li>Verifica resa e supporto in fase di avviamento.</li>
-                </ul>
-                <p><a class="btn" href="contatti.html">Contattaci per una consulenza</a></p>
-            </article>
+        <h2 class="product-viewer__title product-viewer__title--outside">Processo selezionato: <span id="product-viewer-selected">-</span></h2>
+        <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Eureka Packaging · Campoformido (UD)</p>
+            <p>&copy; 2026 Eureka Packaging &middot; Campoformido (UD)</p>
         </div>
     </footer>
 
@@ -81,21 +74,54 @@
         (function () {
             const toggle = document.getElementById('menu-toggle');
             const nav = document.getElementById('site-nav');
-            if (!toggle || !nav) return;
-            const closeMenu = () => {
-                nav.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-                toggle.textContent = 'Apri menu';
-            };
-            toggle.addEventListener('click', () => {
-                const isOpen = nav.classList.toggle('open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
-            });
-            nav.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', () => {
-                    if (!nav.classList.contains('open')) return;
-                    closeMenu();
+            if (toggle && nav) {
+                const closeMenu = () => {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.textContent = 'Apri menu';
+                };
+                toggle.addEventListener('click', () => {
+                    const isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
+                });
+                nav.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        if (!nav.classList.contains('open')) return;
+                        closeMenu();
+                    });
+                });
+            }
+
+            const productLinks = document.querySelectorAll('.cottura-product-link');
+            const productViewer = document.getElementById('product-viewer');
+            const productViewerFrame = document.getElementById('product-viewer-frame');
+            const productViewerSelected = document.getElementById('product-viewer-selected');
+            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
+
+            productLinks.forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const rawUrl = link.getAttribute('href');
+                    if (!rawUrl) return;
+
+                    productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
+
+                    productViewerFrame.hidden = false;
+                    productViewerFrame.src = 'about:blank';
+                    if (rawUrl !== '#') {
+                        requestAnimationFrame(() => {
+                            productViewerFrame.src = rawUrl;
+                        });
+                    }
+
+                    const activeEl = document.activeElement;
+                    if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
+                    const selection = window.getSelection ? window.getSelection() : null;
+                    if (selection) selection.removeAllRanges();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
                 });
             });
         })();
@@ -103,4 +129,3 @@
     <script src="assets/js/cookie-auto-accept.js"></script>
 </body>
 </html>
-
