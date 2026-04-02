@@ -40,11 +40,11 @@
 
         .usato-marquee-track {
             display: flex;
-            align-items: center;
+            align-items: stretch;
             gap: 0.85rem;
             width: max-content;
             padding: 0.85rem 0.4rem;
-            animation: usato-scroll 38s linear infinite;
+            animation: usato-scroll 62s linear infinite;
             will-change: transform;
         }
 
@@ -54,21 +54,133 @@
 
         .usato-marquee-item {
             flex: 0 0 auto;
-            display: block;
-            width: 176px;
-            height: 176px;
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
             border-radius: 12px;
             overflow: hidden;
-            background: #fff;
             border: 1px solid rgba(19, 36, 58, 0.14);
+            background: #ffffff;
             box-shadow: 0 6px 14px rgba(19, 36, 58, 0.14);
+            cursor: pointer;
+            text-align: left;
+            padding: 0;
+            appearance: none;
         }
 
-        .usato-marquee-item img {
+        .usato-marquee-item:focus-visible {
+            outline: 2px solid #d52235;
+            outline-offset: 2px;
+        }
+
+        .usato-marquee-media {
+            width: 100%;
+            height: 176px;
+            background: #f2f4f8;
+            overflow: hidden;
+        }
+
+        .usato-marquee-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        .usato-marquee-copy {
+            display: block;
+            padding: 0.6rem 0.68rem 0.7rem;
+            line-height: 1.25;
+            color: #13243a;
+        }
+
+        .usato-marquee-desc {
+            display: block;
+            font-size: 0.73rem;
+            min-height: 2.35rem;
+        }
+
+        .usato-marquee-price {
+            display: block;
+            margin-top: 0.3rem;
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: #0f1e30;
+        }
+
+        .usato-popup {
+            position: fixed;
+            inset: 0;
+            z-index: 1200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .usato-popup.is-open {
+            display: flex;
+        }
+
+        .usato-popup__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(8, 16, 28, 0.72);
+        }
+
+        .usato-popup__dialog {
+            position: relative;
+            width: min(92vw, 860px);
+            max-height: 92vh;
+            overflow: auto;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 16px 40px rgba(4, 10, 18, 0.4);
+            border: 1px solid rgba(19, 36, 58, 0.18);
+            padding: 0.95rem 0.95rem 1.05rem;
+        }
+
+        .usato-popup__close {
+            position: absolute;
+            right: 0.55rem;
+            top: 0.45rem;
+            border: 0;
+            background: transparent;
+            color: #13243a;
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .usato-popup__image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid rgba(19, 36, 58, 0.12);
+            background: #f4f6fa;
+            display: block;
+        }
+
+        .usato-popup__title {
+            margin: 0.72rem 0 0.25rem;
+            font-size: 0.95rem;
+            color: #13243a;
+            line-height: 1.3;
+        }
+
+        .usato-popup__price {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f1e30;
+        }
+
+        .usato-popup__phrase {
+            margin: 0.48rem 0 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #d52235;
         }
 
         @keyframes usato-scroll {
@@ -82,8 +194,11 @@
 
         @media (max-width: 900px) {
             .usato-marquee-item {
-                width: 148px;
-                height: 148px;
+                width: 196px;
+            }
+
+            .usato-marquee-media {
+                height: 152px;
             }
         }
 
@@ -94,12 +209,19 @@
 
             .usato-marquee-track {
                 gap: 0.65rem;
-                animation-duration: 32s;
+                animation-duration: 54s;
             }
 
             .usato-marquee-item {
-                width: 128px;
-                height: 128px;
+                width: 178px;
+            }
+
+            .usato-marquee-media {
+                height: 136px;
+            }
+
+            .usato-marquee-desc {
+                min-height: 2.1rem;
             }
         }
     </style>
@@ -153,6 +275,17 @@
         </section>
     </main>
 
+    <div id="usato-popup" class="usato-popup" aria-hidden="true">
+        <div class="usato-popup__backdrop" data-popup-close></div>
+        <div class="usato-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="usato-popup-title">
+            <button class="usato-popup__close" id="usato-popup-close" type="button" aria-label="Chiudi popup">&times;</button>
+            <img id="usato-popup-image" class="usato-popup__image" alt="Macchina usata" src="about:blank" />
+            <h3 id="usato-popup-title" class="usato-popup__title"></h3>
+            <p id="usato-popup-price" class="usato-popup__price"></p>
+            <p class="usato-popup__phrase">Fottiti Coglione</p>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Eureka Packaging &middot; Campoformido (UD)</p>
@@ -182,46 +315,151 @@
                 });
             }
 
-            const galleryImages = [
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104329-scaled-e1634808145242-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155114-scaled-e1642518866884-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_153214-scaled-e1642518532995-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091723-002-e1771405398759-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220323_144702-scaled-e1648044209305-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155103-scaled-e1708356827212-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0007-002-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145600-scaled-e1747210802587-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145453-scaled-e1747055554907-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250217_104526-e1739787001619-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220318_100349-scaled-e1647874469395-300x300.jpg',
-                'https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153314-scaled-e1637765195346-300x300.jpg'
+            const catalogItems = [
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104329-scaled-e1634808145242-300x300.jpg',
+                    description: 'Macchina da banco / macchine a campana / Orved / VM 18 N',
+                    price: '2.800,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155114-scaled-e1642518866884-300x300.jpg',
+                    description: 'Macchina da banco / macchine a campana / Orved / VM 18',
+                    price: '2.500,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_153214-scaled-e1642518532995-300x300.jpg',
+                    description: 'L\'erica / Macchina da banco / macchine a campana / C 308 LERICA',
+                    price: '1.350,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091723-002-e1771405398759-300x300.jpg',
+                    description: 'Macchina da banco / macchine a campana / Orved / VM 43 XL',
+                    price: '5.100,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220323_144702-scaled-e1648044209305-300x300.jpg',
+                    description: 'Macchina da banco / macchine a campana / Orved / IDEA 32 HI-LINE',
+                    price: '2.500,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005-300x300.jpg',
+                    description: 'Macchina da banco / macchine a campana / Orved / VM 43 CUISSON',
+                    price: '5.500,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155103-scaled-e1708356827212-300x300.jpg',
+                    description: 'Macchina da banco / macchine a campana / Orved / CUISSON 31',
+                    price: '3.100,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002-300x300.jpg',
+                    description: 'Friulmed / L\'erica / Macchina da banco / macchine a campana / FC 36 CHEF VAC',
+                    price: '1.850,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl-300x300.jpg',
+                    description: 'Atm / Termosigillatrici / VGP 12 mini',
+                    price: '3.700,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0007-002-300x300.jpg',
+                    description: 'Macchina carrellata / macchine a campana / Orved / BRIGHT 20',
+                    price: '9.500,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145600-scaled-e1747210802587-300x300.jpg',
+                    description: 'Bagni termostatici / Orved / SV LAB',
+                    price: '3.000,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145453-scaled-e1747055554907-300x300.jpg',
+                    description: 'Solo saldatura / Termosigillatrici / PROFI 1',
+                    price: '1.000,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250217_104526-e1739787001619-300x300.jpg',
+                    description: 'Macchina da banco / macchine a campana / Orved / VM 33',
+                    price: '3.800,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220318_100349-scaled-e1647874469395-300x300.jpg',
+                    description: 'Solo saldatura / Termosigillatrici / PROFI 2',
+                    price: '1.380,00 € IVA escl.'
+                },
+                {
+                    image: 'https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153314-scaled-e1637765195346-300x300.jpg',
+                    description: 'Macchine ad aspirazione esterna / VM 14 / 90',
+                    price: '1.800,00 € IVA escl.'
+                }
             ];
 
             const marquee = document.getElementById('usato-marquee');
             const track = document.getElementById('usato-marquee-track');
             const loopToggle = document.getElementById('gallery-loop-toggle');
-            if (marquee && track && galleryImages.length) {
-                const slideshowImages = galleryImages.concat(galleryImages);
+            const popup = document.getElementById('usato-popup');
+            const popupImage = document.getElementById('usato-popup-image');
+            const popupTitle = document.getElementById('usato-popup-title');
+            const popupPrice = document.getElementById('usato-popup-price');
+            const popupClose = document.getElementById('usato-popup-close');
+
+            const largeImageUrl = (url) => url.replace(/-300x300(?=\.[a-z]+(?:\?|$))/i, '');
+
+            const openPopup = (item) => {
+                if (!popup || !popupImage || !popupTitle || !popupPrice) return;
+                popupImage.src = largeImageUrl(item.image);
+                popupImage.alt = item.description;
+                popupTitle.textContent = item.description;
+                popupPrice.textContent = item.price;
+                popup.classList.add('is-open');
+                popup.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closePopup = () => {
+                if (!popup) return;
+                popup.classList.remove('is-open');
+                popup.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            };
+
+            if (marquee && track && catalogItems.length) {
+                const slideshowItems = catalogItems.concat(catalogItems);
                 const fragment = document.createDocumentFragment();
 
-                slideshowImages.forEach((url, index) => {
-                    const imageLink = document.createElement('a');
-                    imageLink.className = 'usato-marquee-item';
-                    imageLink.href = 'https://www.macchinesottovuotousate.it/';
-                    imageLink.target = '_blank';
-                    imageLink.rel = 'noopener noreferrer';
-                    imageLink.setAttribute('aria-label', 'Apri il catalogo macchinesottovuotousate.it');
+                slideshowItems.forEach((item) => {
+                    const card = document.createElement('button');
+                    card.type = 'button';
+                    card.className = 'usato-marquee-item';
+                    card.setAttribute('aria-label', item.description + ' - ' + item.price);
+
+                    const media = document.createElement('span');
+                    media.className = 'usato-marquee-media';
 
                     const image = document.createElement('img');
-                    image.src = url;
-                    image.alt = 'Macchina usata ' + ((index % galleryImages.length) + 1);
+                    image.src = item.image;
+                    image.alt = item.description;
                     image.loading = 'lazy';
+                    image.decoding = 'async';
+                    media.appendChild(image);
 
-                    imageLink.appendChild(image);
-                    fragment.appendChild(imageLink);
+                    const copy = document.createElement('span');
+                    copy.className = 'usato-marquee-copy';
+
+                    const description = document.createElement('span');
+                    description.className = 'usato-marquee-desc';
+                    description.textContent = item.description;
+
+                    const price = document.createElement('span');
+                    price.className = 'usato-marquee-price';
+                    price.textContent = item.price;
+
+                    copy.appendChild(description);
+                    copy.appendChild(price);
+
+                    card.appendChild(media);
+                    card.appendChild(copy);
+                    card.addEventListener('click', () => openPopup(item));
+                    fragment.appendChild(card);
                 });
 
                 track.appendChild(fragment);
@@ -235,6 +473,20 @@
                     loopToggle.setAttribute('aria-pressed', loopIsOn ? 'false' : 'true');
                 });
             }
+
+            if (popupClose) {
+                popupClose.addEventListener('click', closePopup);
+            }
+
+            if (popup) {
+                popup.querySelectorAll('[data-popup-close]').forEach((el) => {
+                    el.addEventListener('click', closePopup);
+                });
+            }
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') closePopup();
+            });
         })();
     </script>
     <script src="assets/js/cookie-auto-accept.js"></script>
