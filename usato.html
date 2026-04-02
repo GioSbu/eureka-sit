@@ -14,6 +14,95 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="usato.html" />
     <link rel="stylesheet" href="assets/css/site.css?v=18" />
+    <style>
+        .usato-gallery {
+            padding: 0.95rem 1rem 1.1rem;
+        }
+
+        .usato-gallery-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0 0 0.7rem;
+        }
+
+        .usato-gallery-controls .btn {
+            min-width: 170px;
+            text-align: center;
+        }
+
+        .usato-marquee {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 14px;
+            background: linear-gradient(180deg, #f7f9fd 0%, #f0f4fa 100%);
+            border: 1px solid rgba(19, 36, 58, 0.1);
+        }
+
+        .usato-marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            width: max-content;
+            padding: 0.85rem 0.4rem;
+            animation: usato-scroll 38s linear infinite;
+            will-change: transform;
+        }
+
+        .usato-marquee[data-loop='off'] .usato-marquee-track {
+            animation-play-state: paused;
+        }
+
+        .usato-marquee-item {
+            flex: 0 0 auto;
+            display: block;
+            width: 176px;
+            height: 176px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid rgba(19, 36, 58, 0.14);
+            box-shadow: 0 6px 14px rgba(19, 36, 58, 0.14);
+        }
+
+        .usato-marquee-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @keyframes usato-scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .usato-marquee-item {
+                width: 148px;
+                height: 148px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .usato-gallery {
+                padding: 0.8rem;
+            }
+
+            .usato-marquee-track {
+                gap: 0.65rem;
+                animation-duration: 32s;
+            }
+
+            .usato-marquee-item {
+                width: 128px;
+                height: 128px;
+            }
+        }
+    </style>
 </head>
 <body class="refrigerazione-page cottura-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -52,9 +141,15 @@
                 </div>
             </div>
         </section>
-        <h2 class="product-viewer__title product-viewer__title--outside">Processo selezionato: <span id="product-viewer-selected">-</span></h2>
-        <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
-            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
+
+        <h2 class="product-viewer__title product-viewer__title--outside">Le Nostre proposte:-</h2>
+        <section id="product-viewer" class="card product-viewer product-viewer--cottura usato-gallery" aria-live="polite">
+            <div class="usato-gallery-controls">
+                <button id="gallery-loop-toggle" class="btn btn-ghost" type="button" aria-pressed="true">Loop circolare: ON</button>
+            </div>
+            <div class="usato-marquee" id="usato-marquee" data-loop="on">
+                <div class="usato-marquee-track" id="usato-marquee-track"></div>
+            </div>
         </section>
     </main>
 
@@ -87,37 +182,59 @@
                 });
             }
 
-            const productLinks = document.querySelectorAll('.cottura-product-link');
-            const productViewer = document.getElementById('product-viewer');
-            const productViewerFrame = document.getElementById('product-viewer-frame');
-            const productViewerSelected = document.getElementById('product-viewer-selected');
-            if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
+            const galleryImages = [
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104329-scaled-e1634808145242-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155114-scaled-e1642518866884-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_153214-scaled-e1642518532995-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091723-002-e1771405398759-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220323_144702-scaled-e1648044209305-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155103-scaled-e1708356827212-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0007-002-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145600-scaled-e1747210802587-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145453-scaled-e1747055554907-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250217_104526-e1739787001619-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220318_100349-scaled-e1647874469395-300x300.jpg',
+                'https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153314-scaled-e1637765195346-300x300.jpg'
+            ];
 
-            productLinks.forEach((link) => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    const rawUrl = link.getAttribute('href');
-                    if (!rawUrl) return;
+            const marquee = document.getElementById('usato-marquee');
+            const track = document.getElementById('usato-marquee-track');
+            const loopToggle = document.getElementById('gallery-loop-toggle');
+            if (marquee && track && galleryImages.length) {
+                const slideshowImages = galleryImages.concat(galleryImages);
+                const fragment = document.createDocumentFragment();
 
-                    productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
+                slideshowImages.forEach((url, index) => {
+                    const imageLink = document.createElement('a');
+                    imageLink.className = 'usato-marquee-item';
+                    imageLink.href = 'https://www.macchinesottovuotousate.it/';
+                    imageLink.target = '_blank';
+                    imageLink.rel = 'noopener noreferrer';
+                    imageLink.setAttribute('aria-label', 'Apri il catalogo macchinesottovuotousate.it');
 
-                    productViewerFrame.hidden = false;
-                    productViewerFrame.src = 'about:blank';
-                    if (rawUrl !== '#') {
-                        requestAnimationFrame(() => {
-                            productViewerFrame.src = rawUrl;
-                        });
-                    }
+                    const image = document.createElement('img');
+                    image.src = url;
+                    image.alt = 'Macchina usata ' + ((index % galleryImages.length) + 1);
+                    image.loading = 'lazy';
 
-                    const activeEl = document.activeElement;
-                    if (activeEl && typeof activeEl.blur === 'function') activeEl.blur();
-                    const selection = window.getSelection ? window.getSelection() : null;
-                    if (selection) selection.removeAllRanges();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    document.documentElement.scrollTop = 0;
-                    document.body.scrollTop = 0;
+                    imageLink.appendChild(image);
+                    fragment.appendChild(imageLink);
                 });
-            });
+
+                track.appendChild(fragment);
+            }
+
+            if (loopToggle && marquee) {
+                loopToggle.addEventListener('click', () => {
+                    const loopIsOn = marquee.dataset.loop !== 'off';
+                    marquee.dataset.loop = loopIsOn ? 'off' : 'on';
+                    loopToggle.textContent = loopIsOn ? 'Loop circolare: OFF' : 'Loop circolare: ON';
+                    loopToggle.setAttribute('aria-pressed', loopIsOn ? 'false' : 'true');
+                });
+            }
         })();
     </script>
     <script src="assets/js/cookie-auto-accept.js"></script>
