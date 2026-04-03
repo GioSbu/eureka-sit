@@ -3136,3 +3136,60 @@ body.refrigerazione-page .product-viewer__default-refrigerazione img {
     filter: saturate(0.84) contrast(0.90) brightness(0.86) blur(0.45px);
     transform: scale(1.012);
 }
+
+/* 2026 QUICK FIX 14 - Home Imballaggi: immagine con look vissuto */
+body.home-page .home-imballaggi-media {
+    position: relative;
+    overflow: hidden;
+    background: #24211d;
+}
+
+body.home-page .home-imballaggi-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 14%, rgba(38, 24, 12, 0.20), transparent 44%),
+        linear-gradient(180deg, rgba(56, 44, 30, 0.12) 0%, rgba(20, 16, 12, 0.26) 100%);
+    mix-blend-mode: multiply;
+}
+
+body.home-page .home-imballaggi-media img,
+body.home-page .home-imballaggi-media img[style] {
+    object-fit: cover !important;
+    object-position: center center !important;
+    filter: saturate(0.84) contrast(0.90) brightness(0.86) sepia(0.08) blur(0.45px);
+    transform: scale(1.012);
+}
+
+/* 2026 QUICK FIX 15 - Imballaggi default image nella view */
+body.imballaggi-page .product-viewer__default-imballaggi {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    background: #201d19;
+    border-color: #3f3a34;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+body.imballaggi-page .product-viewer__default-imballaggi::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 18% 16%, rgba(43, 28, 14, 0.20), transparent 46%),
+        linear-gradient(180deg, rgba(58, 42, 24, 0.14) 0%, rgba(18, 13, 10, 0.28) 100%);
+    mix-blend-mode: multiply;
+}
+
+body.imballaggi-page .product-viewer__default-imballaggi img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    filter: saturate(0.84) contrast(0.90) brightness(0.86) sepia(0.08) blur(0.45px);
+    transform: scale(1.012);
+}

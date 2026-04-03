@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it" class="refrigerazione-page cottura-page">
+<html lang="it" class="refrigerazione-page cottura-page imballaggi-page">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,9 +13,9 @@
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="imballaggi-industriali.html" />
-    <link rel="stylesheet" href="assets/css/site.css?v=26" />
+    <link rel="stylesheet" href="assets/css/site.css?v=33" />
 </head>
-<body class="refrigerazione-page cottura-page frame-view-page">
+<body class="refrigerazione-page cottura-page imballaggi-page frame-view-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
         <div class="container header-inner">
@@ -61,7 +61,10 @@
         </section>
         <h2 class="product-viewer__title product-viewer__title--outside">Processo selezionato: <span id="product-viewer-selected">-</span></h2>
         <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
-            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank" hidden></iframe>
+            <div id="product-viewer-default" class="product-viewer__frame product-viewer__default-imballaggi">
+                <img src="gallery/home-imballaggi-default.png" alt="Imballaggio industriale" loading="eager" decoding="async" />
+            </div>
         </section>
     </main>
 
@@ -98,6 +101,7 @@
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerSelected = document.getElementById('product-viewer-selected');
+            const productViewerDefault = document.getElementById('product-viewer-default');
             if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
             productLinks.forEach((link) => {
@@ -108,6 +112,7 @@
 
                     productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
 
+                    if (productViewerDefault) productViewerDefault.hidden = true;
                     productViewerFrame.hidden = false;
                     productViewerFrame.src = 'about:blank';
                     if (rawUrl !== '#') {
@@ -130,3 +135,5 @@
     <script src="assets/js/cookie-auto-accept.js"></script>
 </body>
 </html>
+
+
