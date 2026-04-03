@@ -2777,3 +2777,16 @@ body.cottura-page .product-viewer__title--outside {
         align-self: auto !important;
     }
 }
+
+/* 2026 QUICK FIX 5 - logo nuovo senza sfondo nero */
+.brand {
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.brand img {
+    filter: none !important;
+}
