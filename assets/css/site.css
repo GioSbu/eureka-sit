@@ -2961,3 +2961,53 @@ body.cottura-page .detergenze-marquee-media img {
         font-size: 0.78rem;
     }
 }
+
+/* 2026 QUICK FIX 9 - home card: testo sopra, immagine sotto e piu grande */
+body.home-page #soluzioni .card > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.48rem !important;
+}
+
+body.home-page #soluzioni .card > div > div:nth-child(2) {
+    order: 1 !important;
+    margin-right: 0 !important;
+}
+
+body.home-page #soluzioni .card > div > div:first-child {
+    order: 2 !important;
+    width: min(100%, 182px) !important;
+    height: 132px !important;
+    margin: 0 auto !important;
+    padding: 0.28rem !important;
+}
+
+body.home-page #soluzioni .card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+body.home-page #soluzioni .card p {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: initial !important;
+    overflow: visible !important;
+    margin-top: 0.28rem !important;
+    line-height: 1.22 !important;
+}
+
+@media (max-width: 900px) {
+    body.home-page #soluzioni .card > div > div:first-child {
+        width: min(100%, 168px) !important;
+        height: 124px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    body.home-page #soluzioni .card > div > div:first-child {
+        width: min(100%, 156px) !important;
+        height: 116px !important;
+    }
+}
