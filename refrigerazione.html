@@ -13,7 +13,7 @@
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="refrigerazione.html" />
-    <link rel="stylesheet" href="assets/css/site.css?v=26" />
+    <link rel="stylesheet" href="assets/css/site.css?v=32" />
 </head>
 <body class="refrigerazione-page cottura-page frame-view-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -62,7 +62,10 @@
         </section>
         <h2 class="product-viewer__title product-viewer__title--outside">Processo selezionato: <span id="product-viewer-selected">-</span></h2>
         <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
-            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
+            <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank" hidden></iframe>
+            <div id="product-viewer-default" class="product-viewer__frame product-viewer__default-refrigerazione">
+                <img src="gallery/home-refrigerazione-default.png" alt="Cucina professionale e refrigerazione avanzata" loading="eager" decoding="async" />
+            </div>
         </section>
     </main>
 
@@ -99,6 +102,7 @@
             const productViewer = document.getElementById('product-viewer');
             const productViewerFrame = document.getElementById('product-viewer-frame');
             const productViewerSelected = document.getElementById('product-viewer-selected');
+            const productViewerDefault = document.getElementById('product-viewer-default');
             if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
             productLinks.forEach((link) => {
@@ -109,6 +113,7 @@
 
                     productViewerSelected.textContent = link.dataset.label || link.textContent.trim();
 
+                    if (productViewerDefault) productViewerDefault.hidden = true;
                     productViewerFrame.hidden = false;
                     productViewerFrame.src = 'about:blank';
                     if (rawUrl !== '#') {
