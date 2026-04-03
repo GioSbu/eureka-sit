@@ -2737,3 +2737,43 @@ body.cottura-page .product-viewer__title--outside {
         min-height: 360px !important;
     }
 }
+
+/* 2026 QUICK FIX 4 - Gas single-line subtitle + Usato viewer alignment */
+@media (min-width: 901px) {
+    body.gas-page .hero--sottovuoto .section-subtitle {
+        white-space: nowrap !important;
+        max-width: none !important;
+        margin-bottom: 0.18rem !important;
+        font-size: clamp(0.82rem, 1.28vw, 0.96rem);
+        line-height: 1.15;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Usato: stessa centratura/larghezza della GUI sopra */
+    body.cottura-page:not(.frame-view-page) .product-viewer__title--outside,
+    body.cottura-page:not(.frame-view-page) .usato-gallery {
+        width: 100% !important;
+        max-width: var(--maxw) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-self: center !important;
+    }
+}
+
+@media (max-width: 900px) {
+    body.gas-page .hero--sottovuoto .section-subtitle {
+        white-space: nowrap !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    body.cottura-page:not(.frame-view-page) .product-viewer__title--outside,
+    body.cottura-page:not(.frame-view-page) .usato-gallery {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        align-self: auto !important;
+    }
+}
