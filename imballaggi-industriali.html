@@ -104,6 +104,16 @@
             const productViewerDefault = document.getElementById('product-viewer-default');
             if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
+            const resetViewerDefault = () => {
+                if (productViewerDefault) productViewerDefault.hidden = false;
+                productViewerFrame.hidden = true;
+                productViewerFrame.src = 'about:blank';
+                productViewerSelected.textContent = '-';
+            };
+
+            resetViewerDefault();
+            window.addEventListener('pageshow', resetViewerDefault);
+
             productLinks.forEach((link) => {
                 link.addEventListener('click', (event) => {
                     event.preventDefault();
@@ -135,5 +145,6 @@
     <script src="assets/js/cookie-auto-accept.js"></script>
 </body>
 </html>
+
 
 
