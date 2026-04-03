@@ -2977,9 +2977,9 @@ body.home-page #soluzioni .card > div > div:nth-child(2) {
 
 body.home-page #soluzioni .card > div > div:first-child {
     order: 2 !important;
-    width: min(100%, 182px) !important;
-    height: 132px !important;
-    margin: 0 auto !important;
+    width: 100% !important;
+    height: 196px !important;
+    margin: 0 !important;
     padding: 0.28rem !important;
 }
 
@@ -3000,14 +3000,16 @@ body.home-page #soluzioni .card p {
 
 @media (max-width: 900px) {
     body.home-page #soluzioni .card > div > div:first-child {
-        width: min(100%, 168px) !important;
-        height: 124px !important;
+        width: 100% !important;
+        height: 172px !important;
     }
 }
 
 @media (max-width: 640px) {
     body.home-page #soluzioni .card > div > div:first-child {
-        width: min(100%, 156px) !important;
-        height: 116px !important;
+        width: 100% !important;
+        height: 152px !important;
     }
 }
+
+
