@@ -3013,3 +3013,36 @@ body.home-page #soluzioni .card p {
 }
 
 
+
+/* 2026 QUICK FIX 10 - home card immagini full-size (override forte) */
+body.home-page #soluzioni .card > div > div:first-child,
+body.home-page #soluzioni .card > div > div:first-child[style] {
+    width: 100% !important;
+    height: 280px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.home-page #soluzioni .card img,
+body.home-page #soluzioni .card img[style] {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+@media (max-width: 900px) {
+    body.home-page #soluzioni .card > div > div:first-child,
+    body.home-page #soluzioni .card > div > div:first-child[style] {
+        height: 236px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    body.home-page #soluzioni .card > div > div:first-child,
+    body.home-page #soluzioni .card > div > div:first-child[style] {
+        height: 196px !important;
+    }
+}
