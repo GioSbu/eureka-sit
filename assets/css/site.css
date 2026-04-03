@@ -3047,3 +3047,17 @@ body.home-page #soluzioni .card img[style] {
     }
 }
 
+
+/* 2026 QUICK FIX 11 - Cottura default image nella view */
+body.cottura-page .product-viewer__default {
+    overflow: hidden;
+    background: #ffffff;
+}
+
+body.cottura-page .product-viewer__default img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+}
