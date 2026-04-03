@@ -2341,3 +2341,205 @@ body.cottura-page .product-viewer--cottura .product-viewer__frame {
         min-height: 440px;
     }
 }
+
+/* 2026 QUICK FIX - centratura view e zero barre verticali non desiderate */
+.product-viewer,
+body.cottura-page .product-viewer__title--outside {
+    width: min(1720px, calc(100vw - 28px));
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media (min-width: 901px) {
+    html.home-page,
+    body.home-page,
+    html.contatti-page,
+    body.contatti-page,
+    html.frame-view-page,
+    body.frame-view-page {
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+
+    body.home-page,
+    body.contatti-page,
+    body.frame-view-page {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body.frame-view-page .site-header,
+    body.frame-view-page .footer,
+    body.home-page .site-header,
+    body.home-page .footer,
+    body.contatti-page .site-header,
+    body.contatti-page .footer {
+        flex: 0 0 auto;
+    }
+
+    body.frame-view-page main#contenuto.container {
+        flex: 1 1 auto;
+        min-height: 0;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    body.frame-view-page .hero {
+        margin-bottom: 0.35rem;
+        padding: 0.72rem 0.9rem;
+    }
+
+    body.frame-view-page .hero .section-subtitle {
+        margin-bottom: 0.35rem;
+        font-size: 0.9rem;
+        line-height: 1.32;
+    }
+
+    body.frame-view-page .product-viewer {
+        flex: 1 1 auto;
+        min-height: 0;
+        margin-bottom: 0.22rem;
+        padding-top: 0.72rem;
+        padding-bottom: 0.72rem;
+    }
+
+    body.frame-view-page .product-viewer__frame,
+    body.frame-view-page.sottovuoto-page .product-viewer__frame,
+    body.frame-view-page.gas-page .product-viewer__frame {
+        min-height: 0 !important;
+        height: clamp(350px, calc(100dvh - 330px), 580px);
+    }
+
+    body.frame-view-page.cottura-page .product-viewer__frame {
+        min-height: 0 !important;
+        height: clamp(310px, calc(100dvh - 405px), 530px);
+    }
+
+    body.frame-view-page.cottura-page .product-viewer--cottura .product-viewer__fallback {
+        min-height: 0 !important;
+        height: clamp(310px, calc(100dvh - 405px), 530px);
+    }
+
+    body.frame-view-page .product-viewer__title--outside {
+        margin-bottom: 0.32rem;
+    }
+
+    /* Home: torna full-view senza barra verticale */
+    body.home-page main#contenuto.container {
+        flex: 1 1 auto;
+        min-height: 0;
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.2rem !important;
+        display: flex !important;
+        flex-direction: column;
+        gap: 0.16rem;
+        overflow: hidden;
+    }
+
+    body.home-page .hero--home {
+        margin-bottom: 0.24rem;
+        padding: 0.58rem 0.86rem;
+    }
+
+    body.home-page .home-hero-copy {
+        font-size: 0.95rem;
+        line-height: 1.25;
+    }
+
+    body.home-page .home-soluzioni {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body.home-page .home-sol-title {
+        margin-bottom: 0.18rem;
+        font-size: 1.02rem;
+    }
+
+    body.home-page .home-soluzioni-subtitle {
+        margin: 0 0 0.32rem;
+        font-size: 0.79rem;
+        line-height: 1.18;
+    }
+
+    body.home-page .home-soluzioni-grid {
+        flex: 1 1 auto;
+        min-height: 0;
+        gap: 0.55rem 0.68rem;
+    }
+
+    body.home-page #soluzioni .card {
+        padding: 0.64rem 0.72rem;
+    }
+
+    body.home-page #soluzioni .card > div > div:first-child {
+        width: 72px !important;
+        height: 72px !important;
+    }
+
+    body.home-page #soluzioni .card p {
+        margin-top: 0.28rem !important;
+        margin-bottom: 0 !important;
+        font-size: 0.76rem;
+        line-height: 1.14;
+    }
+
+    body.home-page #valore {
+        margin-top: 0.16rem;
+    }
+
+    body.home-page #valore .section-title {
+        margin: 0 0 0.2rem;
+        font-size: 0.92rem;
+    }
+
+    body.home-page .value-widget-card {
+        padding: 0.46rem;
+    }
+
+    body.home-page .value-widget-list {
+        gap: 0.34rem 0.5rem;
+    }
+
+    body.home-page .value-widget-btn {
+        min-height: 30px;
+        padding: 0.28rem 0.45rem;
+        font-size: 0.69rem;
+    }
+
+    body.home-page .contact-home {
+        margin-top: 0.15rem;
+        padding: 0.2rem 0.58rem;
+    }
+
+    body.home-page .contact-home .contact-line {
+        font-size: 0.73rem;
+        line-height: 1.14;
+    }
+
+    body.home-page .footer {
+        margin-top: 0.12rem;
+        padding-top: 0.16rem;
+        padding-bottom: 0.24rem;
+    }
+
+    body.home-page .footer p {
+        margin: 0;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .product-viewer,
+    body.cottura-page .product-viewer__title--outside {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
