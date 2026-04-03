@@ -2790,3 +2790,20 @@ body.cottura-page .product-viewer__title--outside {
 .brand img {
     filter: none !important;
 }
+
+/* 2026 QUICK FIX 6 - button DETERGENZE azzurro chiaro */
+body.cottura-page .gourmet-btn.detergenze-btn {
+    background: #d6f0ff !important;
+    border-color: #95cae3 !important;
+    color: #0d4f6a !important;
+}
+
+body.cottura-page .gourmet-btn.detergenze-btn .gourmet-btn__arrow {
+    color: #2d97c5 !important;
+}
+
+body.cottura-page .gourmet-btn.detergenze-btn:hover,
+body.cottura-page .gourmet-btn.detergenze-btn:focus-visible {
+    background: #e6f6ff !important;
+    border-color: #76b9da !important;
+}
