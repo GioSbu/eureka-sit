@@ -2543,3 +2543,110 @@ body.cottura-page .product-viewer__title--outside {
         margin-right: 0 !important;
     }
 }
+
+/* 2026 QUICK FIX 2 - centratura forte view + home cards piu basse */
+@media (min-width: 901px) {
+    /* View e titolo sempre centrati */
+    body.frame-view-page .product-viewer,
+    body.frame-view-page .product-viewer__title--outside {
+        width: min(1480px, calc(100vw - 96px)) !important;
+        max-width: 1480px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* GUI sopra la view centrata */
+    body.frame-view-page .hero-actions--top {
+        justify-content: center !important;
+    }
+
+    body.frame-view-page .hero-actions--with-gourmet,
+    body.frame-view-page .hero-gourmet-row,
+    body.frame-view-page .cottura-link-row {
+        justify-content: center !important;
+    }
+
+    /* Home: riduzione altezza 6 card */
+    body.home-page #soluzioni .card {
+        padding: 0.48rem 0.56rem;
+    }
+
+    body.home-page #soluzioni .card > div {
+        gap: 0.58rem !important;
+    }
+
+    body.home-page #soluzioni .card > div > div:first-child {
+        width: 60px !important;
+        height: 60px !important;
+        padding: 0.24rem;
+    }
+
+    body.home-page .widget-title-btn {
+        font-size: 0.76rem;
+        padding: 0.14rem 0.38rem;
+    }
+
+    body.home-page #soluzioni .card p {
+        margin-top: 0.2rem !important;
+        font-size: 0.68rem;
+        line-height: 1.08;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Riduzione da Attivita in giu */
+    body.home-page #valore {
+        margin-top: 0.08rem;
+    }
+
+    body.home-page #valore .section-title {
+        margin: 0 0 0.12rem;
+        font-size: 0.82rem;
+    }
+
+    body.home-page .value-widget-card {
+        padding: 0.34rem;
+    }
+
+    body.home-page .value-widget-list {
+        gap: 0.24rem 0.34rem;
+    }
+
+    body.home-page .value-widget-btn {
+        min-height: 24px;
+        padding: 0.2rem 0.3rem;
+        font-size: 0.6rem;
+    }
+
+    body.home-page .contact-home {
+        margin-top: 0.08rem;
+        padding: 0.14rem 0.5rem;
+    }
+
+    body.home-page .contact-home .contact-line {
+        font-size: 0.67rem;
+        line-height: 1.05;
+    }
+
+    body.home-page .footer {
+        margin-top: 0.08rem;
+        padding-top: 0.1rem;
+        padding-bottom: 0.16rem;
+    }
+
+    body.home-page .footer p {
+        font-size: 0.72rem;
+    }
+}
+
+@media (max-width: 900px) {
+    body.frame-view-page .product-viewer,
+    body.frame-view-page .product-viewer__title--outside {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
