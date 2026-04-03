@@ -3219,3 +3219,29 @@ body.home-page .home-cottura-media img[style] {
     filter: saturate(0.82) contrast(0.90) brightness(0.86) sepia(0.08) blur(0.45px);
     transform: scale(1.012);
 }
+
+/* 2026 QUICK FIX 17 - Home Sottovuoto: immagine con look vissuto */
+body.home-page .home-sottovuoto-media {
+    position: relative;
+    overflow: hidden;
+    background: #202427;
+}
+
+body.home-page .home-sottovuoto-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 14%, rgba(20, 36, 44, 0.20), transparent 44%),
+        linear-gradient(180deg, rgba(26, 40, 52, 0.12) 0%, rgba(12, 18, 24, 0.26) 100%);
+    mix-blend-mode: multiply;
+}
+
+body.home-page .home-sottovuoto-media img,
+body.home-page .home-sottovuoto-media img[style] {
+    object-fit: cover !important;
+    object-position: center center !important;
+    filter: saturate(0.82) contrast(0.90) brightness(0.86) sepia(0.08) blur(0.45px);
+    transform: scale(1.012);
+}
