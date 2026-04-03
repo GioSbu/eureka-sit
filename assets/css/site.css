@@ -2807,3 +2807,120 @@ body.cottura-page .gourmet-btn.detergenze-btn:focus-visible {
     background: #e6f6ff !important;
     border-color: #76b9da !important;
 }
+
+/* 2026 QUICK FIX 7 - Cottura DETERGENZE marquee gallery */
+body.cottura-page .detergenze-gallery {
+    display: block;
+}
+
+body.cottura-page .detergenze-gallery[hidden] {
+    display: none;
+}
+
+body.cottura-page .detergenze-gallery-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 0.65rem;
+}
+
+body.cottura-page .detergenze-gallery-controls .btn {
+    min-width: 170px;
+    text-align: center;
+}
+
+body.cottura-page .detergenze-marquee {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(19, 36, 58, 0.12);
+    background: linear-gradient(180deg, #f7fafd 0%, #eef4fb 100%);
+}
+
+body.cottura-page .detergenze-marquee-track {
+    display: flex;
+    align-items: stretch;
+    gap: 0.95rem;
+    width: max-content;
+    padding: 0.95rem 0.45rem;
+    animation: detergenze-scroll 58s linear infinite;
+    will-change: transform;
+}
+
+body.cottura-page .detergenze-marquee[data-loop='off'] .detergenze-marquee-track {
+    animation-play-state: paused;
+}
+
+body.cottura-page .detergenze-marquee-item {
+    flex: 0 0 auto;
+    width: 330px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(19, 36, 58, 0.14);
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(19, 36, 58, 0.12);
+}
+
+body.cottura-page .detergenze-marquee-media {
+    width: 100%;
+    height: 250px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem;
+}
+
+body.cottura-page .detergenze-marquee-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@keyframes detergenze-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 1100px) {
+    body.cottura-page .detergenze-marquee-item {
+        width: 290px;
+    }
+
+    body.cottura-page .detergenze-marquee-media {
+        height: 224px;
+    }
+}
+
+@media (max-width: 900px) {
+    body.cottura-page .detergenze-gallery-controls {
+        justify-content: flex-start;
+    }
+
+    body.cottura-page .detergenze-marquee-item {
+        width: 250px;
+    }
+
+    body.cottura-page .detergenze-marquee-media {
+        height: 190px;
+    }
+}
+
+@media (max-width: 640px) {
+    body.cottura-page .detergenze-marquee-track {
+        gap: 0.65rem;
+        animation-duration: 50s;
+    }
+
+    body.cottura-page .detergenze-marquee-item {
+        width: 220px;
+    }
+
+    body.cottura-page .detergenze-marquee-media {
+        height: 164px;
+    }
+}

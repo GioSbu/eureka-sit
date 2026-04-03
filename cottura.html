@@ -13,7 +13,7 @@
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="cottura.html" />
-    <link rel="stylesheet" href="assets/css/site.css?v=24" />
+    <link rel="stylesheet" href="assets/css/site.css?v=25" />
 </head>
 <body class="cottura-page frame-view-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -63,7 +63,7 @@
             </div>
         </section>
         <h2 class="product-viewer__title product-viewer__title--outside">Processo selezionato: <span id="product-viewer-selected">-</span></h2>
-        <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
+                <section id="product-viewer" class="card product-viewer product-viewer--cottura" aria-live="polite">
             <iframe id="product-viewer-frame" class="product-viewer__frame" title="Vista prodotto esterna" src="about:blank"></iframe>
             <div id="product-viewer-fallback" class="product-viewer__fallback" hidden>
                 <div class="product-viewer__fallback-card">
@@ -71,6 +71,14 @@
                     <h3 id="product-viewer-fallback-title" class="product-viewer__fallback-title">Contenuto non disponibile nella view integrata</h3>
                     <p class="product-viewer__fallback-text">Il sito selezionato blocca la visualizzazione in questa finestra. Aprilo in una nuova scheda per vedere il contenuto completo.</p>
                     <a id="product-viewer-fallback-link" class="btn product-viewer__fallback-link" href="#" target="_blank" rel="noopener noreferrer">Apri sito in nuova scheda</a>
+                </div>
+            </div>
+            <div id="detergenze-gallery" class="detergenze-gallery" hidden>
+                <div class="detergenze-gallery-controls">
+                    <button id="detergenze-loop-toggle" class="btn btn-ghost" type="button" aria-pressed="true">Loop circolare: ON</button>
+                </div>
+                <div class="detergenze-marquee" id="detergenze-marquee" data-loop="on">
+                    <div class="detergenze-marquee-track" id="detergenze-marquee-track"></div>
                 </div>
             </div>
         </section>
@@ -82,7 +90,7 @@
         </div>
     </footer>
 
-    <script>
+        <script>
         (function () {
             const toggle = document.getElementById('menu-toggle');
             const nav = document.getElementById('site-nav');
@@ -112,6 +120,11 @@
             const productViewerFallbackTitle = document.getElementById('product-viewer-fallback-title');
             const productViewerFallbackLink = document.getElementById('product-viewer-fallback-link');
             const productViewerSelected = document.getElementById('product-viewer-selected');
+            const detergenzeGallery = document.getElementById('detergenze-gallery');
+            const detergenzeMarquee = document.getElementById('detergenze-marquee');
+            const detergenzeTrack = document.getElementById('detergenze-marquee-track');
+            const detergenzeLoopToggle = document.getElementById('detergenze-loop-toggle');
+
             if (!productLinks.length || !productViewer || !productViewerFrame || !productViewerSelected) return;
 
             const blockedEmbedHosts = new Set(['rational-online.com']);
@@ -125,8 +138,57 @@
                 }
             };
 
+            const detergenzeImages = [
+                'gallery/img_detergenti/uno.jpg',
+                'gallery/img_detergenti/due.jpg',
+                'gallery/img_detergenti/tre.jpg',
+                'gallery/img_detergenti/quattro.jpg'
+            ];
+
+            const initDetergenzeGallery = () => {
+                if (!detergenzeTrack || !detergenzeMarquee || !detergenzeImages.length) return;
+                if (detergenzeTrack.childElementCount > 0) return;
+
+                const slideshowItems = detergenzeImages.concat(detergenzeImages);
+                const fragment = document.createDocumentFragment();
+
+                slideshowItems.forEach((src, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'detergenze-marquee-item';
+
+                    const media = document.createElement('div');
+                    media.className = 'detergenze-marquee-media';
+
+                    const image = document.createElement('img');
+                    image.src = src;
+                    image.alt = 'Detergenze Rational ' + ((index % detergenzeImages.length) + 1);
+                    image.loading = 'lazy';
+                    image.decoding = 'async';
+
+                    media.appendChild(image);
+                    item.appendChild(media);
+                    fragment.appendChild(item);
+                });
+
+                detergenzeTrack.appendChild(fragment);
+
+                if (detergenzeLoopToggle) {
+                    detergenzeLoopToggle.addEventListener('click', () => {
+                        const loopIsOn = detergenzeMarquee.dataset.loop !== 'off';
+                        detergenzeMarquee.dataset.loop = loopIsOn ? 'off' : 'on';
+                        detergenzeLoopToggle.textContent = loopIsOn ? 'Loop circolare: OFF' : 'Loop circolare: ON';
+                        detergenzeLoopToggle.setAttribute('aria-pressed', loopIsOn ? 'false' : 'true');
+                    });
+                }
+            };
+
+            const hideDetergenzeGallery = () => {
+                if (detergenzeGallery) detergenzeGallery.hidden = true;
+            };
+
             const showFallback = (label, url) => {
                 if (!productViewerFallback || !productViewerFallbackLink || !productViewerFallbackTitle) return;
+                hideDetergenzeGallery();
                 productViewerFrame.hidden = true;
                 productViewerFrame.src = 'about:blank';
                 productViewerFallback.hidden = false;
@@ -136,12 +198,21 @@
             };
 
             const showFrame = (url) => {
+                hideDetergenzeGallery();
                 if (productViewerFallback) productViewerFallback.hidden = true;
                 productViewerFrame.hidden = false;
                 productViewerFrame.src = 'about:blank';
                 requestAnimationFrame(() => {
                     productViewerFrame.src = url;
                 });
+            };
+
+            const showDetergenze = () => {
+                initDetergenzeGallery();
+                if (productViewerFallback) productViewerFallback.hidden = true;
+                productViewerFrame.hidden = true;
+                productViewerFrame.src = 'about:blank';
+                if (detergenzeGallery) detergenzeGallery.hidden = false;
             };
 
             productLinks.forEach((link) => {
@@ -153,7 +224,11 @@
                     const selectedLabel = link.dataset.label || link.textContent.trim();
                     productViewerSelected.textContent = selectedLabel;
 
-                    if (shouldUseFallback(rawUrl)) {
+                    const isDetergenze = (selectedLabel || '').trim().toUpperCase() === 'DETERGENZE' || link.classList.contains('detergenze-btn');
+
+                    if (isDetergenze) {
+                        showDetergenze();
+                    } else if (shouldUseFallback(rawUrl)) {
                         showFallback(selectedLabel, rawUrl);
                     } else {
                         showFrame(rawUrl);
