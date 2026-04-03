@@ -3245,3 +3245,29 @@ body.home-page .home-sottovuoto-media img[style] {
     filter: saturate(0.82) contrast(0.90) brightness(0.86) sepia(0.08) blur(0.45px);
     transform: scale(1.012);
 }
+
+/* 2026 QUICK FIX 18 - Home Gas: immagine con look vissuto */
+body.home-page .home-gas-media {
+    position: relative;
+    overflow: hidden;
+    background: #1e2225;
+}
+
+body.home-page .home-gas-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 14%, rgba(18, 34, 40, 0.20), transparent 44%),
+        linear-gradient(180deg, rgba(24, 38, 46, 0.12) 0%, rgba(10, 16, 22, 0.26) 100%);
+    mix-blend-mode: multiply;
+}
+
+body.home-page .home-gas-media img,
+body.home-page .home-gas-media img[style] {
+    object-fit: cover !important;
+    object-position: center center !important;
+    filter: saturate(0.82) contrast(0.90) brightness(0.86) sepia(0.08) blur(0.45px);
+    transform: scale(1.012);
+}
