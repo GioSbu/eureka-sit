@@ -3193,3 +3193,29 @@ body.imballaggi-page .product-viewer__default-imballaggi img {
     filter: saturate(0.84) contrast(0.90) brightness(0.86) sepia(0.08) blur(0.45px);
     transform: scale(1.012);
 }
+
+/* 2026 QUICK FIX 16 - Home Cottura: immagine visibile e look coerente */
+body.home-page .home-cottura-media {
+    position: relative;
+    overflow: hidden;
+    background: #1f2124;
+}
+
+body.home-page .home-cottura-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 14%, rgba(35, 24, 14, 0.20), transparent 44%),
+        linear-gradient(180deg, rgba(52, 40, 28, 0.12) 0%, rgba(16, 14, 12, 0.26) 100%);
+    mix-blend-mode: multiply;
+}
+
+body.home-page .home-cottura-media img,
+body.home-page .home-cottura-media img[style] {
+    object-fit: cover !important;
+    object-position: center center !important;
+    filter: saturate(0.82) contrast(0.90) brightness(0.86) sepia(0.08) blur(0.45px);
+    transform: scale(1.012);
+}
