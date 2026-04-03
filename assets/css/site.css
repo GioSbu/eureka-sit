@@ -2978,7 +2978,7 @@ body.home-page #soluzioni .card > div > div:nth-child(2) {
 body.home-page #soluzioni .card > div > div:first-child {
     order: 2 !important;
     width: 100% !important;
-    height: 196px !important;
+    height: 157px !important;
     margin: 0 !important;
     padding: 0.28rem !important;
 }
@@ -3018,7 +3018,7 @@ body.home-page #soluzioni .card p {
 body.home-page #soluzioni .card > div > div:first-child,
 body.home-page #soluzioni .card > div > div:first-child[style] {
     width: 100% !important;
-    height: 280px !important;
+    height: 224px !important;
     margin: 0 !important;
     padding: 0 !important;
 }
@@ -3029,20 +3029,21 @@ body.home-page #soluzioni .card img[style] {
     height: 100% !important;
     max-width: none !important;
     max-height: none !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: center center !important;
 }
 
 @media (max-width: 900px) {
     body.home-page #soluzioni .card > div > div:first-child,
     body.home-page #soluzioni .card > div > div:first-child[style] {
-        height: 236px !important;
+        height: 189px !important;
     }
 }
 
 @media (max-width: 640px) {
     body.home-page #soluzioni .card > div > div:first-child,
     body.home-page #soluzioni .card > div > div:first-child[style] {
-        height: 196px !important;
+        height: 157px !important;
     }
 }
+
