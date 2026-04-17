@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="it" class="refrigerazione-page cottura-page">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Partners&References | Eureka Packaging</title>
+    <meta name="description" content="Partners e references Eureka Packaging." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content="Partners&References | Eureka Packaging" />
+    <meta property="og:description" content="Partners e references Eureka Packaging." />
+    <meta property="og:url" content="partners-references.html" />
+    <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="partners-references.html" />
+    <link rel="stylesheet" href="assets/css/site.css?v=63" />
+    <style>
+        .partners-references-page #page-title {
+            text-align: center;
+        }
+
+        .partners-references-page .partners-copy {
+            margin: 0 auto;
+            max-width: none;
+            color: var(--muted-color);
+            text-align: center;
+            font-size: 0.92rem;
+            line-height: 1.3;
+        }
+
+        .partners-references-page .partners-copy p {
+            margin: 0 0 0.55rem;
+        }
+
+        .partners-references-page .partners-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .partners-references-page .partners-layout-section,
+        .partners-references-page .references-layout-section {
+            margin-top: 1rem;
+            padding: 1.1rem;
+        }
+
+        .partners-references-page .partners-layout-title {
+            margin: 0 0 0.45rem;
+            text-align: center;
+            font-size: 1.35rem;
+            color: #13243a;
+        }
+
+        .partners-references-page .partners-layout-subtitle {
+            margin: 0 0 1rem;
+            text-align: center;
+            color: var(--muted-color);
+            line-height: 1.45;
+        }
+
+        .partners-references-page .partners-gallery-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.58rem;
+            margin: 0 0 0.72rem;
+        }
+
+        .partners-references-page .partners-control-btn {
+            min-width: 122px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+        }
+
+        .partners-references-page .partners-control-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            flex: 0 0 auto;
+        }
+
+        .partners-references-page .partners-control-btn[aria-pressed='true'] {
+            background: #d52235;
+            color: #fff;
+            border-color: #d52235;
+        }
+
+        .partners-references-page .partners-marquee {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 14px;
+            border: 1px solid rgba(19, 36, 58, 0.1);
+            background: linear-gradient(180deg, #f7f9fd 0%, #f0f4fa 100%);
+        }
+
+        .partners-references-page .partners-marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 0.72rem;
+            width: max-content;
+            padding: 0.92rem 0.4rem;
+            animation: partners-scroll 42s linear infinite;
+            will-change: transform;
+        }
+
+        .partners-references-page .partners-marquee[data-play='paused'] .partners-marquee-track {
+            animation-play-state: paused;
+        }
+
+        .partners-references-page .partners-marquee[data-direction='reverse'] .partners-marquee-track {
+            animation-direction: reverse;
+        }
+
+        .partners-references-page .partners-marquee-item {
+            flex: 0 0 auto;
+            width: 232px;
+            height: 108px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem;
+            border-radius: 12px;
+            border: 1px solid rgba(19, 36, 58, 0.14);
+            background: #fff;
+            box-shadow: 0 6px 14px rgba(19, 36, 58, 0.12);
+            text-decoration: none;
+        }
+
+        .partners-references-page .partners-marquee-item:focus-visible {
+            outline: 2px solid #d52235;
+            outline-offset: 2px;
+        }
+
+        .partners-references-page .partners-marquee-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .partners-references-page .references-layout-title {
+            margin: 0 0 0.35rem;
+            text-align: center;
+            font-size: 1.28rem;
+            color: #13243a;
+        }
+
+        .partners-references-page .references-layout-subtitle {
+            margin: 0 0 1rem;
+            text-align: center;
+            color: var(--muted-color);
+            line-height: 1.4;
+        }
+
+        .partners-references-page .references-clients {
+            display: grid;
+            gap: 0.8rem;
+            max-height: 680px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-right: 0.32rem;
+            scrollbar-width: thin;
+            scrollbar-color: #8da3bb #eef3f8;
+        }
+
+        .partners-references-page .references-clients::-webkit-scrollbar {
+            width: 9px;
+        }
+
+        .partners-references-page .references-clients::-webkit-scrollbar-track {
+            background: #eef3f8;
+            border-radius: 999px;
+        }
+
+        .partners-references-page .references-clients::-webkit-scrollbar-thumb {
+            background: #8da3bb;
+            border-radius: 999px;
+        }
+
+        .partners-references-page .reference-row {
+            display: grid;
+            grid-template-columns: minmax(170px, 220px) minmax(250px, 1.2fr) minmax(250px, 0.9fr);
+            gap: 0.65rem;
+            align-items: stretch;
+            border: 1px solid #d8e3ee;
+            border-radius: 12px;
+            background: #fff;
+            padding: 0.65rem;
+        }
+
+        .partners-references-page .reference-row__logo {
+            border: 1px solid #e2eaf3;
+            border-radius: 10px;
+            background: #f8fbff;
+            padding: 0.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 154px;
+        }
+
+        .partners-references-page .reference-row__logo img {
+            width: 100%;
+            height: 100%;
+            max-height: 138px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .partners-references-page .reference-row__details {
+            border: 1px solid #e2eaf3;
+            border-radius: 10px;
+            background: #fbfdff;
+            padding: 0.65rem 0.72rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.18rem;
+            text-align: center;
+        }
+
+        .partners-references-page .reference-row__title {
+            margin: 0 0 0.2rem;
+            font-size: 1.03rem;
+            color: #13243a;
+        }
+
+        .partners-references-page .reference-row__line {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--muted-color);
+            line-height: 1.35;
+            font-style: italic;
+        }
+
+        .partners-references-page .reference-row__gallery {
+            border: 1px solid #e2eaf3;
+            border-radius: 10px;
+            background: #f8fbff;
+            padding: 0.45rem;
+            display: grid;
+            grid-template-columns: 42px minmax(0, 1fr) 42px;
+            gap: 0.42rem;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .partners-references-page .reference-row__nav {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid #cfdbea;
+            background: #fff;
+            color: #13243a;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .partners-references-page .reference-row__nav:hover,
+        .partners-references-page .reference-row__nav:focus-visible {
+            background: #13243a;
+            color: #fff;
+            border-color: #13243a;
+            outline: none;
+        }
+
+        .partners-references-page .reference-row__nav svg {
+            width: 17px;
+            height: 17px;
+            fill: currentColor;
+        }
+
+        .partners-references-page .reference-row__viewport {
+            width: 100%;
+            height: 186px;
+            border-radius: 8px;
+            border: 1px solid #dce6f2;
+            background: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .partners-references-page .reference-row__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .partners-references-page .reference-row__counter {
+            position: absolute;
+            right: 0.34rem;
+            bottom: 0.32rem;
+            z-index: 1;
+            border-radius: 999px;
+            background: rgba(19, 36, 58, 0.78);
+            color: #fff;
+            font-size: 0.7rem;
+            line-height: 1;
+            padding: 0.22rem 0.36rem;
+            letter-spacing: 0.01em;
+            pointer-events: none;
+        }
+
+        @keyframes partners-scroll {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+            to {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .partners-references-page .partners-layout-section,
+            .partners-references-page .references-layout-section {
+                padding: 0.85rem;
+            }
+
+            .partners-references-page .partners-control-btn {
+                min-width: 106px;
+                font-size: 0.82rem;
+            }
+
+            .partners-references-page .partners-marquee-item {
+                width: 178px;
+                height: 96px;
+            }
+
+            .partners-references-page .reference-row {
+                grid-template-columns: 1fr;
+                gap: 0.52rem;
+            }
+
+            .partners-references-page .reference-row__logo {
+                min-height: 116px;
+            }
+
+            .partners-references-page .reference-row__logo img {
+                max-height: 104px;
+            }
+
+            .partners-references-page .reference-row__gallery {
+                grid-template-columns: 38px minmax(0, 1fr) 38px;
+            }
+
+            .partners-references-page .reference-row__nav {
+                width: 38px;
+                height: 38px;
+            }
+
+            .partners-references-page .reference-row__viewport {
+                height: 190px;
+            }
+
+            .partners-references-page .references-clients {
+                max-height: 72vh;
+                padding-right: 0.18rem;
+            }
+        }
+    </style>
+</head>
+<body class="refrigerazione-page cottura-page partners-references-page">
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Vai alla homepage">
+                <img src="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" alt="Logo Eureka Packaging" />
+            </a>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Apri menu</button>
+            <nav id="site-nav" class="nav" aria-label="Navigazione principale">
+                <a href="index.html">Home</a>
+                <a href="sottovuoto.html">Sottovuoto</a>
+                <a href="cottura.html">Cottura</a>
+                <a href="refrigerazione.html">Refrigerazione</a>
+                <a href="gas.html">Gas&amp;Food</a>
+                <a href="imballaggi-industriali.html">Imballaggi</a>
+                <a href="arredi-neutri.html">Arredi/Neutri</a>
+                <a href="partners-references.html" aria-current="page">Partners&amp;References</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenuto" class="container">
+        <section class="hero hero--cottura" aria-labelledby="page-title">
+            <div>
+                <div class="hero-topline">
+                    <p class="eyebrow"><a href="index.html#soluzioni">COLLABORAZIONI</a> - FORNITORI &amp; CLIENTI</p>
+                    <div class="hero-actions hero-actions--top">
+                        <a class="btn" href="contatti.html">Contattaci</a>
+                        <div class="hero-action-stack">
+                            <a class="btn btn-ghost" href="index.html#soluzioni">Torna alle soluzioni</a>
+                        </div>
+                    </div>
+                </div>
+                <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Partners&amp;References</h1>
+                <div class="partners-copy">
+                    <p>Specialisti in sistemi di Cottura Conservazione Refrigerazione ed Imballaggio</p>
+                    <p>La nostra missione &egrave; quella di aiutare i nostri Clienti a fronteggiare con successo le nuove sfide del mercato facendo leva sulle competenze aziendali e sulla collaborazione con i migliori specialisti del settore.</p>
+                    <p>Sviluppiamo sinergie vincenti con l'obiettivo di fornire Soluzioni innovative, affidabili e convenienti.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card partners-layout-section" aria-labelledby="partners-title">
+            <h2 id="partners-title" class="partners-layout-title">I nostri partners</h2>
+            <p class="partners-layout-subtitle">Collaboriamo con le migliori aziende del Settore Alimentare ed Industriale, garantendo ai nostri clienti le migliori macchine per la Cottura la Conservazione la Refrigerazione e l'Imballaggio.</p>
+
+            <div class="partners-gallery-controls">
+                <button id="partners-forward" class="btn btn-ghost partners-control-btn" type="button" aria-pressed="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M7 6v12H5V6h2Zm12.18 11.03L10.71 12l8.47-5.03v10.06Z"></path>
+                    </svg>
+                    <span>Avanti</span>
+                </button>
+                <button id="partners-stop" class="btn btn-ghost partners-control-btn" type="button" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M7 7h10v10H7z"></path>
+                    </svg>
+                    <span>Stop</span>
+                </button>
+                <button id="partners-backward" class="btn btn-ghost partners-control-btn" type="button" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M17 6v12h2V6h-2ZM4.82 17.03 13.29 12 4.82 6.97v10.06Z"></path>
+                    </svg>
+                    <span>Indietro</span>
+                </button>
+            </div>
+
+            <div class="partners-marquee" id="partners-marquee" data-play="running" data-direction="forward" aria-label="Loghi partner in scorrimento">
+                <div class="partners-marquee-track" id="partners-marquee-track"></div>
+            </div>
+        </section>
+
+        <section class="card references-layout-section" aria-labelledby="references-title">
+            <h2 id="references-title" class="references-layout-title">Referenze</h2>
+            <p class="references-layout-subtitle">Le migliori aziende del Settore Alimentare ed Industriale, che si sono affidate a Eureka.<br />Date un'occhiata ...</p>
+
+            <div id="references-clients" class="references-clients" aria-label="Referenze clienti"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Eureka Packaging &middot; Campoformido (UD)</p>
+            <p><strong>Eureka di Nagostinis Marco</strong> &middot; Via della Croce 35, 33030 Campoformido (UD) &middot; P.IVA: 01793480300 &middot; REA: UD - 210632 &middot; PEC: <a href="mailto:eureka-pack@pec.it">eureka-pack@pec.it</a></p>
+            <p><a href="privacy.html">Privacy Policy</a> &middot; <a href="cookie.html">Cookie Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const toggle = document.getElementById('menu-toggle');
+            const nav = document.getElementById('site-nav');
+            if (toggle && nav) {
+                const closeMenu = () => {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.textContent = 'Apri menu';
+                };
+
+                toggle.addEventListener('click', () => {
+                    const isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
+                });
+
+                nav.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        if (!nav.classList.contains('open')) return;
+                        closeMenu();
+                    });
+                });
+            }
+
+            const partnersLogos = [
+                { src: 'gallery/img_loghi_partners/orved.jpg', alt: 'Logo Orved', href: 'sottovuoto.html' },
+                { src: 'gallery/img_loghi_partners/rational.jpg', alt: 'Logo Rational', href: 'cottura.html' },
+                { src: 'gallery/img_loghi_partners/unox.jpg', alt: 'Logo Unox', href: 'cottura.html' },
+                { src: 'gallery/img_loghi_partners/Logo_Angelopo.jpg', alt: 'Logo Angelopo', href: 'cottura.html' },
+                { src: 'gallery/img_loghi_partners/medicair-food.jpg', alt: 'Logo Medicair Food', href: 'gas.html' },
+                { src: 'gallery/img_loghi_partners/Logo-Minipac.png', alt: 'Logo Mini Pack Torre e Gramegna', href: 'imballaggi-industriali.html' },
+                { src: 'gallery/img_loghi_partners/pkg-group.jpg', alt: 'Logo PKG Group', href: 'imballaggi-industriali.html' },
+                { src: 'gallery/img_loghi_partners/Logo_Irinox.jpg', alt: 'Logo Irinox', href: 'refrigerazione.html' },
+                { src: 'gallery/img_loghi_partners/Logo_friulinox.jpg', alt: 'Logo Friulinox', href: 'refrigerazione.html' }
+            ];
+
+            const partnersMarquee = document.getElementById('partners-marquee');
+            const partnersTrack = document.getElementById('partners-marquee-track');
+            const partnersBackward = document.getElementById('partners-backward');
+            const partnersStop = document.getElementById('partners-stop');
+            const partnersForward = document.getElementById('partners-forward');
+
+            if (partnersMarquee && partnersTrack && partnersLogos.length) {
+                const logosForLoop = partnersLogos.concat(partnersLogos);
+                const fragment = document.createDocumentFragment();
+
+                logosForLoop.forEach((entry) => {
+                    const link = document.createElement('a');
+                    link.className = 'partners-marquee-item';
+                    link.href = entry.href;
+                    link.setAttribute('aria-label', entry.alt);
+
+                    const image = document.createElement('img');
+                    image.src = entry.src;
+                    image.alt = entry.alt;
+                    image.loading = 'lazy';
+                    image.decoding = 'async';
+
+                    link.appendChild(image);
+                    fragment.appendChild(link);
+                });
+
+                partnersTrack.appendChild(fragment);
+            }
+
+            if (partnersMarquee && partnersBackward && partnersStop && partnersForward) {
+                const updatePartnersControls = () => {
+                    const isPaused = partnersMarquee.dataset.play === 'paused';
+                    const isReverse = partnersMarquee.dataset.direction === 'reverse';
+                    partnersBackward.setAttribute('aria-pressed', (!isPaused && isReverse) ? 'true' : 'false');
+                    partnersStop.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+                    partnersForward.setAttribute('aria-pressed', (!isPaused && !isReverse) ? 'true' : 'false');
+                };
+
+                const setPartnersState = (play, direction) => {
+                    partnersMarquee.dataset.play = play;
+                    partnersMarquee.dataset.direction = direction;
+                    updatePartnersControls();
+                };
+
+                partnersBackward.addEventListener('click', () => {
+                    setPartnersState('running', 'reverse');
+                });
+
+                partnersStop.addEventListener('click', () => {
+                    setPartnersState('paused', partnersMarquee.dataset.direction === 'reverse' ? 'reverse' : 'forward');
+                });
+
+                partnersForward.addEventListener('click', () => {
+                    setPartnersState('running', 'forward');
+                });
+
+                setPartnersState('running', 'forward');
+            }
+
+            const referenceClients = [
+                {
+                    name: 'il forno Rizzo',
+                    logo: 'gallery/img_loghi_clienti/il-forno-rizzo/logo.jpg',
+                    details: [
+                        'Bistrot & Caffe',
+                        'Piazzale Don Francesco Placerano, 1',
+                        '33017 - Tarcento (Ud)',
+                        'tel. 0432 681683'
+                    ],
+                    gallery: [
+                        'gallery/img_loghi_clienti/il-forno-rizzo/gallery-01.jpg',
+                        'gallery/img_loghi_clienti/il-forno-rizzo/gallery-02.jpg',
+                        'gallery/img_loghi_clienti/il-forno-rizzo/gallery-03.jpg',
+                        'gallery/img_loghi_clienti/il-forno-rizzo/gallery-04.jpg'
+                    ]
+                },
+                {
+                    name: 'LA\' DI MORET',
+                    logo: 'gallery/img_loghi_clienti/la-di-moret/logo.jpg',
+                    details: [
+                        'Via Tricesimo, 276',
+                        '33100 Udine UD',
+                        'tel. 0432 545096'
+                    ],
+                    gallery: [
+                        'gallery/img_loghi_clienti/la-di-moret/gallery-01.jpg',
+                        'gallery/img_loghi_clienti/la-di-moret/gallery-02.jpg',
+                        'gallery/img_loghi_clienti/la-di-moret/gallery-03.jpg',
+                        'gallery/img_loghi_clienti/la-di-moret/gallery-04.jpg'
+                    ]
+                },
+                {
+                    name: 'NOTE DI GUSTO',
+                    logo: 'gallery/img_loghi_clienti/note-di-gusto/logo.jpg',
+                    details: [
+                        'Via Spilimbergo, 263',
+                        '33100 Martignacco UD',
+                        'tel. 0432 1793610'
+                    ],
+                    gallery: [
+                        'gallery/img_loghi_clienti/note-di-gusto/gallery-01.jpg',
+                        'gallery/img_loghi_clienti/note-di-gusto/gallery-02.jpg',
+                        'gallery/img_loghi_clienti/note-di-gusto/gallery-03.jpg',
+                        'gallery/img_loghi_clienti/note-di-gusto/gallery-04.jpg',
+                        'gallery/img_loghi_clienti/note-di-gusto/gallery-05.jpg',
+                        'gallery/img_loghi_clienti/note-di-gusto/gallery-06.jpg',
+                        'gallery/img_loghi_clienti/note-di-gusto/gallery-07.jpg',
+                        'gallery/img_loghi_clienti/note-di-gusto/gallery-08.jpg'
+                    ]
+                },
+                {
+                    name: 'Azienda Agrituristica Nonis',
+                    logo: 'gallery/img_loghi_clienti/azienda-agrituristica-nonis/logo.jpg',
+                    details: [
+                        'Via Treviso, 17',
+                        'San Vito al Tagliamento (PN)',
+                        'tel. 0434 81710'
+                    ],
+                    gallery: [
+                        'gallery/img_loghi_clienti/azienda-agrituristica-nonis/gallery-01.jpg',
+                        'gallery/img_loghi_clienti/azienda-agrituristica-nonis/gallery-02.jpg',
+                        'gallery/img_loghi_clienti/azienda-agrituristica-nonis/gallery-03.jpg',
+                        'gallery/img_loghi_clienti/azienda-agrituristica-nonis/gallery-04.jpg',
+                        'gallery/img_loghi_clienti/azienda-agrituristica-nonis/gallery-05.jpg',
+                        'gallery/img_loghi_clienti/azienda-agrituristica-nonis/gallery-06.jpg'
+                    ]
+                },
+                {
+                    name: 'MAMM CICLOFOCACCERIA',
+                    logo: 'gallery/img_loghi_clienti/mamm-ciclofocacceria/logo.jpg',
+                    details: [
+                        'Largo Del Teatro, 2',
+                        '33100 Udine (UD)',
+                        'tel. +39 3426191801'
+                    ],
+                    gallery: [
+                        'gallery/img_loghi_clienti/mamm-ciclofocacceria/gallery-01.jpg',
+                        'gallery/img_loghi_clienti/mamm-ciclofocacceria/gallery-03.jpeg',
+                        'gallery/img_loghi_clienti/mamm-ciclofocacceria/gallery-04.jpg',
+                        'gallery/img_loghi_clienti/mamm-ciclofocacceria/gallery-06.jpg',
+                        'gallery/img_loghi_clienti/mamm-ciclofocacceria/gallery-07.jpg',
+                        'gallery/img_loghi_clienti/mamm-ciclofocacceria/gallery-08.jpg',
+                        'gallery/img_loghi_clienti/mamm-ciclofocacceria/gallery-09.jpg',
+                        'gallery/img_loghi_clienti/mamm-ciclofocacceria/gallery-10.jpg'
+                    ]
+                },
+                {
+                    name: 'SOCIETA\' AGRICOLA S.S.',
+                    logo: 'gallery/img_loghi_clienti/societa-agricola-ss/logo.jpg',
+                    details: [
+                        'Largo Armando Diaz, 8',
+                        '33045 Nimis (UD)',
+                        'tel. 0432 790685'
+                    ],
+                    gallery: [
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-01.jpg',
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-02.jpg',
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-03.jpg',
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-04.jpg',
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-05.jpg',
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-06.jpg',
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-07.jpg',
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-08.jpg',
+                        'gallery/img_loghi_clienti/societa-agricola-ss/gallery-09.jpg'
+                    ]
+                }
+            ];
+
+            const referencesContainer = document.getElementById('references-clients');
+
+            if (referencesContainer && referenceClients.length) {
+                const fragment = document.createDocumentFragment();
+
+                referenceClients.forEach((client) => {
+                    const row = document.createElement('article');
+                    row.className = 'reference-row';
+
+                    const logoBox = document.createElement('div');
+                    logoBox.className = 'reference-row__logo';
+                    const logoImage = document.createElement('img');
+                    logoImage.src = client.logo;
+                    logoImage.alt = 'Logo ' + client.name;
+                    logoImage.loading = 'lazy';
+                    logoImage.decoding = 'async';
+                    logoBox.appendChild(logoImage);
+
+                    const detailsBox = document.createElement('div');
+                    detailsBox.className = 'reference-row__details';
+
+                    const title = document.createElement('h3');
+                    title.className = 'reference-row__title';
+                    title.textContent = client.name;
+                    detailsBox.appendChild(title);
+
+                    client.details.forEach((line) => {
+                        const paragraph = document.createElement('p');
+                        paragraph.className = 'reference-row__line';
+                        paragraph.textContent = line;
+                        detailsBox.appendChild(paragraph);
+                    });
+
+                    const galleryBox = document.createElement('div');
+                    galleryBox.className = 'reference-row__gallery';
+
+                    const prevButton = document.createElement('button');
+                    prevButton.type = 'button';
+                    prevButton.className = 'reference-row__nav';
+                    prevButton.setAttribute('aria-label', 'Immagine precedente ' + client.name);
+                    prevButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.8 5 8 12l6.8 7L16 17.74 10.43 12 16 6.26 14.8 5Z"></path></svg>';
+
+                    const nextButton = document.createElement('button');
+                    nextButton.type = 'button';
+                    nextButton.className = 'reference-row__nav';
+                    nextButton.setAttribute('aria-label', 'Immagine successiva ' + client.name);
+                    nextButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9.2 5-1.2 1.26L13.57 12 8 17.74 9.2 19 16 12 9.2 5Z"></path></svg>';
+
+                    const viewport = document.createElement('div');
+                    viewport.className = 'reference-row__viewport';
+
+                    const viewportImage = document.createElement('img');
+                    viewportImage.className = 'reference-row__image';
+                    viewportImage.alt = 'Gallery ' + client.name;
+                    viewportImage.loading = 'lazy';
+                    viewportImage.decoding = 'async';
+
+                    const counter = document.createElement('span');
+                    counter.className = 'reference-row__counter';
+
+                    viewport.appendChild(viewportImage);
+                    viewport.appendChild(counter);
+                    galleryBox.appendChild(prevButton);
+                    galleryBox.appendChild(viewport);
+                    galleryBox.appendChild(nextButton);
+
+                    const images = (Array.isArray(client.gallery) && client.gallery.length ? client.gallery : [client.logo]);
+                    let index = 0;
+
+                    const setImage = (nextIndex) => {
+                        index = (nextIndex + images.length) % images.length;
+                        viewportImage.src = images[index];
+                        counter.textContent = (index + 1) + ' / ' + images.length;
+                    };
+
+                    prevButton.addEventListener('click', () => setImage(index - 1));
+                    nextButton.addEventListener('click', () => setImage(index + 1));
+                    setImage(0);
+
+                    row.appendChild(logoBox);
+                    row.appendChild(detailsBox);
+                    row.appendChild(galleryBox);
+                    fragment.appendChild(row);
+                });
+
+                referencesContainer.appendChild(fragment);
+            }
+        })();
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cookie Policy | Eureka Packaging</title>
+    <meta name="description" content="Informativa cookie del sito Eureka Packaging." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content="Cookie Policy | Eureka Packaging" />
+    <meta property="og:description" content="Informazioni su cookie e strumenti di tracciamento utilizzati nel sito." />
+    <meta property="og:url" content="cookie.html" />
+    <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="cookie.html" />
+    <link rel="stylesheet" href="assets/css/site.css?v=63" />
+</head>
+<body class="contatti-page">
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Vai alla homepage">
+                <img src="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" alt="Logo Eureka Packaging" />
+            </a>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Apri menu</button>
+            <nav id="site-nav" class="nav" aria-label="Navigazione principale">
+                <a href="index.html">Home</a>
+                <a href="sottovuoto.html">Sottovuoto</a>
+                <a href="cottura.html">Cottura</a>
+                <a href="refrigerazione.html">Refrigerazione</a>
+                <a href="gas.html">Gas&amp;Food</a>
+                <a href="imballaggi-industriali.html">Imballaggi</a>
+                <a href="arredi-neutri.html">Arredi/Neutri</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenuto" class="container">
+        <section class="hero" aria-labelledby="cookie-title">
+            <p class="eyebrow" style="margin-bottom:1rem;">Compliance</p>
+            <h1 id="cookie-title" class="hero-home-style" style="font-weight:700; font-size:1.15rem; font-style:italic;">Cookie Policy</h1>
+            <p class="section-subtitle" style="width:100%; max-width:100%; text-align:left;">Informazioni sull&rsquo;uso di cookie e strumenti di tracciamento nel sito.</p>
+        </section>
+
+        <section class="card" aria-label="Informativa cookie" style="margin-top:1rem;">
+            <p><strong>Ultimo aggiornamento:</strong> 10 aprile 2026</p>
+
+            <h2>Cosa sono i cookie</h2>
+            <p>I cookie sono piccoli file di testo che i siti web inviano al dispositivo dell&rsquo;utente per migliorare la navigazione, memorizzare preferenze e, in alcuni casi, misurare o profilare l&rsquo;attivit&agrave; online.</p>
+
+            <h2>Tipi di cookie</h2>
+            <ul class="list">
+                <li><strong>Cookie tecnici:</strong> necessari al funzionamento del sito e alla navigazione.</li>
+                <li><strong>Cookie analitici:</strong> usati per statistiche aggregate (se configurati in modo non identificativo possono rientrare nei tecnici).</li>
+                <li><strong>Cookie di profilazione/marketing:</strong> usati per creare profili e mostrare comunicazioni personalizzate.</li>
+                <li><strong>Cookie di terze parti:</strong> cookie installati da servizi esterni incorporati nel sito.</li>
+            </ul>
+
+            <h2>Stato attuale del sito</h2>
+            <ul class="list">
+                <li>Il sito non include script di auto-accettazione del consenso cookie.</li>
+                <li>Il sito pu&ograve; mostrare contenuti esterni (iframe/link a siti terzi): tali servizi possono impostare cookie di terze parti quando caricati.</li>
+                <li>In caso di attivazione di cookie non tecnici verr&agrave; implementata una piattaforma di consenso conforme (banner con accetta/rifiuta e gestione preferenze).</li>
+            </ul>
+
+            <h2>Gestione dei cookie</h2>
+            <p>L&rsquo;utente pu&ograve; gestire o cancellare i cookie dalle impostazioni del browser. La disattivazione dei cookie tecnici pu&ograve; influire sul corretto funzionamento di alcune funzionalit&agrave; del sito.</p>
+
+            <h2>Contatti</h2>
+            <p>Per richieste su privacy e cookie: <a href="mailto:info@eureka-pack.it">info@eureka-pack.it</a>.</p>
+
+            <h2>Nota di completamento</h2>
+            <p>Questa informativa deve essere aggiornata quando saranno definiti in modo definitivo i servizi terzi attivi, l&rsquo;eventuale CMP (consent management platform) e i dati societari completi.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Eureka Packaging &middot; Campoformido (UD)</p>
+            <p><strong>Eureka di Nagostinis Marco</strong> &middot; Via della Croce 35, 33030 Campoformido (UD) &middot; P.IVA: 01793480300 &middot; REA: UD - 210632 &middot; PEC: <a href="mailto:eureka-pack@pec.it">eureka-pack@pec.it</a></p>
+            <p><a href="privacy.html">Privacy Policy</a> &middot; <a href="cookie.html" aria-current="page">Cookie Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const toggle = document.getElementById('menu-toggle');
+            const nav = document.getElementById('site-nav');
+            if (!toggle || !nav) return;
+            const closeMenu = () => {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.textContent = 'Apri menu';
+            };
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                toggle.textContent = isOpen ? 'Chiudi menu' : 'Apri menu';
+            });
+            nav.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    if (!nav.classList.contains('open')) return;
+                    closeMenu();
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
+
+

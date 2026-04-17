@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it" class="refrigerazione-page cottura-page">
+<html lang="it" class="refrigerazione-page cottura-page usato-page">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +13,7 @@
     <meta property="og:image" content="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="usato.html" />
-    <link rel="stylesheet" href="assets/css/site.css?v=26" />
+    <link rel="stylesheet" href="assets/css/site.css?v=63" />
     <style>
         .usato-gallery {
             padding: 0.95rem 1rem 1.1rem;
@@ -21,13 +21,31 @@
 
         .usato-gallery-controls {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
+            align-items: center;
+            gap: 0.58rem;
             margin: 0 0 0.7rem;
         }
 
-        .usato-gallery-controls .btn {
-            min-width: 170px;
-            text-align: center;
+        .usato-control-btn {
+            min-width: 122px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+        }
+
+        .usato-control-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            flex: 0 0 auto;
+        }
+
+        .usato-control-btn[aria-pressed='true'] {
+            background: #d52235;
+            color: #fff;
+            border-color: #d52235;
         }
 
         .usato-marquee {
@@ -48,8 +66,12 @@
             will-change: transform;
         }
 
-        .usato-marquee[data-loop='off'] .usato-marquee-track {
+        .usato-marquee[data-play='paused'] .usato-marquee-track {
             animation-play-state: paused;
+        }
+
+        .usato-marquee[data-direction='reverse'] .usato-marquee-track {
+            animation-direction: reverse;
         }
 
         .usato-marquee-item {
@@ -337,26 +359,77 @@
                 max-height: min(58vh, calc(92vh - 200px));
             }
         }
+
+        html.usato-page,
+        body.usato-page {
+            height: 100% !important;
+            overflow-y: hidden !important;
+            overflow-x: hidden !important;
+        }
+
+        body.usato-page {
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.usato-page .site-header,
+        body.usato-page .footer {
+            flex: 0 0 auto;
+        }
+
+        body.usato-page main#contenuto.container {
+            flex: 1 1 auto;
+            min-height: 0;
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
+            overflow-y: auto !important;
+            overflow-x: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        body.usato-page main#contenuto.container::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        @media (min-width: 901px) {
+            body.usato-page .hero-topline {
+                flex-wrap: nowrap;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+
+            body.usato-page .hero-topline .eyebrow {
+                white-space: nowrap;
+            }
+
+            body.usato-page .hero-topline .hero-actions--top {
+                margin-left: auto;
+                justify-content: flex-end;
+                transform: translateY(10px);
+            }
+        }
+
     </style>
 </head>
-<body class="refrigerazione-page cottura-page">
+<body class="refrigerazione-page cottura-page usato-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
         <div class="container header-inner">
-            <a class="brand" href="index.htm" aria-label="Vai alla homepage">
+            <a class="brand" href="index.html" aria-label="Vai alla homepage">
                 <img src="158cafef/dms3rep/multi/opt/Logo_EUREKA-080421-811x265-RossoNero.jpg" alt="Logo Eureka Packaging" />
             </a>
             <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Apri menu</button>
             <nav id="site-nav" class="nav" aria-label="Navigazione principale">
-                <a href="index.htm">Home</a>
+                <a href="index.html">Home</a>
                 <a href="sottovuoto.html">Sottovuoto</a>
                 <a href="cottura.html">Cottura</a>
                 <a href="refrigerazione.html">Refrigerazione</a>
                 <a href="gas.html">Gas&amp;Food</a>
                 <a href="imballaggi-industriali.html">Imballaggi</a>
                 <a href="arredi-neutri.html">Arredi/Neutri</a>
-                <a href="usato.html" aria-current="page">Usato</a>
-                <a href="contatti.html">Contatti</a>
             </nav>
         </div>
     </header>
@@ -365,10 +438,12 @@
         <section class="hero hero--cottura" aria-labelledby="page-title">
             <div>
                 <div class="hero-topline">
-                    <p class="eyebrow"><a href="index.htm#soluzioni">SOLUZIONI</a> - MACCHINE USATE</p>
+                    <p class="eyebrow"><a href="index.html#soluzioni">SOLUZIONI</a> - MACCHINE USATE</p>
                     <div class="hero-actions hero-actions--top">
                         <a class="btn" href="contatti.html">Contattaci</a>
-                        <a class="btn btn-ghost" href="index.htm#soluzioni">Torna alle soluzioni</a>
+                        <div class="hero-action-stack">
+                            <a class="btn btn-ghost" href="sottovuoto.html">Torna al Sottovuoto</a>
+                        </div>
                     </div>
                 </div>
                 <h1 id="page-title" style="margin:.2rem 0 1rem; font-weight:700; font-size:1.15rem; font-style:italic; color:#13243a;">Macchine ricondizionate</h1>
@@ -381,9 +456,26 @@
         <h2 class="product-viewer__title product-viewer__title--outside">Le Nostre proposte:-Sul Sottovuoto</h2>
         <section id="product-viewer" class="card product-viewer product-viewer--cottura usato-gallery" aria-live="polite">
             <div class="usato-gallery-controls">
-                <button id="gallery-loop-toggle" class="btn btn-ghost" type="button" aria-pressed="true">Loop circolare: ON</button>
+                <button id="gallery-forward" class="btn btn-ghost usato-control-btn" type="button" aria-pressed="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M7 6v12H5V6h2Zm12.18 11.03L10.71 12l8.47-5.03v10.06Z"></path>
+                    </svg>
+                    <span>Avanti</span>
+                </button>
+                <button id="gallery-stop" class="btn btn-ghost usato-control-btn" type="button" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M7 7h10v10H7z"></path>
+                    </svg>
+                    <span>Stop</span>
+                </button>
+                <button id="gallery-backward" class="btn btn-ghost usato-control-btn" type="button" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M17 6v12h2V6h-2ZM4.82 17.03 13.29 12 4.82 6.97v10.06Z"></path>
+                    </svg>
+                    <span>Indietro</span>
+                </button>
             </div>
-            <div class="usato-marquee" id="usato-marquee" data-loop="on">
+            <div class="usato-marquee" id="usato-marquee" data-play="running" data-direction="forward">
                 <div class="usato-marquee-track" id="usato-marquee-track"></div>
             </div>
         </section>
@@ -412,6 +504,8 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Eureka Packaging &middot; Campoformido (UD)</p>
+            <p><strong>Eureka di Nagostinis Marco</strong> &middot; Via della Croce 35, 33030 Campoformido (UD) &middot; P.IVA: 01793480300 &middot; REA: UD - 210632 &middot; PEC: <a href="mailto:eureka-pack@pec.it">eureka-pack@pec.it</a></p>
+            <p><a href="privacy.html">Privacy Policy</a> &middot; <a href="cookie.html">Cookie Policy</a></p>
         </div>
     </footer>
 
@@ -438,11 +532,13 @@
                 });
             }
 
-            const catalogItems = [{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104329-scaled-e1634808145242-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 18 N","price":"2.800,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104329-scaled-e1634808145242.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104003-scaled-e1634807827832.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104022-scaled-e1634807854773.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104100-scaled-e1634807908958.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104116-scaled-e1634807998880.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104148-scaled-e1634808022725.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104155-scaled-e1634808052812.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104207-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104232-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153925-scaled-e1633616023772.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_150625-scaled.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155114-scaled-e1642518866884-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 18","price":"2.500,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155114-scaled-e1642518866884.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104100-scaled-e1634807908958.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155452-scaled-e1642519004217.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155122-scaled-e1642518890631.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155139-scaled-e1642518915217.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20210601_153427-scaled-e1623076942527.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_153214-scaled-e1642518532995-300x300.jpg","description":"L\u0027erica / Macchina da banco / macchine a campana / C 308 LERICA","price":"1.350,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_153214-scaled-e1642518532995.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153859-scaled-e1633616115952.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153925-scaled-e1633616023772.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153949-scaled-e1633616155710.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_154009-scaled-e1633616192205.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_154042-scaled-e1633616229996.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091723-002-e1771405398759-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 43 XL","price":"5.100,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091723-002-e1771405398759.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145912-scaled-e1726062284455.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145653-scaled-e1726062138516.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145604-scaled-e1726062030608.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091538-002-1.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091358-Copia-e1771405534351.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091343-002-e1771405460219.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091652-002-e1771405369282.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091557-002-e1771405318710.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220323_144702-scaled-e1648044209305-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / IDEA 32 HI-LINE","price":"2.500,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220323_144702-scaled-e1648044209305.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/08/20210830_153612-scaled-e1630333140759.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/08/20210830_153636-scaled-e1630333199538.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220310_103317-scaled-e1646909432110.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153925-scaled-e1633616023772.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/06/20240617_112748-scaled-e1718694905672.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 43 CUISSON","price":"5.500,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101041-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101110-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101117.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101237-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101322-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101410-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101419-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101519.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101552-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101602-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101709-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101632-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101741-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101949-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_102138-scaled.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155103-scaled-e1708356827212-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / CUISSON 31","price":"3.100,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155103-scaled-e1708356827212.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/07/20210706_113929-scaled-e1625568808570.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/07/20210706_113945-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/07/20210706_114044-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104207-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155116-scaled-e1708356893846.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155146-scaled-e1708356940512.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155300-scaled-e1708357544410.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002-300x300.jpg","description":"Friulmed / L\u0027erica / Macchina da banco / macchine a campana / FC 36 CHEF VAC","price":"1.850,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083355-002-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083322-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083259-002.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl-300x300.jpg","description":"Atm / Termosigillatrici / VGP 12 mini","price":"3.700,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2023/05/20230522_152357-scaled-e1684830170792.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/vgp-12-mini-later-tagl-1-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/vgp-12-mini-front-tagl.png","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250219_094514.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0007-002-300x300.jpg","description":"Macchina carrellata / macchine a campana / Orved / BRIGHT 20","price":"9.500,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0007-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0006-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0004-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0003-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0002-002.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145600-scaled-e1747210802587-300x300.jpg","description":"Bagni termostatici / Orved / SV LAB","price":"3.000,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145600-scaled-e1747210802587.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095339-e1747211305181.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095358-e1747210910499.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095405-e1747210974707.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095407-e1747211036623.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095417-e1747211073114.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095444-e1747211221885.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095425-e1747211135306.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145453-scaled-e1747055554907-300x300.jpg","description":"Solo saldatura / Termosigillatrici / PROFI 1","price":"1.000,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145453-scaled-e1747055554907.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145511-scaled-e1747055631825.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145537-scaled-e1747055673164.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250217_104526-e1739787001619-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 33","price":"3.800,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250217_104526-e1739787001619.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_150317-scaled-e1726062419121.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145939-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145912-scaled-e1726062284455.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145829-scaled-e1726062243213.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145704-scaled-e1726062193285.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145653-scaled-e1726062138516.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145631-scaled-e1726062069207.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145604-scaled-e1726062030608.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220318_100349-scaled-e1647874469395-300x300.jpg","description":"Solo saldatura / Termosigillatrici / PROFI 2","price":"1.380,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220318_100349-scaled-e1647874469395.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20151118_045603-scaled-e1623071479799.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20151118_045620-scaled-e1623071508834.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153314-scaled-e1637765195346-300x300.jpg","description":"Macchine ad aspirazione esterna / VM 14 / 90","price":"1.800,00€ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153314-scaled-e1637765195346.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20210531_155736-scaled-e1622714184215.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20210603_151009-1-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20210531_162131-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/VM-14-SFREGIO.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153331-scaled.jpg"]}];
+            const catalogItems = [{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104329-scaled-e1634808145242-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 18 N","price":"2.800,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104329-scaled-e1634808145242.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104003-scaled-e1634807827832.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104022-scaled-e1634807854773.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104100-scaled-e1634807908958.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104116-scaled-e1634807998880.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104148-scaled-e1634808022725.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104155-scaled-e1634808052812.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104207-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104232-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153925-scaled-e1633616023772.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_150625-scaled.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155114-scaled-e1642518866884-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 18","price":"2.500,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155114-scaled-e1642518866884.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104100-scaled-e1634807908958.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155452-scaled-e1642519004217.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155122-scaled-e1642518890631.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_155139-scaled-e1642518915217.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20210601_153427-scaled-e1623076942527.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_153214-scaled-e1642518532995-300x300.jpg","description":"L\u0027erica / Macchina da banco / macchine a campana / C 308 LERICA","price":"1.350,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2022/01/20220118_153214-scaled-e1642518532995.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153859-scaled-e1633616115952.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153925-scaled-e1633616023772.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153949-scaled-e1633616155710.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_154009-scaled-e1633616192205.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_154042-scaled-e1633616229996.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091723-002-e1771405398759-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 43 XL","price":"5.100,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091723-002-e1771405398759.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145912-scaled-e1726062284455.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145653-scaled-e1726062138516.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145604-scaled-e1726062030608.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091538-002-1.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091358-Copia-e1771405534351.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091343-002-e1771405460219.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091652-002-e1771405369282.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2026/02/20260218_091557-002-e1771405318710.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220323_144702-scaled-e1648044209305-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / IDEA 32 HI-LINE","price":"2.500,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220323_144702-scaled-e1648044209305.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/08/20210830_153612-scaled-e1630333140759.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/08/20210830_153636-scaled-e1630333199538.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220310_103317-scaled-e1646909432110.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211007_153925-scaled-e1633616023772.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/06/20240617_112748-scaled-e1718694905672.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 43 CUISSON","price":"5.500,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101005-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101041-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101110-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101117.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101237-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101322-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101410-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101419-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101519.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101552-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101602-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101709-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101632-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101741-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_101949-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/10/20241022_102138-scaled.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155103-scaled-e1708356827212-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / CUISSON 31","price":"3.100,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155103-scaled-e1708356827212.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/07/20210706_113929-scaled-e1625568808570.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/07/20210706_113945-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/07/20210706_114044-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/10/20211021_104207-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155116-scaled-e1708356893846.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155146-scaled-e1708356940512.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/02/20240219_155300-scaled-e1708357544410.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002-300x300.jpg","description":"Friulmed / L\u0027erica / Macchina da banco / macchine a campana / FC 36 CHEF VAC","price":"1.850,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083341-002-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083355-002-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083322-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/11/20240412_083259-002.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl-300x300.jpg","description":"Atm / Termosigillatrici / VGP 12 mini","price":"3.700,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/VPG_Mini_postprodotta-tagl-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2023/05/20230522_152357-scaled-e1684830170792.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/vgp-12-mini-later-tagl-1-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2023/07/vgp-12-mini-front-tagl.png","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250219_094514.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0007-002-300x300.jpg","description":"Macchina carrellata / macchine a campana / Orved / BRIGHT 20","price":"9.500,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0007-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0006-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0004-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0003-002.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/10/IMG-20251010-WA0002-002.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145600-scaled-e1747210802587-300x300.jpg","description":"Bagni termostatici / Orved / SV LAB","price":"3.000,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145600-scaled-e1747210802587.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095339-e1747211305181.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095358-e1747210910499.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095405-e1747210974707.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095407-e1747211036623.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095417-e1747211073114.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095444-e1747211221885.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250514_095425-e1747211135306.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145453-scaled-e1747055554907-300x300.jpg","description":"Solo saldatura / Termosigillatrici / PROFI 1","price":"1.000,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145453-scaled-e1747055554907.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145511-scaled-e1747055631825.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2025/05/20250512_145537-scaled-e1747055673164.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250217_104526-e1739787001619-300x300.jpg","description":"Macchina da banco / macchine a campana / Orved / VM 33","price":"3.800,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2025/02/20250217_104526-e1739787001619.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_150317-scaled-e1726062419121.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145939-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145912-scaled-e1726062284455.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145829-scaled-e1726062243213.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145704-scaled-e1726062193285.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145653-scaled-e1726062138516.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145631-scaled-e1726062069207.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2024/09/20240911_145604-scaled-e1726062030608.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220318_100349-scaled-e1647874469395-300x300.jpg","description":"Solo saldatura / Termosigillatrici / PROFI 2","price":"1.380,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2022/03/20220318_100349-scaled-e1647874469395.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20151118_045603-scaled-e1623071479799.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20151118_045620-scaled-e1623071508834.jpg"]},{"image":"https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153314-scaled-e1637765195346-300x300.jpg","description":"Macchine ad aspirazione esterna / VM 14 / 90","price":"1.800,00â‚¬ IVA escl.","views":["https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153314-scaled-e1637765195346.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20210531_155736-scaled-e1622714184215.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20210603_151009-1-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/20210531_162131-scaled.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/06/VM-14-SFREGIO.jpg","https://www.macchinesottovuotousate.it/wp-content/uploads/2021/11/20211124_153331-scaled.jpg"]}];
 
             const marquee = document.getElementById('usato-marquee');
             const track = document.getElementById('usato-marquee-track');
-            const loopToggle = document.getElementById('gallery-loop-toggle');
+            const backwardControl = document.getElementById('gallery-backward');
+            const stopControl = document.getElementById('gallery-stop');
+            const forwardControl = document.getElementById('gallery-forward');
             const popup = document.getElementById('usato-popup');
             const popupImage = document.getElementById('usato-popup-image');
             const popupThumbs = document.getElementById('usato-popup-thumbs');
@@ -554,13 +650,34 @@
                 track.appendChild(fragment);
             }
 
-            if (loopToggle && marquee) {
-                loopToggle.addEventListener('click', () => {
-                    const loopIsOn = marquee.dataset.loop !== 'off';
-                    marquee.dataset.loop = loopIsOn ? 'off' : 'on';
-                    loopToggle.textContent = loopIsOn ? 'Loop circolare: OFF' : 'Loop circolare: ON';
-                    loopToggle.setAttribute('aria-pressed', loopIsOn ? 'false' : 'true');
+            if (marquee && backwardControl && stopControl && forwardControl) {
+                const updateControls = () => {
+                    const isPaused = marquee.dataset.play === 'paused';
+                    const isReverse = marquee.dataset.direction === 'reverse';
+                    backwardControl.setAttribute('aria-pressed', (!isPaused && isReverse) ? 'true' : 'false');
+                    stopControl.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+                    forwardControl.setAttribute('aria-pressed', (!isPaused && !isReverse) ? 'true' : 'false');
+                };
+
+                const setMarqueeState = (play, direction) => {
+                    marquee.dataset.play = play;
+                    marquee.dataset.direction = direction;
+                    updateControls();
+                };
+
+                backwardControl.addEventListener('click', () => {
+                    setMarqueeState('running', 'reverse');
                 });
+
+                stopControl.addEventListener('click', () => {
+                    setMarqueeState('paused', marquee.dataset.direction === 'reverse' ? 'reverse' : 'forward');
+                });
+
+                forwardControl.addEventListener('click', () => {
+                    setMarqueeState('running', 'forward');
+                });
+
+                setMarqueeState('running', 'forward');
             }
 
             if (popupClose) {
@@ -578,6 +695,11 @@
             });
         })();
     </script>
-    <script src="assets/js/cookie-auto-accept.js"></script>
 </body>
 </html>
+
+
+
+
+
+
